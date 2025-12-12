@@ -1,0 +1,10 @@
+project:
+  type: manuscript
+
+manuscript:
+  article: index.qmd
+
+bibliography: references.bib
+
+format:
+  frpQuarto-html: default

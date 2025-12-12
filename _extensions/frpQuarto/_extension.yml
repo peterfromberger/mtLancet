@@ -1,0 +1,44 @@
+name: frpQuarto
+title: "FRP Manuscript Format"
+author: "Dr. Peter Fromberger"
+version: 0.1.5
+quarto-required: ">=1.5.0"
+
+contributes:
+  shortcodes: 
+    - summary.lua
+    - acknowledgements.lua
+    - contributors.lua
+    - datasharing_statement.lua
+    - declaration_of_interests.lua
+  formats: 
+    html:
+      theme: [default, styles.scss]
+      html-table-processing: none
+      tbl-cap-location: bottom
+      extract-media: "htmlMedia"
+      toc: true
+      toc-depth: 2
+      template: template.html
+
+      include-after-body: 
+            text: |
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  document.querySelectorAll("figcaption").forEach(e => {
+                    e.innerHTML = e.innerHTML.replace(
+                      /((.*?)\.)\s*(.*)/,
+                      '<div class="figcaption-title-lancet">$1</div><details class="dropdown-card"><summary><span class="figcaption-dropdown">Show full caption</span><span class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></summary><div class="figcaption-subtext">$3</div></details>'
+                    )
+                  })
+                });
+              </script>
+
+      crossref:
+        title-delim: " "
+
+      template-partials:
+        - title-block.html
+        - toc.html
+    docx:
+      reference-docx: styles.docx

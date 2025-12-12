@@ -1,0 +1,247 @@
+/* FRP Quarto Lancet Style (HTML) */
+
+/*-- scss:defaults --*/
+$primary-color: #00549e;
+$secondary-color: #2e2e2e;
+$text-color: #212529;
+$bg-color: white;
+
+// The left hand sidebar
+$grid-sidebar-width: 200px !default;
+
+// The main body
+$grid-body-width: 960px !default;
+
+// The right hand margin bar
+$grid-margin-width: 200px !default;
+
+// The gutter that appears between the above columns
+$grid-column-gutter-width: 0.5rem !default;
+
+
+$toc-color: $primary-color;
+$toc-font-size: 0.9em;
+
+/*-- scss:rules --*/
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  word-wrap: break-word;
+  color: $secondary-color;
+  background: $bg-color;
+  line-height: 1.65em;
+  //max-width: 1200px;
+  margin: 2em auto;
+  padding: 2em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Source Sans Pro", sans-serif;
+  color: $secondary-color;
+  font-weight: 400;
+}
+
+h1, .h1 {
+  font-size: 1.625rem;
+  font-weight: 400;
+  margin: 1rem 0;
+  line-height: 1.2em;
+}
+
+h2, .h2 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 1rem 0;
+  line-height: 1.2em;
+  border-bottom: none;
+}
+
+h3, .h3 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    margin: 1rem 0;
+}
+
+h4, .h4 {
+    color: #2e2e2e;
+    font-size: 1.13rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 1rem 0;
+}
+
+p, .p {
+    color: $secondary-color;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin: 0 0 1em;
+    word-wrap: break-word;
+}
+
+// title-block.html styles
+
+.header-line {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  margin-bottom: 0.25em;
+  color: #2e2e2e;
+}
+
+.header-line-em {
+  font-weight: 600;
+}
+
+.author {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #00549e;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25em;
+}
+
+.contributors {
+  color: #212529;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 1em;
+}
+
+.author-roles {
+  font-family: "Source Sans Pro", sans-serif;
+  color: $secondary-color;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin: 0 0 1em;
+  word-wrap: break-word;
+}
+
+cell-output-display, .cell-output-display {
+  display: flex;
+}
+
+
+details.dropdown-card {
+  font-family: "Source Sans Pro", sans-serif;
+  color: $secondary-color;
+  margin: 1em 0;
+  text-align: left;
+}
+
+/* ——— Titelzeile / Trigger ——— */
+details.dropdown-card summary {
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #00549e;
+  list-style: none;
+}
+
+.dropdown-card .arrow svg {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-card[open] .arrow svg {
+  transform: rotate(180deg);
+}
+
+details.dropdown-card .card-content {
+  background-color: #f5f5f5;
+  border-top: 1px solid #2e2e2e;
+  padding: 1em;
+  line-height: 1.25em;
+  display: grid;
+  grid-template-columns: auto 1fr; /* erste Spalte: letter, zweite: name */
+  gap: 0.5em; /* Abstand zwischen Spalten */
+}
+
+.affiliation-row {
+  display: contents; /* lässt die grid-Struktur die Spalten steuern */
+}
+
+.affiliation-letter {
+  text-align: left;   /* falls du die Buchstaben rechtsbündig willst */
+}
+
+.affiliation-name {
+  text-align: left;
+}
+
+//
+
+blockquote {
+  border-left: 4px solid $secondary-color;
+  padding-left: 1em;
+  font-style: italic;
+  color: #444;
+  background-color: #f9f9f9;
+}
+
+// Figures
+
+// also true for tables which are embedded in figure divs
+.figure {
+  border-top: 1px solid #b9b9b9;
+  border-bottom: 1px solid #b9b9b9;
+  //margin: 1.25rem 0;
+  padding: 1rem 0 0 0;
+  text-align: left;
+}
+
+figcaption, .figcaption {
+  font-size: .938rem;
+  text-align: left;
+
+}
+
+.figcaption-dropdown {
+  font-size: .938rem;
+  text-align: left;
+}
+
+.figcaption-title-lancet {
+  color: #000;
+  font-weight: 700;
+  text-align: left;
+}
+
+.figcaption-subtext {
+  display: block;
+  text-align: left;
+  font-weight: 400;
+  padding: .625rem;
+  background: #ebebeb;
+  margin-block-start: .938rem;
+  color: $secondary-color
+}
+
+// links
+
+a {
+    color: #00549e;
+    transition: background .15s ease-in-out,color .15s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        color: #00549e;
+        text-decoration: underline;
+    }
+}
+
+code {
+  background-color: #f5f5f5;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+// ---------- TOC Styling ----------
+toc-title, .toc-title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #2e2e2e;
+}
