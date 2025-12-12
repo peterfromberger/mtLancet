@@ -1,5 +1,10 @@
 /.quarto/
 /_data/
+/renv/
+
+.Rhistory
+.Rproj.user
+.Rprofile
 
 /.luarc.json
 
