@@ -1,9 +1,15 @@
 # \@myTabu Project
 
-### render apa html
-quarto render paper/clinical_trial_LancetDigitalHealth/manuscript.qmd --to apaquarto-html
-
+## render
 quarto render index.qmd --to frpQuarto-html
+
+## publish github
+quarto publish gh-pages
+
+
+https://peterfromberger.github.io/mtLancet/
+
+
 
 In order to run the R scripts, there must be a _data folder at first level in folder structure (where the README.qmd file lives).
 
