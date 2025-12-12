@@ -1,4 +1,4 @@
-# \@myTabu Project
+# Manuscript
 
 ## render
 quarto render index.qmd --to frpQuarto-html

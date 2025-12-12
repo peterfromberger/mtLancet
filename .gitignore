@@ -1,5 +1,6 @@
 /.quarto/
 /_data/
+/_manuscript
 /renv/
 
 .Rhistory
