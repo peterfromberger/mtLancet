@@ -11,7 +11,7 @@ https://peterfromberger.github.io/mtLancet/
 
 
 
-In order to run the R scripts, there must be a _data folder at first level in folder structure (where the README.qmd file lives).
+In order to run some of the R scripts, there must be a _data folder at first level in folder structure (where the README.qmd file lives).
 
 You will need some packages from Dr. Andreas Leha (Human medical center Göttingen):
 

@@ -3,7 +3,15 @@ title: "Effectiveness of a web-based intervention for individuals who committed 
 
 shorttitle: "Effectiveness of a web-based intervention for individuals who committed sexual offenses against children."
 
-version: "0.5.0"
+version: "0.6.5"
+
+date: last-modified
+date-format: long
+
+format-links:
+  - text: Other Link
+    href: https://quarto.org/
+    icon: hand-thumbs-up
 
 authors:
   - name: Peter Fromberger
@@ -159,21 +167,6 @@ affiliations:
     city: Magdeburg
     country: Germany
 
-date: last-modified
-date-format: long
-
-appendix-style: plain
-notebook-links: global
-
-crossref:
-  custom:
-    - kind: float
-      key: apptbl
-      latex-env: apptbl
-      reference-prefix: Table A
-      space-before-numbering: false
-      latex-list-of-description: Appendix Table
-
 summary:
   background: |
     Sexual offenders often present with diverse risk profiles requiring differentiated interventions [@knuth84].
@@ -185,6 +178,14 @@ summary:
     Taken together, the intervention did not lead to measurable changes in the primary CARES outcome but was associated with selected improvements in secondary endpoints — most notably reduced explicit sexual interest and strengthened working alliance with coaches and supervisors — without indications of harm also for low-risk individuals.
   funding: |
     The work was funded by the German Federal Ministry of Education and Research (BMBF, Funding number: 01KR1807A). The funder of the study had no role in study design, data collection, data analysis, data interpretation, or writing of the report.
+
+panel:
+  evidence_before_this_study: |
+    This section should include a description of all the evidence that the authors considered before undertaking this study. Authors should state: the sources (databases, journal or book reference lists, etc) searched; the criteria used to include or exclude studies (including the exact start and end dates of the search), which should not be limited to English language publications; the search terms used; the quality (risk of bias) of that evidence; and the pooled estimate derived from meta-analysis of the evidence, if appropriate. Research in context panels should not have references; anything mentioned that needs referencing should appear in the main text.
+  added_value_of_this_study: |
+    Authors should describe here how their findings add value to the existing evidence (including an updated meta-analysis, if appropriate).
+  implications_of_all_the_available_evidence: |
+    Authors should state the implications for practice or policy and future research of their study combined with existing evidence.
 
 data_sharing_statement: "The source code of the webbased intervention, the content of the intervention as well as placebo arm are available online under an open source licence after publishing. De-identified data will be made available on reasonable request from the corresponding author (peter.fromberger@medizin.uni-goettingen.de). Data access requests, which can be submitted via email to the corresponding author, must include a detailed description of the research question and aims. Data sharing will be authorised following proposal approval and the execution of a signed data access agreement, strictly for scientific use."
 

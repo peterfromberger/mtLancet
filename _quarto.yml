@@ -1,5 +1,8 @@
 project:
   type: manuscript
+  resources: 
+    - /resources
+    - /resources/*.pdf
 
 manuscript:
   article: index.qmd
