@@ -281,17 +281,39 @@ toc-title, .toc-title {
   color: #000;
 }
 
-
+// ----- toc sidebar: additional info -----
 .add-info {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.85em;
+  font-size: 0.9em;
   font-weight: 600;
   color: #2e2e2e;
 }
 
 .add-info-link {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.85em;
+  font-size: 0.9em;
   font-weight: 400;
+  color: #2e2e2e;
+}
+
+// ------- wordcount styling -------
+.wordcount-source {
+  display: none;
+  border: 1px solid #b9b9b9;
+  padding: 0.5rem;
+  margin-top: 1rem
+}
+
+.wordcount-title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #2e2e2e;
+}
+
+.word-count-item {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9em !important;
+  font-weight: 300 !important;
   color: #2e2e2e;
 }

@@ -8,6 +8,7 @@ manuscript:
   article: index.qmd
 
 bibliography: references.bib
+csl: the-lancet.csl
 
 format:
   frpQuarto-html: default

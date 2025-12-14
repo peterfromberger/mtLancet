@@ -8,11 +8,6 @@ version: "0.6.5"
 date: last-modified
 date-format: long
 
-format-links:
-  - text: Other Link
-    href: https://quarto.org/
-    icon: hand-thumbs-up
-
 authors:
   - name: Peter Fromberger
     initials: "PF"  # variables not defined by quarto become metadata.variable
@@ -195,9 +190,32 @@ acknowledgement:
   thanks: "The authors would like to thank all participants for their time, trust and willingness to take part in the study. Furthermore, we would like to thank all community supervisors for taking part in the study - the project as well as the clinical trial was only possible with their help and support. The authors are grateful to Matthias Koller, Andreas Hill und Sophie K. Piper for taking part in the DSMB."
 ---
 
+::: {.wordcount-source when-format="html"}
+
+[Metrics]{.wordcount-title}
+
+[**Summary**: ??? words (300 max); **Manuscript**: {{< words-body >}} words (3.500 max); **Supplement**: {{< words-append >}} words (no limit); **References**: {{< words-ref >}} words (30 citations max).]{.word-count-item}
+:::
+
+
 <!-- SUMMARY -->
 <!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
+<!-- We do not count the words in the summary -->
+::: {.no-count}
+
 {{< summary >}}
+
+:::
+
+<!-- Example figure -->
+::: {#fig-elephant .lightbox}
+
+```{=html}
+<img width="100%" src="resources/figures/mtDiagrams-sd_guided_tasks.png" />
+```
+
+Elephant. A very big animal the elephant is.
+:::
 
 <!-- INTRODUCTION SECTION -->
 {{< include _includes/txt_introduction.qmd >}}
@@ -229,14 +247,23 @@ acknowledgement:
 
 <!-- ACKNOWLEDGEMENTS -->
 <!-- Is automatically filled; do not delete the shortcode -->
+
+::: {.no-count}
+
 ## References
 
 ::: {#refs}
 :::
 
+:::
+
 <!-- YOUR SUPPLEMENTARY MATERIAL -->
 {{< pagebreak >}}
 
-## Supplementary Material
+::: {#appendix-count}
+
+## Supplementary Material {.appendix}
 
 {{< include _includes/txt_supplement.qmd >}}
+
+:::
