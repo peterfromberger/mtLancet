@@ -8,6 +8,8 @@ version: "0.6.5"
 date: last-modified
 date-format: long
 
+lightbox: true
+
 authors:
   - name: Peter Fromberger
     initials: "PF"  # variables not defined by quarto become metadata.variable
@@ -207,15 +209,12 @@ acknowledgement:
 
 :::
 
+
+@fig-example shows a big elefenat.
+
 <!-- Example figure -->
-::: {#fig-elephant .lightbox}
+![Elephant. A very big animal the elephant is.](resources/figures/mtDiagrams-sd_guided_tasks.png){#fig-example width=100%}
 
-```{=html}
-<img width="100%" src="resources/figures/mtDiagrams-sd_guided_tasks.png" />
-```
-
-Elephant. A very big animal the elephant is.
-:::
 
 <!-- INTRODUCTION SECTION -->
 {{< include _includes/txt_introduction.qmd >}}

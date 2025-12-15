@@ -4,7 +4,7 @@ return {
     local md = {}
     local declaration_of_interests_strings = {}
 
-    table.insert(md, "## Declaration of interests\n")
+    table.insert(md, "## Declaration of interests {.unnumbered .unlisted}\n")
 
     local authors_with_interests = {}
     local total_authors = 0
@@ -28,7 +28,7 @@ return {
 
           -- Füge Autor-Eintrag hinzu
           table.insert(declaration_of_interests_strings, table.concat(local_strings))
-          
+
           -- Speichere Autor mit Interessen
           table.insert(authors_with_interests, initials)
         end
@@ -41,7 +41,7 @@ return {
     -- Wenn einige Autoren etwas angegeben haben
     elseif #declaration_of_interests_strings > 0 then
       table.insert(md, table.concat(declaration_of_interests_strings, "\n"))
-      
+
       -- Prüfe, ob es mehr als einen Autor gibt und ob nicht alle Autoren Interessen angegeben haben
       if total_authors > 1 and #authors_with_interests < total_authors then
         table.insert(md, "All other authors declare no competing interests.")
@@ -52,6 +52,5 @@ return {
     local blocks = pandoc.read(table.concat(md, "\n")).blocks
     return pandoc.Div(blocks, {id = "declaration-of-interests"})
   end
-  
-}
 
+}

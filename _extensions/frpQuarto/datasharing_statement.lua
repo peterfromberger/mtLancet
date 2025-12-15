@@ -1,9 +1,9 @@
 return {
-  ['datasharing_statement'] = function(args, kwargs, meta) 
+  ['datasharing_statement'] = function(args, kwargs, meta)
 
     local md = {}
 
-    table.insert(md, "## Data sharing\n")
+    table.insert(md, "## Data sharing {.unnumbered .unlisted}\n")
     if not meta.data_sharing_statement then
         table.insert(md, "No data sharing statement found in metadata.\n")
     else

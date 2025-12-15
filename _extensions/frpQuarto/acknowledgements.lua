@@ -1,9 +1,9 @@
 return {
-  ['acknowledgements'] = function(args, kwargs, meta) 
+  ['acknowledgements'] = function(args, kwargs, meta)
 
     local md = {}
 
-    table.insert(md, "## Acknowledgement\n")
+    table.insert(md, "## Acknowledgement {.unnumbered .unlisted}\n")
     if not meta.acknowledgement then
         table.insert(md, "This work has not been funded.\n")
     else

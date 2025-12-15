@@ -18,10 +18,6 @@ $grid-margin-width: 200px !default;
 // The gutter that appears between the above columns
 $grid-column-gutter-width: 0.5rem !default;
 
-
-$toc-color: $primary-color;
-$toc-font-size: 0.9em;
-
 /*-- scss:rules --*/
 body {
   font-family: "Source Sans Pro", sans-serif;
@@ -246,6 +242,9 @@ toc-title, .toc-title {
   color: #2e2e2e;
 }
 
+.nav-link.active .header-section-number {
+  color: $primary-color
+}
 
 // ----------- PANEL --------------
 .research-panel {
