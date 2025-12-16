@@ -19,8 +19,15 @@ format:
     tbl-cap-location: bottom
 
     other-links:
-      - text: NASA Open Data
-        href: https://data.nasa.gov/
+      - text: Trial registry
+        icon: file-pdf
+        href: resources/GermanClinicalTrialsRegister.pdf
+      - text: Trial protocol
+        icon: file-pdf
+        href: resources/GermanClinicalTrialsRegister.pdf
+      - text: Statistical analysis plan
+        icon: file-pdf
+        href: resources/myTabu_SAP_signed.pdf
     code-links:
       - text: Data Import Code
         icon: file-code
@@ -64,25 +71,100 @@ format:
               );
             });
 
+            /* ---------- Wordcount einklappbar ---------- */
+
+            const header = document.querySelector("header");
+            const sourceWordcount = document.querySelector(".wordcount-source");
+            const affDropdown = header.querySelector(".dropdown-card");
+
+            if (!header) return;
+
+            // Container für Buttons + Content
+            const container = document.createElement("div");
+            container.classList.add("header-buttons-container");
+
+            // Funktion: Button erzeugen
+            const createButton = (text, contentHTML) => {
+              const btn = document.createElement("button");
+              btn.classList.add("header-btn");
+
+              // innerHTML mit Pfeil
+              btn.innerHTML = `
+                <span class="btn-text">${text}</span>
+                <span class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" 
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" 
+                      stroke-linejoin="round" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </span>
+              `;
+
+              btn.dataset.content = contentHTML;
+              return btn;
+            };
+
+            const affContent = affDropdown ? affDropdown.querySelector(".card-content").innerHTML : "";
+            const wordContent = sourceWordcount ? sourceWordcount.innerHTML : "";
+
+            const btnAff = createButton("Affiliations & Notes", affContent);
+            const btnWord = createButton("Article metrics", wordContent);
+
+            // Buttons
+            const contentBtnDiv = document.createElement("div");
+            contentBtnDiv.classList.add("header-buttons");
+
+            contentBtnDiv.appendChild(btnAff);
+            contentBtnDiv.appendChild(btnWord);
+
+            container.appendChild(contentBtnDiv);
+
+            // Grauer Content-Bereich
+            const contentDiv = document.createElement("div");
+            contentDiv.classList.add("header-content");
+            contentDiv.innerHTML = affContent; // initial Affiliations
+
+            container.appendChild(contentDiv);
+
+            // Button-Events
+            [btnAff, btnWord].forEach(btn => {
+              btn.addEventListener("click", () => {
+                // Content wechseln
+                contentDiv.innerHTML = btn.dataset.content;
+
+                // Pfeil-Rotation & Active State
+                [btnAff, btnWord].forEach(b => {
+                  b.classList.remove("active");
+                  b.querySelector(".arrow").classList.remove("rotated");
+                });
+
+                btn.classList.add("active");
+                btn.querySelector(".arrow").classList.add("rotated");
+              });
+            });
+
+            // Affiliations Dropdown verstecken (nur Content nutzen)
+            if (affDropdown) affDropdown.style.display = "none";
+
+            // Header einfügen
+            header.appendChild(container);
+
             /* --------------------------------------------------
-            * 2. WORDCOUNT → TOC SIDEBAR
+            * 2. OTHER LINKS + CODE LINKS HEADLINE ANPASSEN
             * -------------------------------------------------- */
-            const source = document.querySelector(".wordcount-source");
-            const toc = document.querySelector("nav#TOC, nav[id$='TOC']");
+            document.querySelectorAll(".quarto-code-links > h2")
+                .forEach(h2 => {
+                  if (h2.textContent.includes("Code")) {
+                    h2.textContent = "Other formats";
+                  }
+                });
 
-            if (source && toc) {
-              const container = document.createElement("div");
-              container.classList.add(
-                "add-info",
-                "content-visible",
-                "no-count"
-              );
-
-              container.innerHTML = source.innerHTML;
-
-              const tocContent = toc.querySelector(".toc-content") || toc;
-              tocContent.after(container);
-            }
+            document.querySelectorAll(".quarto-other-links > h2")
+                .forEach(h2 => {
+                  if (h2.textContent.includes("Other")) {
+                    h2.textContent = "Additional resources";
+                  }
+                });
 
           });
         </script>

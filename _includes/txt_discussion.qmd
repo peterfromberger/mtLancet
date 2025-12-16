@@ -18,6 +18,10 @@ Schließlich könnte auch die Placebo bedingung zu starke effekte hervorrufen, s
 
 Die Tatsache, dass in Modul 3 die Impulskontrolle bei Placebo abnimmt zeigt, wie wichtig eine evaluation vor der Implementierung auch im forensischen Kontext sinn macht und auch notwendig ist. Beipielsweise sind ganz viele Onlineinterventionen online und werden stark beworben, jedoch liegt keine evaluation vor, so dass nicht sicher ist, ob möglicherwiese mehr Schaden als Gutes angerichtet wird. Die letzte arbeit des projekt dunkelfeldes könnte man in diese Richtung interpretieren!
 
+Fehlender effekt könnte auch an der mangelhaften Umsetzung des Need-Prinzips liegen. Echte anpassung an das ned-prinzip würde bedeuten, dass wir alle prä Fragebögen erheben bei Baseline erheben und dann nur denjenigen entsprechende Module anbieten, wenn ein erhöhter Wert für eine Risikovariable auftritt. dazu müsste man die einzelnen Blöcke der Inhalte, die eine Risikovariable behandeln, zusammenfassen und entweder eine automatisierte oder händische Auswahl derjenigen Inhalte implementieren, die für einen Probanden relevenat sind. Dies wäre sehr gut im rahmen eines blended approaches machbar, der Möglicherwiese das Dropout-Problem reduziert.
+
+Auf Sonjas Ergebnisse sollte man schon auch noch eingehen: Dropout und Gründe für hohen Dropout.
+
 Adverse events...[nochmals mit Lätth et al. vergleichen und schauen, ob e andere Literatur gibt mit diesen Angaben (z.B. SOTP)!]
 
 Unfortunately, none of these statistically significant effects in self-reports reached clinically significance defined by the reliable change index (Jacobson and Truax (1991)). Therefore, the effectiveness of the web-based intervention is questionable.

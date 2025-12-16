@@ -194,9 +194,8 @@ acknowledgement:
 
 ::: {.wordcount-source when-format="html"}
 
-[Metrics]{.wordcount-title}
+[**Summary**: ??? words (300 max); **Manuscript**: {{< words-body >}} words (3.500 max); **Supplement**: {{< words-append >}} words (no limit); **References**: {{< words-ref >}} words (30 citations max)]{.word-count-item}
 
-[**Summary**: ??? words (300 max); **Manuscript**: {{< words-body >}} words (3.500 max); **Supplement**: {{< words-append >}} words (no limit); **References**: {{< words-ref >}} words (30 citations max).]{.word-count-item}
 :::
 
 
@@ -213,7 +212,7 @@ acknowledgement:
 @fig-example shows a big elefenat.
 
 <!-- Example figure -->
-![Elephant. A very big animal the elephant is.](resources/figures/mtDiagrams-sd_guided_tasks.png){#fig-example width=100%}
+![Elephant. A very big animal the elephant is.](resources/figures/mtDiagrams-act_guided_tasks.png){#fig-example width=100%}
 
 
 <!-- INTRODUCTION SECTION -->
