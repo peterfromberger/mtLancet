@@ -19,25 +19,29 @@ format:
     tbl-cap-location: bottom
 
     other-links:
-      - text: (1) Trial registry
-        icon: file-pdf
+      - text: Manuscript
+        icon: file-earmark-word
+        href: '#'
+      - text: Supplementary material
+        icon: file-earmark-pdf
+        href: '#'
+      - text: Trial registry
+        icon: file-earmark-pdf
         href: resources/GermanClinicalTrialsRegister.pdf
-      - text: (2) Study protocol
-        icon: file-pdf
+      - text: Study protocol
+        icon: file-earmark-pdf
         href: resources/myTabu_frontiers_study_protocol.pdf
-      - text: (3) Statistical analysis plan
-        icon: file-pdf
+      - text: Statistical analysis plan
+        icon: file-earmark-pdf
         href: resources/myTabu_SAP_signed.pdf
-      - text: (4) Secondary outcomes
-        icon: file-pdf
-        href: '#'
-      - text: (4) Secondary outcomes
-        icon: file-pdf
-        href: '#'
+      
     code-links:
-      - text: Data Import Code
-        icon: file-code
-        href: '#'
+      - text: Disclosure form
+        icon: file-earmark-word
+        href: 'resources/coi_disclosure.docx'
+      - text: Author statement form
+        icon: file-earmark-pdf
+        href: 'resources/tldh-author-signatures.pdf'
 
     toc: true
     toc-depth: 3
@@ -181,7 +185,7 @@ format:
             document.querySelectorAll(".quarto-code-links > h2")
               .forEach(h2 => {
                 if (h2.textContent.includes("Code")) {
-                  h2.textContent = "Code links";
+                  h2.textContent = "Author forms";
                 }
               }
             );
@@ -189,7 +193,7 @@ format:
             document.querySelectorAll(".quarto-other-links > h2")
               .forEach(h2 => {
                 if (h2.textContent.includes("Other")) {
-                  h2.textContent = "Supplementary Material";
+                  h2.textContent = "Submission files";
                 }
               });
 

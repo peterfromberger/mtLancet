@@ -203,26 +203,22 @@ panel:
   implications_of_all_the_available_evidence: |
     Authors should state the implications for practice or policy and future research of their study combined with existing evidence.
 
-data_sharing_statement: "The source code of the webbased intervention, the content of the intervention as well as placebo arm are available online under an open source licence after publishing. De-identified data will be made available on reasonable request from the corresponding author (peter.fromberger@medizin.uni-goettingen.de). Data access requests, which can be submitted via email to the corresponding author, must include a detailed description of the research question and aims. Data sharing will be authorised following proposal approval and the execution of a signed data access agreement, strictly for scientific use."
+data_sharing_statement: "The source code of the web-based intervention, the content of the intervention as well as placebo arm are available online under an open source license after publishing. De-identified data will be made available on reasonable request from the corresponding author (peter.fromberger@medizin.uni-goettingen.de). Data access requests, which can be submitted via email to the corresponding author, must include a detailed description of the research question and aims. Data sharing will be authorized following proposal approval and the execution of a signed data access agreement, strictly for scientific use."
 
 acknowledgement:
   funding: "The work was funded by the German Federal Ministry of Education and Research (BMBF, Funding number: 01KR1807A). The funder of the study had no role in study design, data collection, data analysis, data interpretation, or writing of the report."
   ai_use: "Our statement on the use of ai in the creation of the manuscript: - translation, correct grammar."
   thanks: "The authors would like to thank all participants for their time, trust and willingness to take part in the study. Furthermore, we would like to thank all community supervisors for taking part in the study - the project as well as the clinical trial was only possible with their help and support. The authors are grateful to Matthias Koller, Andreas Hill und Sophie K. Piper for taking part in the DSMB."
+
+appendix-style: none
+
+suppress-bibliography: false
 ---
 
 <!-- SUMMARY -->
 <!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
 <!-- We do not count the words in the summary -->
 {{< summary >}}
-
-
-
-@fig-example shows a big elefenat.
-
-<!-- Example figure -->
-![Elephant. A very big animal the elephant is.](resources/figures/mtDiagrams-act_guided_tasks.png){#fig-example width=100%}
-
 
 <!-- INTRODUCTION SECTION -->
 {{< include _includes/txt_introduction.qmd >}}
@@ -252,16 +248,9 @@ acknowledgement:
 <!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
 {{< acknowledgements >}}
 
-<!-- ACKNOWLEDGEMENTS -->
-<!-- Is automatically filled; do not delete the shortcode -->
-
-::: {.no-count}
-
 ## References
 
 ::: {#refs}
-:::
-
 :::
 
 <!-- YOUR SUPPLEMENTARY MATERIAL -->

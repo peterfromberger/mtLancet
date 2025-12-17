@@ -12,6 +12,7 @@ return {
     table.insert(md, "### Findings {.unnumbered .unlisted}\n" .. pandoc.utils.stringify(meta.summary.findings) .. "\n")
     table.insert(md, "### Interpretations {.unnumbered .unlisted}\n" .. pandoc.utils.stringify(meta.summary.interpretations) .. "\n")
     table.insert(md, "### Funding {.unnumbered .unlisted}\n" .. pandoc.utils.stringify(meta.summary.funding) .. "\n")
+    table.insert(md, "---\n")
 
     -- Markdown-Text in Pandoc-Blöcke parsen, damit die ToC korrekt funktioniert
     local blocks = pandoc.read(table.concat(md, "\n")).blocks
