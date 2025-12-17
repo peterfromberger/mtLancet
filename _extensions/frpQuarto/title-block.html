@@ -26,7 +26,11 @@
     $for(by-author)$
 
       <span class="author">
-        <span>$by-author.name.literal$</span>
+        $if(by-author.metadata.is_prof)$
+          <span>Prof $by-author.name.literal$</span>
+        $else$
+          <span>$by-author.name.literal$</span>
+        $endif$
 
         $if(by-author.degrees)$
           <span>, </span>
