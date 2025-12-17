@@ -10,11 +10,15 @@ date-format: long
 
 lightbox: true
 
+filters:
+  - frpQuarto
+
 authors:
   - name: Peter Fromberger
     initials: "PF"  # variables not defined by quarto become metadata.variable
     declaration_of_interests: "conflict-of-interest is here"
     degrees: PhD
+    is_prof: false
     affiliations:
       - ref: UMG
     orcid: 0000-0002-4818-8730
@@ -23,6 +27,7 @@ authors:
     corresponding: true
   - name: Sonja Schröder
     degrees: PhD
+    is_prof: false
     declaration_of_interests: "conflict-of-interest is here"
     initials: "SSch"
     affiliations:
@@ -32,6 +37,7 @@ authors:
     corresponding: false
   - name: Bruno Siegel
     degrees: MSc
+    is_prof: false
     declaration_of_interests: "conflict-of-interest is here"
     initials: "BS"
     affiliations:
@@ -39,6 +45,8 @@ authors:
     roles: [writing – review & editing, investigation]
     corresponding: false
   - name: Andreas Leha
+    degrees: PhD
+    is_prof: false
     declaration_of_interests: "conflict-of-interest is here"
     initials: "AL"
     affiliations:
@@ -46,6 +54,7 @@ authors:
     roles: [formal analysis, writing – review & editing]
   - name: Fabian Kück
     degrees: PhD
+    is_prof: false
     declaration_of_interests: "conflict-of-interest is here"
     initials: "FK"
     affiliations:
@@ -55,12 +64,14 @@ authors:
     corresponding: false
   - name: Louisa Neumann
     degrees: MSc
+    is_prof: false
     declaration_of_interests: "conflict-of-interest is here"
     initials: "LM"
     affiliations:
       - ref: Wun
   - name: Safiye Tozdan
     degrees: PhD
+    is_prof: false
     declaration_of_interests: "conflict-of-interest is here"
     initials: "ST"
     affiliations:
@@ -70,6 +81,7 @@ authors:
     corresponding: false
   - name: Sabine Horn
     degrees: MSc
+    is_prof: false
     declaration_of_interests: "conflict-of-interest is here"
     initials: "SH"
     affiliations:
@@ -77,12 +89,14 @@ authors:
     roles: [writing – review & editing, conceptualization, funding acquisition]
   - name: Claudia Buntrock
     degrees: PhD
+    is_prof: true
     declaration_of_interests: "conflict-of-interest is here"
     initials: "CB"
     affiliations:
       - ref: Mag
   - name: Kirsten Jordan
     degrees: PhD
+    is_prof: false
     declaration_of_interests: "conflict-of-interest is here"
     initials: "KJ"
     affiliations:
@@ -92,6 +106,7 @@ authors:
     corresponding: false
   - name: Martin Rettenberger
     degrees: PhD
+    is_prof: true
     declaration_of_interests: "conflict-of-interest is here"
     initials: "MR"
     affiliations:
@@ -100,6 +115,7 @@ authors:
     corresponding: false
   - name: Sonja Etzler
     degrees: PhD
+    is_prof: false
     declaration_of_interests: "conflict-of-interest is here"
     initials: "SE"
     affiliations:
@@ -107,6 +123,7 @@ authors:
     roles: [writing – review & editing]
   - name: Anja Schiemann
     degrees: PhD
+    is_prof: true
     declaration_of_interests: "conflict-of-interest is here"
     initials: "AS"
     affiliations:
@@ -115,6 +132,7 @@ authors:
     corresponding: false
   - name: Peer Briken
     degrees: MD
+    is_prof: true
     declaration_of_interests: "conflict-of-interest is here."
     initials: "PB"
     affiliations:
@@ -124,6 +142,7 @@ authors:
     corresponding: false
   - name: Jürgen Leo Müller
     degrees: MD
+    is_prof: true
     initials: "JLM"
     affiliations:
       - ref: UMG
@@ -192,21 +211,11 @@ acknowledgement:
   thanks: "The authors would like to thank all participants for their time, trust and willingness to take part in the study. Furthermore, we would like to thank all community supervisors for taking part in the study - the project as well as the clinical trial was only possible with their help and support. The authors are grateful to Matthias Koller, Andreas Hill und Sophie K. Piper for taking part in the DSMB."
 ---
 
-::: {.wordcount-source when-format="html"}
-
-[**Summary**: ??? words (300 max); **Manuscript**: {{< words-body >}} words (3.500 max); **Supplement**: {{< words-append >}} words (no limit); **References**: {{< words-ref >}} words (30 citations max)]{.word-count-item}
-
-:::
-
-
 <!-- SUMMARY -->
 <!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
 <!-- We do not count the words in the summary -->
-::: {.no-count}
-
 {{< summary >}}
 
-:::
 
 
 @fig-example shows a big elefenat.

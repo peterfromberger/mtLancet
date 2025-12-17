@@ -1,109 +1,137 @@
-<header>
+<header class="header">
+  <div class="header-line">
+    <span><span class="header-line-em">Journal: </span>THE LANCET Digital Health [<a href="https://www.thelancet.com/landig/about" target="_blank">info</a>; <a href="https://www.thelancet.com/pb-assets/Lancet/authors/tldh-info-for-authors-1759484794993.pdf" target="_blank">author guidelines</a>]</span>
 
-<div class="header-line">
-  <span><span class="header-line-em">Journal: </span>THE LANCET Digital Health [<a href="https://www.thelancet.com/landig/about" target="_blank">info</a>; <a href="https://www.thelancet.com/pb-assets/Lancet/authors/tldh-info-for-authors-1759484794993.pdf" target="_blank">author guidelines</a>]</span>
-  
-  <span>
-    $if(version)$
-      <span style="margin: 0 3px;">&#8226;</span>
-      <span class="header-line-em">Vers. </span>
-      <span>$version$; </span>
-    $endif$
-
-    $if(date)$
-      <span>$date$</span>
-    $endif$
-  </span>
-</div>
-
-$if(title)$
-  <h1 class="title">$title$</h1>
-$endif$
-
-<!-- Authors -->
-<div style="margin-top: 12px; margin-bottom: 12px;">
-$for(by-author)$
-
-  $for(by-author)$
-  
-    <span class="author">
-      <span>$by-author.name.literal$</span>
-      
-      $if(by-author.degrees)$
-        <span>, </span>
-        <span>
-          $for(by-author.degrees)$$it$$sep$, $endfor$
-        </span>
+    <span>
+      $if(version)$
+        <span style="margin: 0 3px;">&#8226;</span>
+        <span class="header-line-em">Vers. </span>
+        <span>$version$; </span>
       $endif$
 
-      $if(by-author.attributes.corresponding)$
-        <span style=" vertical-align: top;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-        </span>
-        
+      $if(date)$
+        <span>$date$</span>
       $endif$
     </span>
-    
+  </div>
 
-    <sup>
-      $for(by-author.affiliations)$
-        $it.letter$$sep$,
-      $endfor$
+  $if(title)$
+    <h1 class="title">$title$</h1>
+  $endif$
 
-      $if(by-author.attributes.corresponding)$
-        <a title=$by-author.email$ style="text-decoration: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor"
-                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <path d="m22 6-10 7L2 6"/>
+  <!-- Authors -->
+  <div style="margin-top: 12px; margin-bottom: 12px;">
+  $for(by-author)$
+
+    $for(by-author)$
+
+      <span class="author">
+        <span>$by-author.name.literal$</span>
+
+        $if(by-author.degrees)$
+          <span>, </span>
+          <span>
+            $for(by-author.degrees)$$it$$sep$, $endfor$
+          </span>
+        $endif$
+
+        $if(by-author.attributes.corresponding)$
+          <span style=" vertical-align: top;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
             </svg>
-          </a>
-      $endif$
-    </sup>
+          </span>
+
+        $endif$
+      </span>
+
+
+      <sup>
+        $for(by-author.affiliations)$
+          $it.letter$$sep$,
+        $endfor$
+
+        $if(by-author.attributes.corresponding)$
+          <a title=$by-author.email$ style="text-decoration: none;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <path d="m22 6-10 7L2 6"/>
+              </svg>
+            </a>
+        $endif$
+      </sup>
+
+    $endfor$
+
+    $sep$<span style="margin: 0 3px;">&#8226;</span>
 
   $endfor$
+  </div>
 
-  $sep$<span style="margin: 0 3px;">&#8226;</span>
-
-$endfor$
-</div>
-
-
-<!-- Affiliation -->
-<details class="dropdown-card">
-  <summary>
-    Affiliations & Notes
-    <span class="arrow">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" 
-           stroke="currentColor" stroke-width="2.5" stroke-linecap="round" 
-           stroke-linejoin="round" viewBox="0 0 24 24">
-        <polyline points="6 9 12 15 18 9"/>
-      </svg>
-    </span>
-  </summary>
-  <div class="card-content">
-    $for(by-affiliation)$
-      <div class="affiliation-row">
-        <span class="affiliation-letter">$it.letter$</span>
-        <span class="affiliation-name">$it.name$, $it.city$, $it.country$</span>
+  <!-- Metrics -->
+   <div>
+    <details class="dropdown-card-metrics">
+      <summary>
+        Affiliations & Notes
+        <span class="arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </span>
+      </summary>
+      <div class="card-content">
+        <div class="affiliation-row">
+          <span class="affiliation-letter"><b>Abstract:</b></span>
+          <span class="affiliation-name">$summary-wordcount$ words (300 max)</span>
+        </div>
+        <div class="affiliation-row">
+          <span class="affiliation-letter"><b>Manuscript:</b></span>
+          <span class="affiliation-name">$wordcount_body_words$ words (3.500 max)</span>
+        </div>
+        <div class="affiliation-row">
+          <span class="affiliation-letter"><b>Supplement:</b></span>
+          <span class="affiliation-name">$wordcount_appendix_words$ words (no limits)</span>
+        </div>
       </div>
-    $endfor$
+    </details>
   </div>
-</details>
 
-<hr style="width:100%"> 
-
-$if(keywords)$
-<div>
-  <div class="keywords">
-    <div class="block-title">$labels.keywords$</div>
-    <p>$for(keywords)$$it$$sep$, $endfor$</p>
+  <!-- Affiliation -->
+  <div>
+    <details class="dropdown-card">
+      <summary>
+        Affiliations & Notes
+        <span class="arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </span>
+      </summary>
+      <div class="card-content">
+        $for(by-affiliation)$
+          <div class="affiliation-row">
+            <span class="affiliation-letter">$it.letter$</span>
+            <span class="affiliation-name">$it.name$, $it.city$, $it.country$</span>
+          </div>
+        $endfor$
+      </div>
+    </details>
   </div>
-</div>
-$endif$
+
+  $if(keywords)$
+  <div>
+    <div class="keywords">
+      <div class="block-title">$labels.keywords$</div>
+      <p>$for(keywords)$$it$$sep$, $endfor$</p>
+    </div>
+  </div>
+  $endif$
 
 </header>

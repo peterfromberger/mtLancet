@@ -19,19 +19,25 @@ format:
     tbl-cap-location: bottom
 
     other-links:
-      - text: Trial registry
+      - text: (1) Trial registry
         icon: file-pdf
         href: resources/GermanClinicalTrialsRegister.pdf
-      - text: Trial protocol
+      - text: (2) Study protocol
         icon: file-pdf
-        href: resources/GermanClinicalTrialsRegister.pdf
-      - text: Statistical analysis plan
+        href: resources/myTabu_frontiers_study_protocol.pdf
+      - text: (3) Statistical analysis plan
         icon: file-pdf
         href: resources/myTabu_SAP_signed.pdf
+      - text: (4) Secondary outcomes
+        icon: file-pdf
+        href: '#'
+      - text: (4) Secondary outcomes
+        icon: file-pdf
+        href: '#'
     code-links:
       - text: Data Import Code
         icon: file-code
-        href: data-import.py
+        href: '#'
 
     toc: true
     toc-depth: 3
@@ -74,7 +80,7 @@ format:
             /* ---------- Wordcount einklappbar ---------- */
 
             const header = document.querySelector("header");
-            const sourceWordcount = document.querySelector(".wordcount-source");
+            const sourceWordcount = document.querySelector(".dropdown-card-metrics");
             const affDropdown = header.querySelector(".dropdown-card");
 
             if (!header) return;
@@ -92,8 +98,8 @@ format:
               btn.innerHTML = `
                 <span class="btn-text">${text}</span>
                 <span class="arrow">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" 
-                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
                       stroke-linejoin="round" viewBox="0 0 24 24">
                     <polyline points="6 9 12 15 18 9"/>
                   </svg>
@@ -105,7 +111,7 @@ format:
             };
 
             const affContent = affDropdown ? affDropdown.querySelector(".card-content").innerHTML : "";
-            const wordContent = sourceWordcount ? sourceWordcount.innerHTML : "";
+            const wordContent = sourceWordcount ? sourceWordcount.querySelector(".card-content").innerHTML : "";
 
             const btnAff = createButton("Affiliations & Notes", affContent);
             const btnWord = createButton("Article metrics", wordContent);
@@ -127,19 +133,35 @@ format:
             container.appendChild(contentDiv);
 
             // Button-Events
+            let activeBtn = null;
+
             [btnAff, btnWord].forEach(btn => {
               btn.addEventListener("click", () => {
-                // Content wechseln
-                contentDiv.innerHTML = btn.dataset.content;
+                const isSameBtn = activeBtn === btn;
 
-                // Pfeil-Rotation & Active State
+                // alles schließen
                 [btnAff, btnWord].forEach(b => {
                   b.classList.remove("active");
                   b.querySelector(".arrow").classList.remove("rotated");
                 });
 
+                contentDiv.classList.remove("open");
+                contentDiv.innerHTML = "";
+
+                // gleicher Button → nur schließen
+                if (isSameBtn) {
+                  activeBtn = null;
+                  return;
+                }
+
+                // neuen Content anzeigen
+                contentDiv.innerHTML = btn.dataset.content;
+                contentDiv.classList.add("open");
+
                 btn.classList.add("active");
                 btn.querySelector(".arrow").classList.add("rotated");
+
+                activeBtn = btn;
               });
             });
 
@@ -149,22 +171,35 @@ format:
             // Header einfügen
             header.appendChild(container);
 
+            if (sourceWordcount) {
+              sourceWordcount.remove();
+            }
+
             /* --------------------------------------------------
             * 2. OTHER LINKS + CODE LINKS HEADLINE ANPASSEN
             * -------------------------------------------------- */
             document.querySelectorAll(".quarto-code-links > h2")
-                .forEach(h2 => {
-                  if (h2.textContent.includes("Code")) {
-                    h2.textContent = "Other formats";
-                  }
-                });
+              .forEach(h2 => {
+                if (h2.textContent.includes("Code")) {
+                  h2.textContent = "Code links";
+                }
+              }
+            );
 
             document.querySelectorAll(".quarto-other-links > h2")
-                .forEach(h2 => {
-                  if (h2.textContent.includes("Other")) {
-                    h2.textContent = "Additional resources";
-                  }
-                });
+              .forEach(h2 => {
+                if (h2.textContent.includes("Other")) {
+                  h2.textContent = "Supplementary Material";
+                }
+              });
+
+            // Links in neuem Tab öffnen
+            document.querySelectorAll(".quarto-other-links > ul > li > a")
+              .forEach(link => {
+                link.setAttribute("target", "_blank");
+                link.setAttribute("rel", "noopener noreferrer");
+              }
+            );
 
           });
         </script>

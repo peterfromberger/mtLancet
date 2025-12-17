@@ -6,7 +6,7 @@ return {
 
     local md = {}
 
-    table.insert(md, "## Summary\n")
+    table.insert(md, "## Summary {.summary}\n")
     table.insert(md, "### Background {.unnumbered .unlisted}\n" .. pandoc.utils.stringify(meta.summary.background) .. "\n")
     table.insert(md, "### Methods {.unnumbered .unlisted}\n" .. pandoc.utils.stringify(meta.summary.methods) .. "\n")
     table.insert(md, "### Findings {.unnumbered .unlisted}\n" .. pandoc.utils.stringify(meta.summary.findings) .. "\n")

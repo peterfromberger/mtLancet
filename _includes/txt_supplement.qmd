@@ -1,1 +1,38 @@
-Three words here.
+### Trial registry {.appendix}
+
+```{=html}
+<object data="resources/GermanClinicalTrialsRegister.pdf" type="application/pdf" width="100%" height="100%" style="min-height:100vh;">
+    <p>It appears you don't have a PDF plugin for this browser.
+    No biggie... you can <a href="resources/GermanClinicalTrialsRegister.pdf">click here to
+    download the PDF file.</a></p>
+</object>
+```
+
+<!-- https://github.com/orgs/quarto-dev/discussions/7918
+
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\begin{document}
+\includegraphics[width=\textwidth]{slides123.pdf}
+\end{document} -->
+
+### Study protocol {.appendix}
+
+```{=html}
+<object data="resources/myTabu_frontiers_study_protocol.pdf" type="application/pdf" width="100%" height="100%" style="min-height:100vh;">
+    <p>It appears you don't have a PDF plugin for this browser.
+    No biggie... you can <a href="resources/myTabu_frontiers_study_protocol.pdf">click here to
+    download the PDF file.</a></p>
+</object>
+```
+
+### Statistical analysis plan (SAP) {.appendix}
+
+```{=html}
+<object data="resources/myTabu_SAP_signed.pdf" type="application/pdf" width="100%" height="100%" style="min-height:100vh;">
+    <p>It appears you don't have a PDF plugin for this browser.
+    No biggie... you can <a href="resources/myTabu_SAP_signed.pdf">click here to
+    download the PDF file.</a></p>
+</object>
+```

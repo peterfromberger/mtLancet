@@ -16,10 +16,12 @@ local ref_words = 0
 local note_words = 0
 local appendix_words = 0
 local total_words = 0
+local summary_words = 0
 
 function set_meta(m)
   m.wordcount_body_words = body_words
   m.wordcount_ref_words = ref_words
+  m.wordcount_summary_words = summary_words
   m.wordcount_appendix_words = appendix_words
   m.wordcount_note_words = note_words
   m.wordcount_total_words = total_words
@@ -87,6 +89,10 @@ function is_ref_div (blk)
   return (blk.t == "Div" and blk.identifier == "refs")
 end
 
+function is_summary_div (blk)
+  return (blk.t == "Div" and blk.identifier == "summary")
+end
+
 function get_all_notes (blks)
   local all_notes = {}
 
@@ -130,6 +136,26 @@ function remove_all_refs (blks)
   return out
 end
 
+function get_all_summaries (blks)
+  local out = {}
+  for _, b in pairs(blks) do
+    if is_summary_div(b) then
+      table.insert(out, b)
+    end
+  end
+  return out
+end
+
+function remove_all_summaries (blks)
+  local out = {}
+  for _, b in pairs(blks) do
+    if not (is_summary_div(b)) then
+      table.insert(out, b)
+    end
+  end
+  return out
+end
+
 -- Check if the block is an appendix div
 function is_appendix_div (blk)
   return (blk.t == "Div" and blk.identifier == "appendix-count")
@@ -159,10 +185,10 @@ end
 
 -- Function for printing word counts to the terminal
 function print_word_counts()
-  
+
   local manuscript_words = body_words + note_words
-  
-  -- Format these different numbers     
+
+  -- Format these different numbers
   local total_words_out = string.format(
     "%d total %s",
     total_words, total_words == 1 and "word" or "words"
@@ -192,7 +218,7 @@ function print_word_counts()
     "%d %s in appendix section",
     appendix_words, appendix_words == 1 and "word" or "words"
   ) or ""
-  
+
   local longest_out = math.max(
     #total_words_out,
     #manuscript_words_out,
@@ -249,6 +275,20 @@ ref_count = {
   end
 }
 
+summary_count = {
+  Str = function(el)
+    -- we don't count a word if it's entirely punctuation:
+    if is_word(el.text) then
+      summary_words = summary_words + 1
+    end
+  end,
+
+  Code = function(el)
+    _, n = el.text:gsub("%S+", "")
+    summary_words = summary_words + n
+  end
+}
+
 -- Count words in the appendix
 appendix_count = {
   Str = function(el)
@@ -256,10 +296,10 @@ appendix_count = {
       appendix_words = appendix_words + 1
     end
   end,
-  
+
   Code = function(el)
     _, n = el.text:gsub("%S+", "")
-    appendix_words = appendix_words + n
+    appendix_words =appendix_words + n
   end
 }
 
@@ -269,7 +309,7 @@ note_count = {
       note_words = note_words + 1
     end
   end,
-  
+
   Code = function(el)
     _, n = el.text:gsub("%S+", "")
     note_words = note_words + n
@@ -283,67 +323,78 @@ function Pandoc(el)
     io.stderr:write("WARNING: pandoc >= 2.1 required for wordcount filter\n")
     return el
   end
-  
+
   -- Count code blocks in body, notes, and appendix if needed
   if el.meta["count-code-blocks"] ~= nil then
     count_code_blocks = el.meta["count-code-blocks"]
   else
     count_code_blocks = true
   end
-  
+
   -- Add these functions to the respective section counting functions
   if count_code_blocks then
     body_count.CodeBlock = function(el)
       _, n = el.text:gsub("%S+", "")
       body_words = body_words + n
     end
-    
+
+    summary_count.CodeBlock = function(el)
+      _, n = el.text:gsub("%S+", "")
+      summary_words = summary_words + n
+    end
+
     appendix_count.CodeBlock = function(el)
       _, n = el.text:gsub("%S+", "")
       appendix_words = appendix_words + n
     end
-    
+
     note_count.CodeBlock = function(el)
       _, n = el.text:gsub("%S+", "")
       note_words = note_words + n
     end
   end
-    
+
   -- Get all notes
   local all_notes = get_all_notes(el.blocks)
   -- Count words in notes
   pandoc.walk_block(pandoc.Div(all_notes), note_count)
-  
+
+  -- Get all summary
+  local all_summaries = get_all_summaries(el.blocks)
+  pandoc.walk_block(pandoc.Div(all_summaries), summary_count)
+
   -- Remove tables, images, and {.no-count} contents
   local untabled = remove_all_tables_images(el.blocks)
   -- Next, remove notes
   local unnote = remove_all_notes(untabled)
-  
+    -- Next, remove summaries
+  local unsummary = remove_all_summaries(unnote)
+
   refs_title = el.meta["reference-section-title"]
-  local unreffed = remove_all_refs(unnote)
-  
+  local unreffed = remove_all_refs(unsummary)
+
   -- Remove appendix divs from the blocks
   local unappended = remove_all_appendix(unreffed)
-  
+
   -- Walk through the unappended blocks and count the words
   pandoc.walk_block(pandoc.Div(unappended), body_count)
-  
+
   local refs = get_all_refs(unnote)
   pandoc.walk_block(pandoc.Div(refs), ref_count)
-  
+
   -- Get all appendix divs
   local appendix = get_all_appendix(unreffed)
   -- Walk through the appendix divs and count the words
   pandoc.walk_block(pandoc.Div(appendix), appendix_count)
-  
+
   -- Calculate total
-  total_words = body_words + note_words + ref_words + appendix_words
-  
+  total_words = body_words + note_words + ref_words + appendix_words + summary_words
+
   -- Show counts in terminal
   print_word_counts()
-  
+
   -- Modify metadata for words.lua
   el.meta = set_meta(el.meta)
-  
+
   return el
 end

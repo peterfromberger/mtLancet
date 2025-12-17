@@ -6,6 +6,9 @@ quarto-required: ">=1.5.0"
 
 contributes:
 
+  filters:
+    - summary_wordcount.lua
+
   shortcodes:
     - summary.lua
     - acknowledgements.lua

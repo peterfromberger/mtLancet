@@ -1,0 +1,402 @@
+[1m[34mRendering qmd embeds [index.qmd][39m[22m
+[trace] Parsed [Plain [Str "Our",Space,Str "statement",Space,Str "on",Space at line 1
+[trace] Parsed [Plain [Str "The",Space,Str "work",Space,Str "was",Space,Str at line 1
+[trace] Parsed [Plain [Str "The",Space,Str "authors",Space,Str "would",Spac at line 1
+[trace] Parsed [Plain [Str "G\246ttingen"]] at line 1
+[trace] Parsed [Plain [Str "Germany"]] at line 1
+[trace] Parsed [Plain [Str "UMG"]] at line 1
+[trace] Parsed [Plain [Str "Clinic",Space,Str "for",Space,Str "Psychiatry", at line 1
+[trace] Parsed [Plain [Str "G\246ttingen"]] at line 1
+[trace] Parsed [Plain [Str "Germany"]] at line 1
+[trace] Parsed [Plain [Str "UMGmath"]] at line 1
+[trace] Parsed [Plain [Str "Scientific",Space,Str "Core",Space,Str "Facilit at line 1
+[trace] Parsed [Plain [Str "Hamburg"]] at line 1
+[trace] Parsed [Plain [Str "Germany"]] at line 1
+[trace] Parsed [Plain [Str "UKE"]] at line 1
+[trace] Parsed [Plain [Str "Institute",Space,Str "for",Space,Str "Sex",Spac at line 1
+[trace] Parsed [Plain [Str "Wiesbaden"]] at line 1
+[trace] Parsed [Plain [Str "Germany"]] at line 1
+[trace] Parsed [Plain [Str "KrimZ"]] at line 1
+[trace] Parsed [Plain [Str "Centre",Space,Str "for",Space,Str "Criminology" at line 1
+[trace] Parsed [Plain [Str "Cologne"]] at line 1
+[trace] Parsed [Plain [Str "Germany"]] at line 1
+[trace] Parsed [Plain [Str "UzK"]] at line 1
+[trace] Parsed [Plain [Str "Criminal",Space,Str "Law,",Space,Str "Criminal" at line 1
+[trace] Parsed [Plain [Str "Moringen"]] at line 1
+[trace] Parsed [Plain [Str "Germany"]] at line 1
+[trace] Parsed [Plain [Str "Mor"]] at line 1
+[trace] Parsed [Plain [Str "Massregelvollzugszentrum",Space,Str "Niedersach at line 1
+[trace] Parsed [Plain [Str "Wunstorf"]] at line 1
+[trace] Parsed [Plain [Str "Germany"]] at line 1
+[trace] Parsed [Plain [Str "Wun"]] at line 1
+[trace] Parsed [Plain [Str "Clinic",Space,Str "for",Space,Str "Forensic",Sp at line 1
+[trace] Parsed [Plain [Str "Magdeburg"]] at line 1
+[trace] Parsed [Plain [Str "Germany"]] at line 1
+[trace] Parsed [Plain [Str "Mag"]] at line 1
+[trace] Parsed [Plain [Str "Institute",Space,Str "of",Space,Str "Social",Sp at line 1
+[trace] Parsed [Plain [Str "UMG"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "PhD"]] at line 1
+[trace] Parsed [Plain [Str "peter.fromberger@medizin.uni-goettingen.de"]] at line 1
+[trace] Parsed [Plain [Str "PF"]] at line 1
+[trace] Parsed [Plain [Str "Peter",Space,Str "Fromberger"]] at line 1
+[trace] Parsed [Plain [Str "0000-0002-4818-8730"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "original" at line 1
+[trace] Parsed [Plain [Str "visualization"]] at line 1
+[trace] Parsed [Plain [Str "conceptualization"]] at line 1
+[trace] Parsed [Plain [Str "funding",Space,Str "acquisition"]] at line 1
+[trace] Parsed [Plain [Str "project",Space,Str "administration"]] at line 1
+[trace] Parsed [Plain [Str "supervision"]] at line 1
+[trace] Parsed [Plain [Str "software"]] at line 1
+[trace] Parsed [Plain [Str "methodology"]] at line 1
+[trace] Parsed [Plain [Str "Mor"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "PhD"]] at line 1
+[trace] Parsed [Plain [Str "SSch"]] at line 1
+[trace] Parsed [Plain [Str "Sonja",Space,Str "Schr\246der"]] at line 1
+[trace] Parsed [Plain [Str "0000-0002-4140-1818"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "investigation"]] at line 1
+[trace] Parsed [Plain [Str "UMG"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "MSc"]] at line 1
+[trace] Parsed [Plain [Str "BS"]] at line 1
+[trace] Parsed [Plain [Str "Bruno",Space,Str "Siegel"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "investigation"]] at line 1
+[trace] Parsed [Plain [Str "UMGmath"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "PhD"]] at line 1
+[trace] Parsed [Plain [Str "AL"]] at line 1
+[trace] Parsed [Plain [Str "Andreas",Space,Str "Leha"]] at line 1
+[trace] Parsed [Plain [Str "formal",Space,Str "analysis"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "UMGmath"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "PhD"]] at line 1
+[trace] Parsed [Plain [Str "FK"]] at line 1
+[trace] Parsed [Plain [Str "Fabian",Space,Str "K\252ck"]] at line 1
+[trace] Parsed [Plain [Str "0000-0002-8634-9101"]] at line 1
+[trace] Parsed [Plain [Str "formal",Space,Str "analysis"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "Wun"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "MSc"]] at line 1
+[trace] Parsed [Plain [Str "LM"]] at line 1
+[trace] Parsed [Plain [Str "Louisa",Space,Str "Neumann"]] at line 1
+[trace] Parsed [Plain [Str "UKE"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "PhD"]] at line 1
+[trace] Parsed [Plain [Str "ST"]] at line 1
+[trace] Parsed [Plain [Str "Safiye",Space,Str "Tozdan"]] at line 1
+[trace] Parsed [Plain [Str "0000-0001-6645-3617"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "investigation"]] at line 1
+[trace] Parsed [Plain [Str "conceptualization"]] at line 1
+[trace] Parsed [Plain [Str "funding",Space,Str "acquisition"]] at line 1
+[trace] Parsed [Plain [Str "UzK"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "MSc"]] at line 1
+[trace] Parsed [Plain [Str "SH"]] at line 1
+[trace] Parsed [Plain [Str "Sabine",Space,Str "Horn"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "conceptualization"]] at line 1
+[trace] Parsed [Plain [Str "funding",Space,Str "acquisition"]] at line 1
+[trace] Parsed [Plain [Str "Mag"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "PhD"]] at line 1
+[trace] Parsed [Plain [Str "CB"]] at line 1
+[trace] Parsed [Plain [Str "Claudia",Space,Str "Buntrock"]] at line 1
+[trace] Parsed [Plain [Str "UMG"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "PhD"]] at line 1
+[trace] Parsed [Plain [Str "KJ"]] at line 1
+[trace] Parsed [Plain [Str "Kirsten",Space,Str "Jordan"]] at line 1
+[trace] Parsed [Plain [Str "0000-0001-8083-5857"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "project",Space,Str "administration"]] at line 1
+[trace] Parsed [Plain [Str "KrimZ"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "PhD"]] at line 1
+[trace] Parsed [Plain [Str "MR"]] at line 1
+[trace] Parsed [Plain [Str "Martin",Space,Str "Rettenberger"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "KrimZ"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "PhD"]] at line 1
+[trace] Parsed [Plain [Str "SE"]] at line 1
+[trace] Parsed [Plain [Str "Sonja",Space,Str "Etzler"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "UzK"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "PhD"]] at line 1
+[trace] Parsed [Plain [Str "AS"]] at line 1
+[trace] Parsed [Plain [Str "Anja",Space,Str "Schiemann"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "conceptualization"]] at line 1
+[trace] Parsed [Plain [Str "funding",Space,Str "acquisition"]] at line 1
+[trace] Parsed [Plain [Str "UKE"]] at line 1
+[trace] Parsed [Plain [Str "conflict-of-interest",Space,Str "is",Space,Str  at line 1
+[trace] Parsed [Plain [Str "MD"]] at line 1
+[trace] Parsed [Plain [Str "PB"]] at line 1
+[trace] Parsed [Plain [Str "Peer",Space,Str "Briken"]] at line 1
+[trace] Parsed [Plain [Str "0000-0002-1360-014X"]] at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "conceptualization"]] at line 1
+[trace] Parsed [Plain [Str "funding",Space,Str "acquisition"]] at line 1
+[trace] Parsed [Plain [Str "UMG"]] at line 1
+[trace] Parsed [Plain [Str "MD"]] at line 1
+[trace] Parsed [Plain [Str "JLM"]] at line 1
+[trace] Parsed [Plain [Str "J\252rgen",Space,Str "Leo",Space,Str "M\252ller at line 1
+[trace] Parsed [Plain [Str "writing",Space,Str "\8211",Space,Str "review",S at line 1
+[trace] Parsed [Plain [Str "conceptualization"]] at line 1
+[trace] Parsed [Plain [Str "funding",Space,Str "acquisition"]] at line 1
+[trace] Parsed [Plain [Str "supervision"]] at line 1
+[trace] Parsed [Plain [Str "references.bib"]] at line 1
+[trace] Parsed [Plain [Str "all"]] at line 1
+[trace] Parsed [Plain [Str "#"]] at line 1
+[trace] Parsed [Plain [Str "file-code"]] at line 1
+[trace] Parsed [Plain [Str "Data",Space,Str "Import",Space,Str "Code"]] at line 1
+[trace] Parsed [Plain [Str "the-lancet.csl"]] at line 1
+[trace] Parsed [Plain [Str "The",Space,Str "source",Space,Str "code",Space, at line 1
+[trace] Parsed [Plain [Str "December",Space,Str "17,",Space,Str "2025"]] at line 1
+[trace] Parsed [Plain [Str "long"]] at line 1
+[trace] Parsed [Plain [Str "/opt/quarto/share/formats/ipynb/templates/title at line 1
+[trace] Parsed [Plain [Str "en"]] at line 1
+[trace] Parsed [Plain [Str "index.qmd"]] at line 1
+[trace] Parsed [Plain [Str "index-meca.zip"]] at line 1
+[trace] Parsed [Plain [Str "index.qmd"]] at line 1
+[trace] Parsed [Plain [Str "9999"]] at line 1
+[trace] Parsed [Plain [Str "Article",Space,Str "Notebook"]] at line 1
+[trace] Parsed [Plain [Str "resources/GermanClinicalTrialsRegister.pdf"]] at line 1
+[trace] Parsed [Plain [Str "file-pdf"]] at line 1
+[trace] Parsed [Plain [Str "(1)",Space,Str "Trial",Space,Str "registry"]] at line 1
+[trace] Parsed [Plain [Str "resources/myTabu_frontiers_study_protocol.pdf"] at line 1
+[trace] Parsed [Plain [Str "file-pdf"]] at line 1
+[trace] Parsed [Plain [Str "(2)",Space,Str "Study",Space,Str "protocol"]] at line 1
+[trace] Parsed [Plain [Str "resources/myTabu_SAP_signed.pdf"]] at line 1
+[trace] Parsed [Plain [Str "file-pdf"]] at line 1
+[trace] Parsed [Plain [Str "(3)",Space,Str "Statistical",Space,Str "analysi at line 1
+[trace] Parsed [Plain [Str "#"]] at line 1
+[trace] Parsed [Plain [Str "file-pdf"]] at line 1
+[trace] Parsed [Plain [Str "(4)",Space,Str "Secondary",Space,Str "outcomes" at line 1
+[trace] Parsed [Para [Str "Authors",Space,Str "should",Space,Str "describe" at line 4
+[trace] Parsed [Para [Str "This",Space,Str "section",Space,Str "should",Spa at line 4
+[trace] Parsed [Para [Str "Authors",Space,Str "should",Space,Str "state",Sp at line 4
+[trace] Parsed [Plain [Str "/home/frp/Code/mtLancet/index.qmd"]] at line 1
+[trace] Parsed [Plain [Str "nb-article"]] at line 1
+[trace] Parsed [Plain [Str "toc-left"]] at line 1
+[trace] Parsed [Plain [Str "true"]] at line 1
+[trace] Parsed [Plain [Str "1.8.26"]] at line 1
+[trace] Parsed [Plain [Str "none"]] at line 1
+[trace] Parsed [Plain [Str "Effectiveness",Space,Str "of",Space,Str "a",Spa at line 1
+[trace] Parsed [Para [Str "Sexual",Space,Str "offenders",Space,Str "often", at line 4
+[trace] Parsed [Para [Str "Preliminary",Space,Str "findings",Space,Str "sug at line 4
+[trace] Parsed [Para [Str "The",Space,Str "work",Space,Str "was",Space,Str  at line 4
+[trace] Parsed [Para [Str "Taken",Space,Str "together,",Space,Str "the",Spa at line 4
+[trace] Parsed [Para [Str "We",Space,Str "conducted",Space,Str "a",Space,St at line 4
+[trace] Parsed [Plain [Str "bottom"]] at line 1
+[trace] Parsed [Plain [Str "cosmo"]] at line 1
+[trace] Parsed [Plain [Str "default"]] at line 1
+[trace] Parsed [Plain [Str "_extensions/frpQuarto/styles.scss"]] at line 1
+[trace] Parsed [Plain [Str "Effectiveness",Space,Str "of",Space,Str "a",Spa at line 1
+[trace] Parsed [Plain [Str "manuscript"]] at line 1
+[trace] Parsed [Plain [Str "left"]] at line 1
+[trace] Parsed [Plain [Str "Table",Space,Str "of",Space,Str "contents"]] at line 1
+[trace] Parsed [Plain [Str "0.6.5"]] at line 1
+[trace] Parsed [] at line 3
+[trace] Parsed [] at line 5
+[trace] Parsed [Para [Span ("",["word-count-item"],[]) [Strong [Str "Summar at line 7
+[trace] Parsed [RawBlock (Format "html") "<p>Summary word count: <span data at line 11
+[trace] Parsed [Div ("",["wordcount-source"],[("when-format","html")]) [Par at line 14
+[trace] Parsed [RawBlock (Format "html") "<!-- SUMMARY -->"] at line 15
+[trace] Parsed [RawBlock (Format "html") "<!-- Is automatically filled with at line 16
+[trace] Parsed [RawBlock (Format "html") "<!-- We do not count the words in at line 17
+[trace] Parsed [Para [Span ("",["quarto-shortcode__"],[("data-is-shortcode" at line 21
+[trace] Parsed [Para [Cite [Citation {citationId = "fig-example", citationP at line 23
+[trace] Parsed [RawBlock (Format "html") "<!-- Example figure -->"] at line 24
+[trace] Parsed [Figure ("fig-example",[],[]) (Caption Nothing [Plain [Str " at line 27
+[trace] Parsed [RawBlock (Format "html") "<!-- INTRODUCTION SECTION -->"] at line 28
+[trace] Parsed [Header 2 ("introduction",[],[]) [Str "Introduction"]] at line 30
+[trace] Parsed [Para [Str "Child",Space,Str "sexual",Space,Str "abuse",Spac at line 32
+[trace] Parsed [RawBlock (Format "html") "<!-- PANEL -->"] at line 33
+[trace] Parsed [RawBlock (Format "html") "<!-- Is automatically filled with at line 34
+[trace] Parsed [Para [Span ("",["quarto-shortcode__"],[("data-is-shortcode" at line 36
+[trace] Parsed [Para [Str "In",Space,Str "CSA",Space,Str "prevention,",Spac at line 40
+[trace] Parsed [Header 3 ("treatment-targets-risk-factors-for-recidivism",[ at line 42
+[trace] Parsed [Para [Str "To",Space,Str "achieve",Space,Str "a",Space,Str  at line 44
+[trace] Parsed [Para [Str "Two",Space,Str "main",Space,Str "theoretical",Sp at line 46
+[trace] Parsed [Header 3 ("gaps-in-post-release-care",[],[]) [Str "Gaps",Sp at line 48
+[trace] Parsed [Para [Str "Besides",Space,Str "the",Space,Str "above",Space at line 50
+[trace] Parsed [Header 3 ("webbased-interventions",[],[]) [Str "Webbased",S at line 52
+[trace] Parsed [Para [Str "Digital",Space,Str "health",Space,Str "intervent at line 54
+[trace] Parsed [Header 3 ("aim-of-the-study",[],[]) [Str "Aim",Space,Str "o at line 56
+[trace] Parsed [Para [Str "In",Space,Str "consequence,",Space,Str "the",Spa at line 59
+[trace] Parsed [RawBlock (Format "html") "<!-- METHODS SECTION -->"] at line 60
+[trace] Parsed [Header 2 ("method",[],[]) [Str "Method"]] at line 62
+[trace] Parsed [Header 3 ("patient-and-public-involvement",[],[]) [Str "Pat at line 64
+[trace] Parsed [Para [Str "The",Space,Str "project",Space,Str "team",Space, at line 66
+[trace] Parsed [Header 3 ("study-design",[],[]) [Str "Study",Space,Str "des at line 68
+[trace] Parsed [Para [Str "The",Space,Str "trial",Space,Str "follows",Space at line 70
+[trace] Parsed [Header 3 ("participants",[],[]) [Str "Participants"]] at line 72
+[trace] Parsed [Para [Str "All",Space,Str "sexual",Space,Str "offenders",Sp at line 74
+[trace] Parsed [Header 3 ("randomisation-and-masking",[],[]) [Str "Randomis at line 76
+[trace] Parsed [Para [Str "The",Space,Str "clinical",Space,Str "trial",Spac at line 78
+[trace] Parsed [Header 3 ("procedures",[],[]) [Str "Procedures"]] at line 80
+[trace] Parsed [Para [Str "For",Space,Str "the",Space,Str "recruitment",Spa at line 82
+[trace] Parsed [Para [Str "Due",Space,Str "to",Space,Str "pseudonymization" at line 84
+[trace] Parsed [Header 4 ("aufbau-und-struktur-der-hbi",[],[]) [Str "Aufbau at line 86
+[trace] Parsed [Para [Str "The",Space,Str "HBI",Space,Str "@myTabu",Space,S at line 88
+[trace] Parsed [Para [Str "The",Space,Str "supervisor",Space,Str "section," at line 90
+[trace] Parsed [Para [Str "The",Space,Str "structure",Space,Str "and",Space at line 92
+[trace] Parsed [Para [Str "Im",Space,Str "teilnehmerbereich",Space,Str "wur at line 94
+[trace] Parsed [Para [Str "Additionally,",Space,Str "an",Space,Str "in-app" at line 96
+[trace] Parsed [Header 4 ("the-mytabu-intervention",[],[]) [Str "The",Space at line 98
+[trace] Parsed [Para [Str "The",Space,Str "content",Space,Str "of",Space,St at line 100
+[trace] Parsed [Para [Str "Since",Space,Str "the",Space,Str "treatment",Spa at line 102
+[trace] Parsed [Para [Str "The",Space,Str "placebo",Space,Str "arm",Space,S at line 104
+[trace] Parsed [Para [Str "During",Space,Str "the",Space,Str "clinical",Spa at line 106
+[trace] Parsed [Header 3 ("outcomes",[],[]) [Str "Outcomes"]] at line 108
+[trace] Parsed [Para [Str "State",Space,Str "the",Space,Str "prespecified", at line 3
+[trace] Parsed [BulletList [[Plain [Str "State",Space,Str "the",Space,Str " at line 110
+[trace] Parsed [Header 4 ("primary-outcomes",[],[]) [Str "Primary",Space,St at line 112
+[trace] Parsed [Para [Str "The",Space,Str "study",Space,Str "protocol",Spac at line 116
+[trace] Parsed [Header 4 ("secondary-outcomes",[],[]) [Str "Secondary",Spac at line 118
+[trace] Parsed [Para [Str "Pre\8211post",Space,Str "difference",Space,Str " at line 120
+[trace] Parsed [RawBlock (Format "html") "<!-- [[]{.quarto-shortcode__-para at line 122
+[trace] Parsed [Header 4 ("assessment-of-harms",[],[]) [Str "Assessment",Sp at line 124
+[trace] Parsed [Para [Str "Stopping",Space,Str "guidelines",Space,Str "have at line 126
+[trace] Parsed [Para [Str "Re-offenses",Space,Str "during",Space,Str "worki at line 128
+[trace] Parsed [Para [Str "genauere",Space,Str "Beschreibung",Space,Str "de at line 130
+[trace] Parsed [Div ("",["callout-important"],[]) [Para [Str "genauere",Spa at line 132
+[trace] Parsed [Para [Str "Potential",Space,Str "harms",Space,Str "have",Sp at line 134
+[trace] Parsed [Para [Str "Finally,",Space,Str "detoriation",Space,Str "of" at line 136
+[trace] Parsed [Header 4 ("ancillary-outcomes",[],[]) [Str "Ancillary",Spac at line 138
+[trace] Parsed [Para [Str "Without",Space,Str "predefined",Space,Str "hypot at line 140
+[trace] Parsed [Para [Str "In",Space,Str "order",Space,Str "to",Space,Str " at line 142
+[trace] Parsed [Para [Str "Finally,",Space,Str "the",Space,Str "Questionnai at line 144
+[trace] Parsed [Header 3 ("sample-size",[],[]) [Str "Sample",Space,Str "siz at line 146
+[trace] Parsed [Para [Str "A",Space,Str "rate",Space,Str "of",Space,Str "50 at line 148
+[trace] Parsed [Header 3 ("statistical-analysis",[],[]) [Str "Statistical", at line 150
+[trace] Parsed [Para [Str "Data",Space,Str "analysis",Space,Str "was",Space at line 152
+[trace] Parsed [Para [Str "The",Space,Str "primary",Space,Str "outcome",Spa at line 154
+[trace] Parsed [Para [Str "To",Space,Str "analyze",Space,Str "the",Space,St at line 156
+[trace] Parsed [Para [Str "Proportions",Space,Str "of",Space,Str "occurrenc at line 158
+[trace] Parsed [Para [Str "Ancilliary",Space,Str "outcomes",Space,Str "have at line 160
+[trace] Parsed [Header 3 ("role-of-funding-source",[],[]) [Str "Role",Space at line 162
+[trace] Parsed [Para [Str "The",Space,Str "work",Space,Str "was",Space,Str  at line 165
+[trace] Parsed [RawBlock (Format "html") "<!-- RESULTS SECTION -->"] at line 166
+[trace] Parsed [Header 2 ("results",[],[]) [Str "Results"]] at line 168
+[trace] Parsed [Para [Str "Between",Space,Str "March",Space,Str "01,",Space at line 170
+[trace] Parsed [RawBlock (Format "html") "<!-- [[]{.quarto-shortcode__-para at line 172
+[trace] Parsed [Header 3 ("follow-up",[],[]) [Str "Follow-up"]] at line 174
+[trace] Parsed [Para [Str "Overall,",Space,Str "n",Space,Str "=",Space,Str  at line 176
+[trace] Parsed [RawBlock (Format "html") "<!-- [[]{.quarto-shortcode__-para at line 178
+[trace] Parsed [Header 3 ("protocol-deviations",[],[]) [Str "Protocol",Spac at line 180
+[trace] Parsed [Para [Str "Participants",Space,Str "of",Space,Str "both",Sp at line 182
+[trace] Parsed [Para [Str "[M\252sste",Space,Str "man",Space,Str "hier",Spa at line 184
+[trace] Parsed [Div ("",["callout-important"],[]) [Para [Str "[M\252sste",S at line 186
+[trace] Parsed [Para [Str "In",Space,Str "the",Space,Str "Fisher\8217s",Spa at line 188
+[trace] Parsed [Para [Str "Interestingly,",Space,Str "the",Space,Str "reaso at line 190
+[trace] Parsed [Para [Str "[FEHLT:",Space,Str "Unterschiede",Space,Str "zwi at line 192
+[trace] Parsed [Div ("",["callout-important"],[]) [Para [Str "[FEHLT:",Spac at line 194
+[trace] Parsed [Header 3 ("baseline-characteristics",[],[]) [Str "Baseline" at line 196
+[trace] Parsed [Para [Cite [Citation {citationId = "tbl-baseline-characteri at line 198
+[trace] Parsed [RawBlock (Format "html") "<!-- [[]{.quarto-shortcode__-para at line 200
+[trace] Parsed [Para [Str "Overall,",Space,Str "n",Space,Str "=",Space,Str  at line 202
+[trace] Parsed [Para [Str "[FEHLT:",Space,Str "ICD-11",Space,Str "screener, at line 205
+[trace] Parsed [Para [Str "PHQ-D"]] at line 207
+[trace] Parsed [Para [Str "diagnosis",Space,Str "(based",Space,Str "on",Spa at line 208
+[trace] Parsed [Div ("",["callout-important"],[]) [Para [Str "[FEHLT:",Spac at line 210
+[trace] Parsed [Header 3 ("main-outcome",[],[]) [Str "Main",Space,Str "outc at line 212
+[trace] Parsed [Para [Str "The",Space,Str "mixed",Space,Str "model",Space,S at line 214
+[trace] Parsed [RawBlock (Format "html") "<!-- [[]{.quarto-shortcode__-para at line 216
+[trace] Parsed [Para [Str "Explorative",Space,Str "pairwise",Space,Str "com at line 218
+[trace] Parsed [Para [Str "Explorative",Space,Str "analysis",Space,Str "of" at line 220
+[trace] Parsed [Header 3 ("secondary-outcomes-1",[],[]) [Str "Secondary",Sp at line 222
+[trace] Parsed [Para [Cite [Citation {citationId = "tbl-sec-pairwise-interv at line 224
+[trace] Parsed [RawBlock (Format "html") "<!-- [[]{.quarto-shortcode__-para at line 226
+[trace] Parsed [Para [Cite [Citation {citationId = "tbl-sec-pairwise-placeb at line 228
+[trace] Parsed [RawBlock (Format "html") "<!-- [[]{.quarto-shortcode__-para at line 230
+[trace] Parsed [Para [Str "Exploratory",Space,Str "subscale",Space,Str "ana at line 232
+[trace] Parsed [Para [Str "Exploratory",Space,Str "analysis",Space,Str "of" at line 234
+[trace] Parsed [Header 3 ("harms",[],[]) [Str "Harms"]] at line 236
+[trace] Parsed [Para [Str "The",Space,Str "interim",Space,Str "analysis",Sp at line 238
+[trace] Parsed [Para [Cite [Citation {citationId = "tbl-who-adverse-events" at line 240
+[trace] Parsed [Para [Str "Fehlt:",Space,Str "Mood",Space,Str "and",Space,S at line 242
+[trace] Parsed [Div ("",["callout-important"],[]) [Para [Str "Fehlt:",Space at line 244
+[trace] Parsed [Header 3 ("ancillary-outcomes-1",[],[]) [Str "Ancillary",Sp at line 246
+[trace] Parsed [Para [Str "The",Space,Str "mixed",Space,Str "model",Space,S at line 248
+[trace] Parsed [Para [Str "Only",Space,Str "XX",Space,Str "participants",Sp at line 250
+[trace] Parsed [Para [Str "Unfortunately,",Space,Str "only",Space,Str "n",S at line 252
+[trace] Parsed [Para [Str "[FEHLT:",Space,Str "QNP]"]] at line 254
+[trace] Parsed [Div ("",["callout-important"],[]) [Para [Str "[FEHLT:",Spac at line 256
+[trace] Parsed [Para [Str "The",Space,Str "mixed",Space,Str "model",Space,S at line 260
+[trace] Parsed [Para [Str "The",Space,Str "mixed",Space,Str "model",Space,S at line 265
+[trace] Parsed [RawBlock (Format "html") "<!-- DISCUSSION SECTION -->"] at line 266
+[trace] Parsed [Header 2 ("discussion",[],[]) [Str "Discussion"]] at line 268
+[trace] Parsed [Para [Str "In",Space,Str "this",Space,Str "worldwide",Space at line 272
+[trace] Parsed [Para [Str "The",Space,Str "trial",Space,Str "follows",Space at line 274
+[trace] Parsed [Para [Str "In",Space,Str "einem",Space,Str "wesentlichen",S at line 276
+[trace] Parsed [Para [Str "Ein",Space,Str "weiterer",Space,Str "Grund",Spac at line 278
+[trace] Parsed [Para [Str "Dies",Space,Str "f\252hrt",Space,Str "zu",Space, at line 280
+[trace] Parsed [Para [Str "Ein",Space,Str "weiterer",Space,Str "Erklr\228ru at line 282
+[trace] Parsed [Para [Str "Schlie\223lich",Space,Str "k\246nnte",Space,Str  at line 284
+[trace] Parsed [Para [Str "Die",Space,Str "Tatsache,",Space,Str "dass",Spac at line 286
+[trace] Parsed [Para [Str "Fehlender",Space,Str "effekt",Space,Str "k\246nn at line 288
+[trace] Parsed [Para [Str "Auf",Space,Str "Sonjas",Space,Str "Ergebnisse",S at line 290
+[trace] Parsed [Para [Str "Adverse",Space,Str "events\8230[nochmals",Space, at line 292
+[trace] Parsed [Para [Str "Unfortunately,",Space,Str "none",Space,Str "of", at line 294
+[trace] Parsed [Para [Str "Harms:",Space,Str "Seh",Space,Str "wenige",Space at line 300
+[trace] Parsed [Para [Str "[Einsch\228tzung",Space,Str "der",Space,Str "Ver at line 302
+[trace] Parsed [Para [Str "Dauer",Space,Str "zu",Space,Str "Lange?",Space,S at line 304
+[trace] Parsed [Para [Str "Bei",Space,Str "secondary",Space,Str "endpoints" at line 306
+[trace] Parsed [Para [Str "Was",Space,Str "messen",Space,Str "die",Space,St at line 312
+[trace] Parsed [Para [Str "The",Space,Str "Discussion",Space,Str "section", at line 314
+[trace] Parsed [Para [Str "\8226",Space,Str "Start",Space,Str "with",Space, at line 316
+[trace] Parsed [Para [Str "\8226",Space,Str "Discuss",Space,Str "any",Space at line 318
+[trace] Parsed [Para [Str "\8226",Space,Str "Discuss",Space,Str "the",Space at line 320
+[trace] Parsed [Para [Str "\8226",Space,Str "Consider",Space,Str "possible" at line 322
+[trace] Parsed [Para [Str "\8226",Space,Str "Suggest",Space,Str "future",Sp at line 324
+[trace] Parsed [Para [Str "\8226",Space,Str "State",Space,Str "general",Spa at line 328
+[trace] Parsed [Para [Str "Futere",Space,Str "directions:",Space,Str "the", at line 330
+[trace] Parsed [Para [Str "Second,",Space,Str "the",Space,Str "study",Space at line 332
+[trace] Parsed [Para [Str "Also",Space,Str "problematic",Space,Str "in",Spa at line 334
+[trace] Parsed [Para [Str "Third,",Space,Str "the",Space,Str "sample",Space at line 336
+[trace] Parsed [Para [Str "Fourth,",Space,Str "no",Space,Str "waiting-list" at line 340
+[trace] Parsed [Para [Str "Seventh,",Space,Str "no",Space,Str "assessments" at line 342
+[trace] Parsed [Para [Str "Eight,",Space,Str "no",Space,Str "diagnostic",Sp at line 344
+[trace] Parsed [Para [Str "Ausschluss",Space,Str "von",Space,Str "recidivis at line 348
+[trace] Parsed [Para [Str "@myTabu",Space,Str "tries",Space,Str "to",Space, at line 351
+[trace] Parsed [RawBlock (Format "html") "<!-- CONTRIBUTORS -->"] at line 352
+[trace] Parsed [RawBlock (Format "html") "<!-- Is automatically filled with at line 353
+[trace] Parsed [Para [Span ("",["quarto-shortcode__"],[("data-is-shortcode" at line 355
+[trace] Parsed [RawBlock (Format "html") "<!-- DATA SHARING -->"] at line 356
+[trace] Parsed [RawBlock (Format "html") "<!-- Is automatically filled with at line 357
+[trace] Parsed [Para [Span ("",["quarto-shortcode__"],[("data-is-shortcode" at line 359
+[trace] Parsed [RawBlock (Format "html") "<!-- DECLARATION OF INTEREST -->" at line 360
+[trace] Parsed [RawBlock (Format "html") "<!-- Is automatically filled with at line 361
+[trace] Parsed [Para [Span ("",["quarto-shortcode__"],[("data-is-shortcode" at line 363
+[trace] Parsed [RawBlock (Format "html") "<!-- ACKNOWLEDGEMENTS -->"] at line 364
+[trace] Parsed [RawBlock (Format "html") "<!-- Is automatically filled with at line 365
+[trace] Parsed [Para [Span ("",["quarto-shortcode__"],[("data-is-shortcode" at line 367
+[trace] Parsed [RawBlock (Format "html") "<!-- ACKNOWLEDGEMENTS -->"] at line 368
+[trace] Parsed [RawBlock (Format "html") "<!-- Is automatically filled; do  at line 370
+[trace] Parsed [] at line 372
+[trace] Parsed [Header 2 ("references",[],[]) [Str "References"]] at line 374
+[trace] Parsed [Div ("refs",[],[]) []] at line 377
+[trace] Parsed [Div ("",["no-count"],[]) [Header 2 ("references",[],[]) [St at line 379
+[trace] Parsed [RawBlock (Format "html") "<!-- YOUR SUPPLEMENTARY MATERIAL  at line 380
+[trace] Parsed [Para [Span ("",["quarto-shortcode__"],[("data-is-shortcode" at line 382
+[trace] Parsed [] at line 384
+[trace] Parsed [Header 2 ("supplementary-material",["appendix"],[]) [Str "S at line 386
+[trace] Parsed [Header 3 ("trial-registry",["appendix"],[]) [Str "Trial",Sp at line 388
+[trace] Parsed [RawBlock (Format "html") "<object data=\"resources/GermanCl at line 396
+[trace] Parsed [RawBlock (Format "html") "<!-- https://github.com/orgs/quar at line 405
+[trace] Parsed [Header 3 ("study-protocol",["appendix"],[]) [Str "Study",Sp at line 407
+[trace] Parsed [RawBlock (Format "html") "<object data=\"resources/myTabu_f at line 415
+[trace] Parsed [Header 3 ("statistical-analysis-plan-sap",["appendix"],[])  at line 417
+[trace] Parsed [RawBlock (Format "html") "<object data=\"resources/myTabu_S at line 426
+[trace] Parsed [Div ("appendix-count",[],[]) [Header 2 ("supplementary-mate at line 429
+[31mERROR (/opt/quarto/share/filters/main.lua:3828) cannot open summary_wordcount.lua: No such file or directory
+[39m[33mWARN: Error encountered when rendering files[39m
