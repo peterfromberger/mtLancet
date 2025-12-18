@@ -249,6 +249,17 @@ code {
   color: $primary-color
 }
 
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+  font-size: 0.875rem;
+  color: $primary-color !important;
+  border-left: 1px solid $primary-color !important;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a:hover {
+  font-size: 0.875rem;
+  color: $primary-color !important;
+}
+
 /* ---------- Other Links & Code Links ---------- */
 
 .quarto-other-links,
