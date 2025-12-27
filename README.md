@@ -1,18 +1,22 @@
 # Manuscript
 
-## render
+## Render
+To render the manuscript, use the following command:
+```bash
 quarto render index.qmd --to frpQuarto-html
-
-## publish github
+```
+## Publish to GitHub Pages
+To publish the rendered manuscript to GitHub Pages, use the following command:
+```bash
 quarto publish gh-pages
+```
+The published manuscript can be accessed at: [https://peterfromberger.github.io/mtLancet/](https://peterfromberger.github.io/mtLancet/)
 
+## Data Folder
+In order to run some of the R scripts, ensure there is a `_data` folder at the first level in the folder structure (where the `README.md` file lives).
 
-https://peterfromberger.github.io/mtLancet/
-
-
-
-In order to run some of the R scripts, there must be a _data folder at first level in folder structure (where the README.qmd file lives).
-
-You will need some packages from Dr. Andreas Leha (Human medical center Göttingen):
-
-- remotes::install_git("https://gitlab.gwdg.de/aleha/descsuppRplots", dependencies = FALSE)
+## Required R Packages
+You will need some packages from Dr. Andreas Leha (Human Medical Center Göttingen):
+```r
+remotes::install_git("https://gitlab.gwdg.de/aleha/descsuppRplots", dependencies = FALSE)
+```
