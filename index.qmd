@@ -44,6 +44,16 @@ authors:
       - ref: UMG
     roles: [writing – review & editing, investigation]
     corresponding: false
+  - name: Safiye Tozdan
+    degrees: PhD
+    is_prof: false
+    declaration_of_interests: "conflict-of-interest is here"
+    initials: "ST"
+    affiliations:
+      - ref: UKE
+    orcid: 0000-0001-6645-3617
+    roles: [writing – review & editing, investigation, conceptualization, funding acquisition]
+    corresponding: false
   - name: Andreas Leha
     degrees: PhD
     is_prof: false
@@ -69,16 +79,6 @@ authors:
     initials: "LM"
     affiliations:
       - ref: Wun
-  - name: Safiye Tozdan
-    degrees: PhD
-    is_prof: false
-    declaration_of_interests: "conflict-of-interest is here"
-    initials: "ST"
-    affiliations:
-      - ref: UKE
-    orcid: 0000-0001-6645-3617
-    roles: [writing – review & editing, investigation, conceptualization, funding acquisition]
-    corresponding: false
   - name: Sabine Horn
     degrees: MSc
     is_prof: false
@@ -104,15 +104,6 @@ authors:
     orcid: 0000-0001-8083-5857
     roles: [writing – review & editing, project administration]
     corresponding: false
-  - name: Martin Rettenberger
-    degrees: PhD
-    is_prof: true
-    declaration_of_interests: "conflict-of-interest is here"
-    initials: "MR"
-    affiliations:
-      - ref: KrimZ
-    roles: [writing – review & editing]
-    corresponding: false
   - name: Sonja Etzler
     degrees: PhD
     is_prof: false
@@ -120,7 +111,16 @@ authors:
     initials: "SE"
     affiliations:
       - ref: KrimZ
-    roles: [writing – review & editing]
+    roles: [writing – review & editing, conceptualization, funding acquisition]
+  - name: Martin Rettenberger
+    degrees: PhD
+    is_prof: true
+    declaration_of_interests: "conflict-of-interest is here"
+    initials: "MR"
+    affiliations:
+      - ref: KrimZ
+    roles: [writing – review & editing, conceptualization, funding acquisition]
+    corresponding: false
   - name: Anja Schiemann
     degrees: PhD
     is_prof: true
