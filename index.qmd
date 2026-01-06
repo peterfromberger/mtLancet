@@ -3,7 +3,7 @@ title: "Effectiveness of a web-based intervention for individuals who committed 
 
 shorttitle: "Effectiveness of a web-based intervention for individuals who committed sexual offenses against children."
 
-version: "0.6.5"
+version: "0.8.0"
 
 date: last-modified
 date-format: long
@@ -16,7 +16,6 @@ filters:
 authors:
   - name: Peter Fromberger
     initials: "PF"  # variables not defined by quarto become metadata.variable
-    declaration_of_interests: "conflict-of-interest is here"
     degrees: PhD
     is_prof: false
     affiliations:
@@ -28,7 +27,6 @@ authors:
   - name: Sonja Schröder
     degrees: PhD
     is_prof: false
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "SSch"
     affiliations:
       - ref: Mor
@@ -38,7 +36,6 @@ authors:
   - name: Bruno Siegel
     degrees: MSc
     is_prof: false
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "BS"
     affiliations:
       - ref: UMG
@@ -65,7 +62,7 @@ authors:
   - name: Fabian Kück
     degrees: PhD
     is_prof: false
-    declaration_of_interests: "conflict-of-interest is here"
+    declaration_of_interests: "conflict-of-interest is here?"
     initials: "FK"
     affiliations:
       - ref: UMGmath
@@ -97,7 +94,6 @@ authors:
   - name: Kirsten Jordan
     degrees: PhD
     is_prof: false
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "KJ"
     affiliations:
       - ref: UMG
@@ -207,8 +203,8 @@ data_sharing_statement: "The source code of the web-based intervention, the cont
 
 acknowledgement:
   funding: "The work was funded by the German Federal Ministry of Education and Research (BMBF, Funding number: 01KR1807A). The funder of the study had no role in study design, data collection, data analysis, data interpretation, or writing of the report."
-  ai_use: "Our statement on the use of ai in the creation of the manuscript: - translation, correct grammar."
-  thanks: "The authors would like to thank all participants for their time, trust and willingness to take part in the study. Furthermore, we would like to thank all community supervisors for taking part in the study - the project as well as the clinical trial was only possible with their help and support. The authors are grateful to Matthias Koller, Andreas Hill und Sophie K. Piper for taking part in the DSMB."
+  ai_use: "A local LLM (qwen-2.5) has been used exclusively for language and grammar corrections. Coding of the HBI, data analysis and interpretation, creation of figures and diagrams as well as the content of the manuscript have been created without ai."
+  thanks: "The authors would like to thank all participants and community supervisors for their time, trust and willingness to take part in the study."
 
 appendix-style: none
 
