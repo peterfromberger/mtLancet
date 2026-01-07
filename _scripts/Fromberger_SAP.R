@@ -10,7 +10,6 @@ library(here) # for better management of resources and folders
 verbose <- FALSE
 
 ## Settings
-export_date <- as.Date("2024-07-31")    #hier muss das Exportdatum eingetragen werden
 export_date <- as.Date("2024-11-22")
 
 ## simulate group data

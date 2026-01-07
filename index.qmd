@@ -211,6 +211,51 @@ appendix-style: none
 suppress-bibliography: false
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: r-init
+
+library(here)
+
+# run SAP analysis script from MBSB (Dr. Fabian Kück und Dr. Andreas Leha)
+source(here::here("_scripts/Fromberger_SAP.R"))
+
+# run analysis for secondary endpoints from MBSB
+#source(here::here("_resources/MBSB/analysis_secondary_endpoints.R"))
+
+# run sensitivity analysis for main endpoint
+#source(here::here("_resources/MBSB/rbmi.R"))
+
+# run script to remove outlier
+#source(here::here("_resources/MBSB/remove_outlier.R"))
+
+# load function to create tbl_mmrm
+# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/prim_mmrm_functions.R"))
+
+# # load functions to create diffscores and their tbls
+# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/prim_diffscore_functions.R"))
+# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/sec_diffscore_functions.R"))
+
+# # load functions to create pairwise tbls
+# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/prim_pairwise_functions.R"))
+# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/sec_pairwise_functions.R"))
+
+# # load functions for who-5
+# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/who_functions.R"))
+
+# # load functions for wai-sr
+# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/wai_functions.R"))
+
+# # load functions for mrq
+# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/mrq_functions_prepluspost.R"))
+# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/mrq_functions.R"))
+
+# # load functions for plots
+# source(here::here("                    _scripts/prim_plot_functions.R"))
+```
+
 <!-- SUMMARY -->
 <!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
 <!-- We do not count the words in the summary -->

@@ -1,0 +1,56 @@
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-prim-cares-mmrm
+#| tbl-cap: "Mixed model for repeated measures (MMRM) for primary outcome (CARES total score)."
+#| html-table-processing: none
+
+library(gtsummary)
+library(gt)
+
+# global theme for gtsummary
+gtsummary::theme_gtsummary_journal(journal = "lancet")
+
+tbl <- fit2 %>%
+    tbl_regression(
+      add_estimate_to_reference_rows = TRUE,
+      intercept = TRUE,
+      label = list(
+        static99_modified_calc = "Static recidivism risk",
+        Aktuelle_Betreuung = "Type of supervision",
+        Aktuelle_zusatzliche_Behandlung = "Additional treatment",
+        Indexdelikt = "Offense type",
+        IoD_reduced_baseline = "Baseline value",
+        Zeit_seit_Beginn_Modul_1_in_Jahren = "Time since baseline (years)",
+        treatment = "Treatment",
+        timepoint = "Timepoint",
+        `Timepoint * treatment` = "Timepoint * Treatment"
+      )
+    ) %>%
+    modify_header(label ~ "**Variable**") %>%
+    remove_abbreviation("CI = Confidence Interval") %>%
+    modify_abbreviation("CI = Confidence Interval") %>%
+    modify_abbreviation("StGB = German penalty law") %>%
+    modify_column_alignment(columns = everything(), align = "left") %>%
+    modify_table_styling(
+        columns = c(estimate, conf.low, conf.high),
+        rows = reference_row %in% TRUE,
+        missing_symbol = "Ref."
+    ) %>%
+    bold_labels() %>%
+    as_gt() %>%
+    gt::tab_options(
+      table.font.names = "Source Sans Pro",
+      table.font.size = 16,
+      quarto.use_bootstrap = FALSE,
+      quarto.disable_processing = TRUE,
+      data_row.padding = px(2)
+    )
+
+# save tbl as image
+gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-prim-cares-mmrm.png")))
+gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-prim-cares-mmrm.docx")))
+
+tbl
+```
