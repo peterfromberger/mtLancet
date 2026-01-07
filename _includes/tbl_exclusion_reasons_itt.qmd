@@ -1,0 +1,162 @@
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-exclusion-reasons-itt
+#| tbl-cap: "Reasons for exclusion from clinical trial for the ITT sample sorted by frequency. Before exclusion, supervision officer had to fill in a questionnaire with pre-defined reasons for exclusion. Please note, that multiple reasons for one participant are possible, e.g. one participant may be excluded because of violation against probation conditions and a re-offense."
+
+library(tidyr)
+library(dplyr)
+library(arrow)
+library(here)
+library(flextable)
+library(stringr)
+library(gtsummary)
+
+# read in data
+data <- readRDS(here::here("_data/finalData/randomizedMaster.Rds"))
+
+# all variables of exclusion questionnaire
+exclusion_cols <- paste0("reason_", 1:9)
+
+tmp <- data %>%
+  filter(client_status == "Ausgeschlossen" | client_status == 'Klinischer Trial beendet vor Abschluss') %>%
+  filter(m1s4l7_calc_lession_finished == TRUE) %>%
+  filter(client_id != 194) %>%
+  dplyr::select(
+    client_id,
+    client_group,
+   # relation_to_mytabu_1,
+   # relation_to_mytabu_2,
+    reason_3a,
+    reason_3b,
+    reason_3c,
+    reason_9a,
+    reason_4a,
+    all_of(exclusion_cols),
+    excluded_at
+  ) %>%
+  mutate(
+    end_of_trial = factor(ifelse(excluded_at >= "2024-10-02", "Yes", "No"), levels = c("Yes", "No")),
+    reason_1 = factor(reason_1, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+    reason_2 = factor(reason_2, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+    reason_3 = factor(reason_3, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+    reason_3b = factor(reason_3b, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+    reason_3c = factor(reason_3c, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+    reason_4 = factor(reason_4, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+    reason_5 = factor(reason_5, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+    reason_6 = factor(reason_6, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+    reason_7 = factor(reason_7, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+    reason_8 = factor(reason_8, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+    reason_9 = factor(reason_9, levels=c("Ja", "Nein"), labels=c("Yes", "No"))
+  )
+
+# all NAs are in the sense of "No"
+tmp[is.na(tmp)] <- "No"
+
+# calculate end of trial
+
+tbl_eq <- tmp %>%
+  select(-client_id, -reason_3a, -reason_4a, -reason_9a) %>%
+  select(client_group,
+    end_of_trial,
+    reason_2,
+    reason_9,
+    reason_1,
+    reason_7,
+    reason_5,
+    reason_6,
+    reason_3,
+    reason_8,
+    reason_4
+
+
+  ) %>%
+  tbl_summary(
+    by = client_group,
+    type = list(
+      end_of_trial = "categorical",
+      reason_1 = "categorical",
+      reason_2 = "categorical",
+      reason_3 = "categorical",
+      reason_4 = "categorical",
+      reason_5 = "categorical",
+      reason_6 = "categorical",
+      reason_7 = "categorical",
+      reason_8 = "categorical",
+      reason_9 = "categorical"
+    ),
+    label = list(
+      reason_1 = "Withdrawal of informed consent",
+      reason_2 = "Probationary supervision expired",
+      reason_3 = "Violation of probation conditions",
+      reason_3a = "Gegen welche Weisungen wurde verstoßen?",
+      reason_3b = "Accusation (§ 145a StGB) due to violation of probation conditions",
+      reason_3c = "Conviction due to violation of probation conditions",
+      reason_4 = "Violation of (court-imposed) conditions",
+      reason_4a = "Gegen welche Auflagen wurde verstoßen?",
+      reason_5 = "CSA offense (§§ 176, 176a or 176b StGB)",
+      reason_6 = "CSAM offense (§ 184b StGB)",
+      reason_7 = "Other offense (not §§ 176, 176a, 176b or 184b StGB)",
+      reason_8 = "Acute suicide risk",
+      reason_9 = "Other reasons",
+      end_of_trial = "End of clinical trial"
+    ),
+    missing_text = "Missing"
+  ) %>%
+  modify_header(label = "**Exclusion reasons**", text_interpret = c("md")) %>%
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**Trial Arms**") %>%
+  bold_labels() %>%
+  add_overall() %>%
+  add_p() %>%
+  add_q()
+
+tbl_eq_short <- tmp %>%
+  select(-client_id, -reason_3a, -reason_4a, -reason_9a) %>%
+  select(client_group,
+    end_of_trial,
+    reason_2,
+    reason_9,
+    reason_1,
+    reason_7,
+    reason_5,
+    reason_6,
+    reason_3,
+    reason_8,
+    reason_4
+
+
+  ) %>%
+  tbl_summary(
+    by = client_group,
+    label = list(
+      reason_1 = "Withdrawal of informed consent",
+      reason_2 = "Probationary supervision expired",
+      reason_3 = "Violation of probation conditions",
+      reason_3a = "Gegen welche Weisungen wurde verstoßen?",
+      reason_3b = "Accusation (§ 145a StGB) due to violation of probation conditions",
+      reason_3c = "Conviction due to violation of probation conditions",
+      reason_4 = "Violation of (court-imposed) conditions",
+      reason_4a = "Gegen welche Auflagen wurde verstoßen?",
+      reason_5 = "CSA offense (§§ 176, 176a oder 176b StGB)",
+      reason_6 = "CSAM offense (§ 184b StGB)",
+      reason_7 = "Other offense (not §§ 176, 176a, 176b oder 184b StGB)",
+      reason_8 = "Acute suicide risk",
+      reason_9 = "Other reasons",
+      end_of_trial = "End of clinical trial"
+    ),
+    missing_text = "Missing"
+  ) %>%
+  modify_header(label = "**Exclusion reasons**", text_interpret = c("md")) %>%
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**Trial Arms**") %>%
+  italicize_labels() %>%
+  add_overall() %>%
+  add_p() %>%
+  add_q()
+
+gt::gtsave(as_gt(tbl_eq), file = file.path(here::here("paper/clinical_trial_LancetDigitalHealth/tables/tbl-exclusion-reasons-itt.png")))
+gt::gtsave(as_gt(tbl_eq_short), file = file.path(here::here("paper/clinical_trial_LancetDigitalHealth/tables/tbl-exclusion-reasons-itt-short.png")))
+
+tbl_eq
+```
