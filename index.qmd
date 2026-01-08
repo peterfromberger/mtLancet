@@ -293,14 +293,3 @@ source(here::here("_scripts/Fromberger_SAP.R"))
 
 ::: {#refs}
 :::
-
-<!-- YOUR SUPPLEMENTARY MATERIAL -->
-{{< pagebreak >}}
-
-::: {#appendix-count}
-
-## Supplementary Material {.appendix}
-
-{{< include _includes/txt_supplement.qmd >}}
-
-:::
