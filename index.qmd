@@ -10,9 +10,6 @@ date-format: long
 
 lightbox: true
 
-filters:
-  - frpQuarto
-
 authors:
   - name: Peter Fromberger
     initials: "PF"  # variables not defined by quarto become metadata.variable
