@@ -1,6 +1,6 @@
 ## Results
 
-Between March 01, 2020, and Septembre 30, 2024, n = 385 individulas who committed sexual offenses against children have been screened for eligibility, of whom 16 have not been randomized. The trial was closed at Septembre 30, 2024 before all participants have been able to finish the web-based intervention due to a lack of further funding (n = ??? End of RCT). N = 369 individuals were randomly assigned, n = 182 to the placebo arm and n = 187 to the intervention arm. N = 213 participants have been included in the ITT sample (n = 107 in the intervention arm and n = 106 in the placebo arm). [@fig-consort-flowchart] shows the CONSORT flowchart. N = 99 participants finished the WBI, n = 44 (30.20%) in the intervention arm and n = 55 (22.40%) in the placebo arm. Only two female participants were randomized, of whom one enters the ITT sample. All participants (n = 213 [100%]) in the ITT sample had the German nationality, data on ethnicity has not been assessed.
+Between March 01, 2020, and Septembre 30, 2024, n = 385 individulas who committed sexual offenses against children have been screened for eligibility, of whom 16 have not been randomized. The trial was closed at Septembre 30, 2024 before all participants have been able to finish the web-based intervention due to a lack of further funding (n = ??? End of RCT). N = 369 individuals were randomly assigned, n = 182 to the placebo arm and n = 187 to the intervention arm. N = 213 participants have been included in the ITT sample (n = 107 in the intervention arm and n = 106 in the placebo arm). [@fig-consort-flowchart] shows the CONSORT flowchart. N = 99 participants finished the WBI, n = 44 (30.20%) in the intervention arm and n = 55 (22.40%) in the placebo arm. Only two female participants were randomized, of whom one enters the ITT sample. 
 
 <!-- {{< include _includes/fig_flowchart_detailed.qmd >}} -->
 
@@ -29,6 +29,8 @@ Interestingly, the reasons for these protocol deviations seems not to be
 <!-- {{< include _includes/tbl_baseline_characteristics.qmd >}} -->
 
 Overall, n = 70 (32%) of the ITT sample received an external (f2f) treatment during participation (psychotherapy and/or medical treatment), but the court ordered this for n = 124 (56%). Only n = 48 (38.71%) of all participants who have an ordered treatment also in fact received external treatment at enrolement, the majority (n = 76; 61.29%) not.
+
+All participants (n = 213 [100%]) in the ITT sample had the German nationality, data on ethnicity has not been assessed.
 
 ::: {.callout-important}
 [FEHLT: ICD-11 screener, PHQ-D, ]
