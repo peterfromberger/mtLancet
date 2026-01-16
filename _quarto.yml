@@ -12,11 +12,184 @@ csl: the-lancet.csl
 
 format:
   html:
-
     theme: [default, _extensions/frpQuarto/styles.scss]
-
     html-table-processing: none
     tbl-cap-location: bottom
+    toc: true
+    toc-depth: 3
+    template: _extensions/frpQuarto/template.html
+
+    include-after-body:
+      text: |
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+
+            /* --------------------------------------------------
+            * 1. FIGCAPTION TRANSFORMATION
+            * -------------------------------------------------- */
+            document.querySelectorAll("figcaption").forEach(e => {
+              e.innerHTML = e.innerHTML.replace(
+                /((.*?)\.)\s*(.*)/,
+                '<div class="figcaption-title-lancet">$1</div>' +
+                '<details class="dropdown-card">' +
+                  '<summary>' +
+                    '<span class="figcaption-dropdown">Show full caption</span>' +
+                    '<span class="arrow">' +
+                      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">' +
+                        '<polyline points="6 9 12 15 18 9"/>' +
+                      '</svg>' +
+                    '</span>' +
+                  '</summary>' +
+                  '<div class="figcaption-subtext">$3</div>' +
+                '</details>'
+              );
+            });
+
+            /* ---------- Wordcount einklappbar ---------- */
+
+            const header = document.querySelector("header");
+            const sourceWordcount = document.querySelector(".dropdown-card-metrics");
+            const affDropdown = header.querySelector(".dropdown-card");
+
+            if (!header) return;
+
+            // Container für Buttons + Content
+            const container = document.createElement("div");
+            container.classList.add("header-buttons-container");
+
+            // Funktion: Button erzeugen
+            const createButton = (text, contentHTML) => {
+              const btn = document.createElement("button");
+              btn.classList.add("header-btn");
+
+              // innerHTML mit Pfeil
+              btn.innerHTML = `
+                <span class="btn-text">${text}</span>
+                <span class="arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                      stroke-linejoin="round" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </span>
+              `;
+
+              btn.dataset.content = contentHTML;
+              return btn;
+            };
+
+            const affContent = affDropdown ? affDropdown.querySelector(".card-content").innerHTML : "";
+            const wordContent = sourceWordcount ? sourceWordcount.querySelector(".card-content").innerHTML : "";
+
+            const btnAff = createButton("Affiliations & Notes", affContent);
+            const btnWord = createButton("Article metrics", wordContent);
+
+            // Buttons
+            const contentBtnDiv = document.createElement("div");
+            contentBtnDiv.classList.add("header-buttons");
+
+            contentBtnDiv.appendChild(btnAff);
+            contentBtnDiv.appendChild(btnWord);
+
+            container.appendChild(contentBtnDiv);
+
+            // Grauer Content-Bereich
+            const contentDiv = document.createElement("div");
+            contentDiv.classList.add("header-content");
+            contentDiv.innerHTML = affContent; // initial Affiliations
+
+            container.appendChild(contentDiv);
+
+            // Button-Events
+            let activeBtn = null;
+
+            [btnAff, btnWord].forEach(btn => {
+              btn.addEventListener("click", () => {
+                const isSameBtn = activeBtn === btn;
+
+                // alles schließen
+                [btnAff, btnWord].forEach(b => {
+                  b.classList.remove("active");
+                  b.querySelector(".arrow").classList.remove("rotated");
+                });
+
+                contentDiv.classList.remove("open");
+                contentDiv.innerHTML = "";
+
+                // gleicher Button → nur schließen
+                if (isSameBtn) {
+                  activeBtn = null;
+                  return;
+                }
+
+                // neuen Content anzeigen
+                contentDiv.innerHTML = btn.dataset.content;
+                contentDiv.classList.add("open");
+
+                btn.classList.add("active");
+                btn.querySelector(".arrow").classList.add("rotated");
+
+                activeBtn = btn;
+              });
+            });
+
+            // Affiliations Dropdown verstecken (nur Content nutzen)
+            if (affDropdown) affDropdown.style.display = "none";
+
+            // Header einfügen
+            header.appendChild(container);
+
+            if (sourceWordcount) {
+              sourceWordcount.remove();
+            }
+
+            /* --------------------------------------------------
+            * 2. OTHER LINKS + CODE LINKS HEADLINE ANPASSEN
+            * -------------------------------------------------- */
+            document.querySelectorAll(".quarto-code-links > h2")
+              .forEach(h2 => {
+                if (h2.textContent.includes("Code")) {
+                  h2.textContent = "Author forms";
+                }
+              }
+            );
+
+            document.querySelectorAll(".quarto-other-links > h2")
+              .forEach(h2 => {
+                if (h2.textContent.includes("Other")) {
+                  h2.textContent = "Submission files";
+                }
+              });
+
+            // Links in neuem Tab öffnen
+            document.querySelectorAll(".quarto-other-links > ul > li > a")
+              .forEach(link => {
+                link.setAttribute("target", "_blank");
+                link.setAttribute("rel", "noopener noreferrer");
+              }
+            );
+
+          });
+        </script>
+
+    crossref:
+      title-delim: " "
+
+    template-partials:
+      - _extensions/frpQuarto/title-block.html
+      - _extensions/frpQuarto/toc.html
+
+    shortcodes: 
+      - _extensions/frpQuarto/summary.lua
+      - _extensions/frpQuarto/acknowledgements.lua
+      - _extensions/frpQuarto/contributors.lua
+      - _extensions/frpQuarto/datasharing_statement.lua
+      - _extensions/frpQuarto/declaration_of_interests.lua
+      - _extensions/frpQuarto/panel.lua
+
+    filters:
+      - _extensions/frpQuarto/wordcount.lua
+      - _extensions/frpQuarto/summary_wordcount.lua
 
     other-links:
       - text: Manuscript
@@ -42,6 +215,3 @@ format:
       - text: Author statement form
         icon: file-earmark-pdf
         href: 'resources/tldh-author-signatures.pdf'
-
-    toc: true
-    toc-depth: 3

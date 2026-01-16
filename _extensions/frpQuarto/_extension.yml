@@ -5,15 +5,12 @@ version: 0.1.5
 quarto-required: ">=1.5.0"
 
 contributes:
-
-  filters:
-    - summary_wordcount.lua
-
-  shortcodes:
+  shortcodes: 
     - summary.lua
     - acknowledgements.lua
     - contributors.lua
     - datasharing_statement.lua
     - declaration_of_interests.lua
-    - panel.lua
-    - andrew-heiss-count-words.lua # Credits to andrew heiss: https://github.com/andrewheiss/quarto-wordcount/
+
+  filters:
+    - summary_wordcount.lua
