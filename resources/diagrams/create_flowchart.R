@@ -205,7 +205,7 @@ create_client_summary_table <- function(df) {
   
   # Clean up temporary column
   result <- result %>%
-    select(-temp_clients_dropout)
+    dplyr::select(-temp_clients_dropout)
   
   # Reshape data to have timepoint as rows and treatment as span headers
   # Group by timepoint and create wide format
@@ -270,7 +270,7 @@ create_client_summary_table <- function(df) {
   return (tbl)
 }
 
-tbl_n_dropouts_ids <- create_client_summary_table(dat_clean %>% filter(!client_id %in% c(253, 396) & !is.na(client_group)) %>% select(client_id, treatment, timepoint, IoD_reduced))
+tbl_n_dropouts_ids <- create_client_summary_table(dat_clean %>% filter(!client_id %in% c(253, 396) & !is.na(client_group)) %>% dplyr::select(client_id, treatment, timepoint, IoD_reduced))
 
 
 
@@ -333,7 +333,7 @@ get_exclusion_reason_timepointxtreatment <- function() {
         levels = c("Yes", "No")
       )
     ) %>%
-    select(
+    dplyr::select(
       client_id,
       treatment,
       end_of_trial,
@@ -410,7 +410,7 @@ get_exclusion_reason_timepointxtreatment <- function() {
         `Other reasons`,
         `End of RCT`), 
         ~ . == "Yes")),
-      exclusion_reasons_list = apply(select(., 
+      exclusion_reasons_list = apply(dplyr::select(., 
         `Withdrawal of informed consent`,
         `Probationary supervision expired`,
         `Violation of probation conditions`,
@@ -479,7 +479,7 @@ for(i in seq_along(dropout_lists)) {
   # Filter data for this group
   group_data <- tmp %>%
     filter(client_id %in% client_ids) %>%
-    select(-client_id)
+    dplyr::select(-client_id)
   
   # Create summary table
   if(nrow(group_data) > 0) {
@@ -500,7 +500,7 @@ excluded_before_baseline <- tmp %>%
   filter(!client_id %in% ids_baseline)
 
 tbl_excluded_before_baseline <- excluded_before_baseline %>%
-  select(
+  dplyr::select(
     -client_id
   ) %>%
   tbl_summary(by = treatment)
@@ -518,7 +518,7 @@ ids_flowchart <- c(188, 195, 189, 197, 207, 212, 216, 221, 227, 232, 240, 246, 2
 # Vergleich zeigt: 412 und 511 sind im Vergleich zur Flowchart zu viel!
 tbl_excluded_before_baseline <- excluded_before_baseline %>%
   filter(client_id != 412 & client_id != 511) %>%
-  select(
+  dplyr::select(
     -client_id
   ) %>%
   tbl_summary(by = treatment)

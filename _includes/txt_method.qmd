@@ -31,9 +31,9 @@ To analyze the treatment effects of each individual module, secondary endpoints 
 
 #### Assessment of harms
 
-Stopping guidelines have been prospectively defined for the interim analysis. A participant was excluded if the responsible supervision officer or the online coach reports clear evidence for sexual recidivism or concrete preparations for any sexual recidivism. Re-offenses during participation in the RCT as reported by the community supervisors were derived from the Exclusion Questionnaire (EQ). The EQ assess the reasons for exclusion in a structured manner and had to be filled in by the supervisor during exclusion of a participant (see Supplementary Material for a detailed description). Frequency of recidivism or concrete preparations for recidivism as reported in in-app messages or during working on guided exercises have been assessed continuously (see Supplementary Material Figure A??? - act Critical event).
+Re-offenses during participation in the RCT as reported by the community supervisors were derived from the Exclusion Questionnaire (EQ). The EQ assess the reasons for exclusion in a structured manner and had to be filled in by the supervisor during exclusion of a participant (see Supplementary Material for a detailed description). Frequency of recidivism or concrete preparations for recidivism as reported in in-app messages or during working on guided exercises have been assessed continuously (see Supplementary Material Figure A??? - act Critical event).
 
-Potential harms have been assessed by the Mood and Risk Questionnaire (MRQ). The MRQ was developed to assess acute changes with regard to emotional well-being (suicidal ideations, mental crisis) and thoughts associated with potential re-offenses (see Supplementary Material XXX).The MRQ has not been mentioned in the SAP due to a mistake by the PI.
+Harms were assessed systematically with the Mood and Risk Questionnaire (MRQ). The MRQ was developed to assess acute changes with regard to emotional well-being (suicidal ideations, mental crisis) and thoughts associated with potential re-offenses (see Supplementary Material XXX). Adverse events have been defeined as....
 
 #### Ancillary outcomes
 
@@ -41,13 +41,13 @@ Without predefined hypotheses, some questionnaires have been administered in an 
 
 In order to assess a possible volunteer-effect, the Questionnaire of Non-Participation (QNP) was developed to assess possible reasons for not taking part in the clinical trial and to assess the baseline characteristics of non-participanmts in order to be able to get a representative baseline for all individuals convicted for CSA or CSEM under community supervision in Germany. Up to now, there exists no official statistic on individuals under community supervision at Germany. The QNP was only administered if a potential participant will not take part in the study but has given informed consent to fill out the QNP.
 
-Finally, the Questionnaire for Acceptance of Technology (ATQ) was administered in order to assess acceptance of technology and its predictors within the framework of this project. Further, the Questionnaire of Subjective Therapy Preconditions [SBV-R; @endresFragebogenSubjektivenBehandlungsvoraussetzungen2010] was used to measures the subscale "pressure of pain" of the multidimensional construct of therapy and treatment preconditions in offenders. These questionnaires were parts of dissertation projects and preliminary data from the intermediate analysis has already been published with regard to the ATQ [@schroderAcceptanceWebBasedIntervention2024; @schroderEngagementWebbasedIntervention2025] or will be published elsewhere.
-
-[WAI-SR]
+Finally, the Questionnaire for Acceptance of Technology (ATQ) was administered in order to assess acceptance of technology and its predictors within the framework of this project. Further, the Questionnaire of Subjective Therapy Preconditions (SBV-R) [@endresFragebogenSubjektivenBehandlungsvoraussetzungen2010] was used to measures the subscale "pressure of pain" of the multidimensional construct of therapy and treatment preconditions in offenders. These questionnaires were parts of dissertation projects and preliminary data from the intermediate analysis has already been published with regard to the ATQ [@schroderAcceptanceWebBasedIntervention2024; @schroderEngagementWebbasedIntervention2025] and are not related with the hypthesis.
 
 ### Sample size
 
 A priori, a rate of 50% of screened participants taking voluntarily part in the clinical trial was assumed. Based on the estimation of responsible ministries of two federal states, it was expected to see 1.165 subjects eligible for participation during the recruitment period of which 50% (n = 582) have been expected to participate in the study. Taking a dropout of 26.4% into account, it was expected to see n = 428 subjects completing the HBI. With n = 214 subjects in both conditions it is possible to detect small effects (d = 0.27) with a power of 80% at a significance level α = 5%.
+
+Stopping guidelines have been prospectively defined for the interim analysis. 
 
 ### Statistical analysis
 

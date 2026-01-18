@@ -3,7 +3,7 @@
 #| message: false
 #| warning: false
 #| label: tbl-prim-cares-mmrm
-#| tbl-cap: "Mixed model for repeated measures (MMRM) for primary outcome (CARES total score)."
+#| tbl-cap: "Mixed model for repeated measures (MMRM) for the CARES total score."
 #| html-table-processing: none
 
 library(gtsummary)
@@ -41,8 +41,8 @@ tbl <- fit2 %>%
     bold_labels() %>%
     as_gt() %>%
     gt::tab_options(
-      table.font.names = "Source Sans Pro",
-      table.font.size = 16,
+      #table.font.names = "Source Sans Pro",
+      table.font.size = 12,
       quarto.use_bootstrap = FALSE,
       quarto.disable_processing = TRUE,
       data_row.padding = px(2)
@@ -50,6 +50,7 @@ tbl <- fit2 %>%
 
 # save tbl as image
 gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-prim-cares-mmrm.png")))
+gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-prim-cares-mmrm.pdf")))
 gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-prim-cares-mmrm.docx")))
 
 tbl

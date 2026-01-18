@@ -4,10 +4,6 @@ Between March 01, 2020, and Septembre 30, 2024, n = 385 individulas who committe
 
 <!-- {{< include _includes/fig_flowchart_detailed.qmd >}} -->
 
-Fig-cap: All other dropouts participants have been excluded by their responsible community supervisor.
-
-![Exclusion reasons. Exclusion reasons have been assessed with the Exclusion Questionnaire (EQ). Multiple choices have been possible. The EQ is filled in by the supervision officer during the exclusion process.](resources/tables/tbl-exclusion-reasons-itt-short.png){#tbl-exclusion-reasons width=100%}
-
 ::: {.callout-important}
 genauere Angaben, wieviele Klienten jeweils betreut wurden...
 :::
