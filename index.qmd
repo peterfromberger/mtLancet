@@ -200,12 +200,8 @@ data_sharing_statement: "The source code of the web-based intervention, the cont
 
 acknowledgement:
   funding: "The work was funded by the German Federal Ministry of Education and Research (BMBF, Funding number: 01KR1807A). The funder of the study had no role in study design, data collection, data analysis, data interpretation, or writing of the report."
-  ai_use: "A local LLM (qwen-2.5) has been used exclusively for language and grammar corrections. Coding of the HBI, data analysis and interpretation, creation of figures and diagrams as well as the content of the manuscript have been created without ai."
-  thanks: "The authors would like to thank all participants and community supervisors for their time, trust and willingness to take part in the study."
-
-appendix-style: none
-
-suppress-bibliography: false
+  ai_use: "A local LLM (qwen-3) has been used exclusively for language and grammar corrections."
+  thanks: "The authors would like to thank all participants and community supervisors for their time, trust and willingness to take part in the study. We would like to thank Maissa Hallaq and Nancy Thilo for their support."
 ---
 
 ```{r}
@@ -220,7 +216,7 @@ library(here)
 source(here::here("_scripts/Fromberger_SAP.R"))
 
 # run analysis for secondary endpoints from MBSB
-#source(here::here("_resources/MBSB/analysis_secondary_endpoints.R"))
+source(here::here("_scripts/analysis_secondary_endpoints.R"))
 
 # run sensitivity analysis for main endpoint
 #source(here::here("_resources/MBSB/rbmi.R"))
@@ -232,12 +228,12 @@ source(here::here("_scripts/Fromberger_SAP.R"))
 # source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/prim_mmrm_functions.R"))
 
 # # load functions to create diffscores and their tbls
-# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/prim_diffscore_functions.R"))
-# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/sec_diffscore_functions.R"))
+source(here::here("_scripts/prim_diffscore_functions.R"))
+source(here::here("_scripts/sec_diffscore_functions.R"))
 
 # # load functions to create pairwise tbls
-# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/prim_pairwise_functions.R"))
-# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/sec_pairwise_functions.R"))
+source(here::here("_scripts/prim_pairwise_functions.R"))
+source(here::here("_scripts/sec_pairwise_functions.R"))
 
 # # load functions for who-5
 # source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/who_functions.R"))
@@ -258,6 +254,27 @@ source(here::here("_scripts/Fromberger_SAP.R"))
 <!-- We do not count the words in the summary -->
 {{< summary >}}
 
+{{< pagebreak >}}
+
+<!-- PANEL -->
+<!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
+{{< panel >}} {.content-visible when-format="html"}
+
+::: {.content-visible when-format="docx"}
+## Research in context
+
+### Evidence before this study
+This section should include a description of all the evidence that the authors considered before undertaking this study. Authors should state: the sources (databases, journal or book reference lists, etc) searched; the criteria used to include or exclude studies (including the exact start and end dates of the search), which should not be limited to English language publications; the search terms used; the quality (risk of bias) of that evidence; and the pooled estimate derived from meta-analysis of the evidence, if appropriate. Research in context panels should not have references; anything mentioned that needs referencing should appear in the main text.
+
+### Added value of this study
+Authors should describe here how their findings add value to the existing evidence (including an updated meta-analysis, if appropriate).
+
+### Implications of all the available evidence
+Authors should state the implications for practice or policy and future research of their study combined with existing evidence.
+:::
+
+{{< pagebreak >}}
+
 <!-- INTRODUCTION SECTION -->
 {{< include _includes/txt_introduction.qmd >}}
 
@@ -269,6 +286,8 @@ source(here::here("_scripts/Fromberger_SAP.R"))
 
 <!-- DISCUSSION SECTION -->
 {{< include _includes/txt_discussion.qmd >}}
+
+{{< pagebreak >}}
 
 <!-- CONTRIBUTORS -->
 <!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
@@ -285,6 +304,8 @@ source(here::here("_scripts/Fromberger_SAP.R"))
 <!-- ACKNOWLEDGEMENTS -->
 <!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
 {{< acknowledgements >}}
+
+{{< pagebreak >}}
 
 ## References
 

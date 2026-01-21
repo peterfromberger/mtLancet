@@ -1,0 +1,115 @@
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-sec-pairwise-placebo
+#| tbl-cap: "Pairwise comparisons between pre- and post module scores of secondary endpoints within the placebo arm."
+
+dvs <- c(
+  "cvtrq_calc_total",
+  "rcq_calc_total",
+  "fsozu_calc_total",
+  "ors_calc_total",
+  "ucla_calc_total",
+  "bis_calc_total",
+  "cusi_calc_total",
+  "ders_calc_imp",
+  "narq_calc_ris",
+  "spsi_calc_total",
+  "kvm_calc_total",
+  "esiq_calc_total",
+  "soi_total_score",
+  "ssik_calc_total",
+  "ekk_calc_total",
+  "hbi_calc_total"
+)
+
+dvs_mbsb <- c(
+  "cvtrq_calc_total",
+  "rcq_calc_total",
+  "fsozu_calc_total",
+  "ors_calc_total",
+  "ucla_calc_total",
+  "bis_calc_total",
+  "cusi_calc_total",
+  "ders_calc_imp",
+  "narq_calc_ris",
+  "spsi_calc_total",
+  "kvm_score",
+  "esiq_calc_total",
+  "soi_total_score",
+  "ssik_calc_total",
+  "ekk_calc_total",
+  "hbi_calc_total"
+)
+
+labels <- c(
+  "CVTRQ (total score)",
+  "RCQ (total score)",
+  "F-Soz-U (total score)",
+  "OQMPR (total score)",
+  "UCLA (total score)",
+  "BIS-15 (total score)",
+  "CUSI (total score)",
+  "DERS (subscale impulsivity)",
+  "NARQ (subscale externalizing strategies)",
+  "SPSI-R (total score)",
+  "BMS (total score)",
+  "ESIQ (total score)",
+  "SOI-R (subscale desire for sexual activity with children)",
+  "SSIC (total score)",
+  "EKK-R (total score)",
+  "HBI-19 (total score)"
+)
+
+abbreviations <- c(
+  "*CVTRQ* = Corrections Victoria Treatment Readiness Questionnaire [@caseyAssessingSuitabilityOffender2007]",
+  "*RCQ* = Readiness to Change Questionnaire [@rollnickDevelopmentShortReadiness1992] - German version [@hannoverReadinessChangeQuestionnaire2002] adapted for individuals who committed sexual offenses against children by project team",
+  "*F-Soz-U* = Seven-item short version of the Social Support Questionnaire [@dunkelEvaluationShortformSocial2005]",
+  "*OQMPR* = Questionnaire for the Measurement of Psychological Reactance [@merzQuestionnaireMeasurementPsychological1983]",
+  "*UCLA* = UCLA Loneliness Scale [@russell_ucla_1996] - German short version [@bilskySocialSupportLoneliness1998]",
+  "*BIS-15* = Barratt Impulsiveness Scale-15 [@pattonFactorStructureBarratt1995]",
+  "*CUSI* = Coping Using Sex Inventory [@cortoniSexCopingStrategy2001]",
+  "*DERS* = Difficulties in Emotion Regulation Scale [@gratzMultidimensionalAssessmentEmotion2003]",
+  "*NARQ* = Negative Affect Repair Questionnaire [@schererNegativeAffectRepair2013]",
+  "*SPSI-R* = Social Problem-Solving Inventory Revised [@dzurillaManualSocialProblemSolving2002]",
+  "*BMS* = Bumby Molest Scale [@bumbyAssessingCognitiveDistortions]",
+  "*EKK-R* = Questionnaire on Emotional Congruence with Children-Revised [@mackEmotionaleKongruenzMit2012]",
+  "*ESIQ* = Explicit Sexual Interest Questionnaire [@banseIndirectMeasuresSexual2010]",
+  "*SOI-R* = Sexual Outlet Inventory revised, subscale desire for sexual activity with children [@bbrikenSexualOutletInventory2010]",
+  "*HBI-19* = Hypersexual Behavior Inventory-19 [@kleinValidierungsstudieDeutschenVersion2013]",
+  "*SSIC* = Specific self-efficacy for modifying Sexual Interest in Children [@tozdanSpezifischeSelbstwirksamkeitZur2015]"
+)
+
+types = rep("continuous2", 16)
+
+# set theme for gtsummary tables to Lancet style
+# theme_gtsummary_journal("lancet")
+
+types = rep("continuous2", 16)
+
+subgroup_str = "Placebo"
+
+tbl <- create_pairwise_tbls(mbsb = TRUE, dvs = dvs, dvs_mbsb = dvs_mbsb, types, labels, abbreviations, subgroup_str)
+
+tbl <- tbl %>% as_gt() %>%
+    gt::tab_options(
+      #table.font.names = "Source Sans Pro",
+      table.font.size = 12,
+      quarto.use_bootstrap = FALSE,
+      quarto.disable_processing = TRUE,
+      data_row.padding = px(2),
+      summary_row.padding = gt::px(2),
+      grand_summary_row.padding = gt::px(2),
+      #footnotes.padding = gt::px(2),
+      #source_notes.padding = gt::px(2),
+      row_group.padding = gt::px(2)
+    )
+
+# save tbl as image
+gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-sec-pairwise-placebo.pdf")))
+gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-sec-pairwise-placebo.docx")))
+gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-sec-pairwise-placebo.png")))
+
+tbl
+```

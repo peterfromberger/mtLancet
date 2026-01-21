@@ -11,6 +11,10 @@ bibliography: references.bib
 csl: the-lancet.csl
 
 format:
+  docx:
+    reference-docx: _extensions/frpQuarto/Lancet_Word_Template.docx
+    toc: false
+    number-sections: false
   html:
     theme: [default, _extensions/frpQuarto/styles.scss]
     html-table-processing: none

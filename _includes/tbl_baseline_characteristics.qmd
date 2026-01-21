@@ -1,0 +1,377 @@
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-baseline-characteristics
+#| tbl-cap: "Baseline characteristics by trial arm."
+
+library(here)
+library(tidyr)
+library(gtsummary)
+library(gt)
+
+# global theme for gtsummary
+gtsummary::theme_gtsummary_journal(journal = "lancet")
+
+# read in data
+data <- read.csv(here::here("_data/finalData/randomizedMaster.csv"))
+
+# itt
+data <- data %>%
+    filter(m1s4l7_calc_lession_finished == TRUE) %>%
+    filter(client_id != 194)
+
+# Create a factor variable for age
+data$demoalt_calc_factor <- cut(data$demoalt, breaks = c(18, 21, 31, 41, 51, 61, 71, 81), labels = c("18-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80"), include.lowest = TRUE, right = FALSE)
+
+# clean nationality
+data$calc_sample_supervisor_1_new <- ifelse(
+  data$calc_sample_supervisor_1 == 'Deutsch', 'German', "Other"
+)
+
+# translate highest education
+ordered_labels <- c(
+  "No formal education",
+  "Lower secondary school",
+  "Intermediate secondary school",
+  "Upper secondary school",
+  "University degree"
+)
+
+translation <- c(
+  "Kein Schulabschluss" = "No formal education",
+  "Hauptschulabschluss" = "Lower secondary school",
+  "Realschulabschluss" = "Intermediate secondary school",
+  "Allgemeine oder fachgebundene Hochschulreife (Abitur)" = "Upper secondary school",
+  "Fachhochschulabschluss / Universitätsabschluss" = "University degree"
+)
+
+data$sample_client_1 <- factor(translation[as.character(data$sample_client_1)], levels = ordered_labels, ordered = TRUE)
+
+# translate employment status
+ordered_labels <- c(
+  "Unemployed",
+  "In education/training",
+  "Unskilled worker",
+  "Worker",
+  "Employee",
+  "Self-employed",
+  "Retired"
+)
+
+translation <- c(
+  "Arbeitslos" = "Unemployed",
+  "In Schule/Ausbildung/Lehre" = "In education/training",
+  "Hilfsarbeiter" = "Unskilled worker",
+  "Arbeiter oder Handwerker" = "Worker",
+  "Angestellter oder Beamter" = "Employee",
+  "Selbstständige Tätigkeit" = "Self-employed",
+  `Rente/Pension` = "Retired"
+)
+
+data$sample_client_5a <- factor(translation[as.character(data$sample_client_5a)], levels = ordered_labels, ordered = TRUE)
+
+# translate beziehungsstatus
+ordered_labels <- c("Single", "Married", "Divorced", "Widowed")
+
+translation <- c(
+  'Ledig' = 'Single',
+  'Verheiratet' = 'Married',
+  'Eingetragene Lebenspartnerschaft' = "Married",
+  'Geschieden' = 'Divorced',
+  'Verwitwet' = 'Widowed'
+)
+
+data$sample_client_4 <- factor(translation[as.character(data$sample_client_4)], levels = ordered_labels, ordered = TRUE)
+
+# translate calc_indexdelikt
+ordered_labels <- c(
+  "Hands-off (§184b StGB)",
+  "Hands-on (§176ff StGB)",
+  "Mixed (§176ff and §184b StGB)"
+)
+
+translation <- c(
+  "Nur §176 StGB" = "Hands-on (§176ff StGB)",
+  "Nur §184b StGB" = "Hands-off (§184b StGB)",
+  "§176 und §184b StGB" = "Mixed (§176ff and §184b StGB)"
+)
+
+data$calc_indexdelikt <- factor(translation[as.character(data$calc_indexdelikt)], levels = ordered_labels, ordered = TRUE)
+
+# translate criminal responsibility
+ordered_labels <- c(
+  "Full criminal responsibility",
+  "Diminished criminal responsibility (§21 StGB)",
+  "No criminal responsibility (§20 StGB)"
+)
+
+translation <- c(
+  "Schuldunfähigkeit (§ 20 StGB)" = "No criminal responsibility (§20 StGB)",
+  "volle Schuldfähigkeit" = "Full criminal responsibility",
+  "verminderte Schuldfähigkeit (§ 21 StGB)" = "Diminished criminal responsibility (§21 StGB)"
+)
+
+data$sample_supervisor_9 <- factor(translation[as.character(data$sample_supervisor_9)], levels = ordered_labels, ordered = TRUE)
+
+# translate prior placement
+ordered_labels <- c(
+  "Suspended sentence",
+  "Prison",
+  "High security hospital",
+  "Preventive detention"
+)
+
+translation <- c(
+  "JVA" = "Prison",
+  "MRV" = "High security hospital",
+  "Sicherungsverwahrung" = "Preventive detention",
+  "Keine Unterbringung" = "Suspended sentence"
+)
+
+data$sample_supervisor_14 <- factor(translation[as.character(data$sample_supervisor_14)], levels = ordered_labels, ordered = TRUE)
+
+# translate static-99
+ordered_labels <- c(
+  "0-1 (low risk)",
+  "2-3 (low-medium risk)",
+  "4-5 (medium-high risk)",
+  "6+ (high risk)"
+)
+
+translation <- c(
+  "0-1 (geringes Risiko)" = "0-1 (low risk)",
+  "2-3 (gering-moderates Risiko)" = "2-3 (low-medium risk)",
+  "4-5 (moderates-hohes Risiko)" = "4-5 (medium-high risk)",
+  "6+ (hohes Risiko)" = "6+ (high risk)"
+)
+
+data$static99_modified_calc_factor <- factor(translation[as.character(data$static99_modified_calc_factor)], levels = ordered_labels, ordered = TRUE)
+
+# translate type of supervision
+ordered_labels <- c(
+  "Probation service",
+  "Post-release supervision"
+)
+
+translation <- c(
+  "Bewährungshilfe" = "Probation service",
+  "Führungsaufsicht" = "Post-release supervision"
+)
+
+data$sample_supervisor_21 <- factor(translation[as.character(data$sample_supervisor_21)], levels = ordered_labels, ordered = TRUE)
+
+# zusammenführen der für Bewährungshilfe und Führingsaufsicht getrennt erfassten fälle
+data$sample_supervisor_therapieweisung_all <- factor(
+  ifelse(
+    rowSums(data[, c("sample_supervisor_25", "sample_supervisor_35")] == "Ja", na.rm = TRUE) > 0,
+    "Yes",
+    "No"
+  ),
+  levels = c("Yes", "No")
+)
+
+# zusammenführen der für Bewährungshilfe und Führingsaufsicht getrennt erfassten fälle
+data$sample_supervisor_therapieweisung_all <- factor(
+  ifelse(
+    rowSums(data[, c("sample_supervisor_25", "sample_supervisor_35")] == "Ja", na.rm = TRUE) > 0,
+    "Yes",
+    "No"
+  ),
+  levels = c("Yes", "No")
+)
+
+data$therapy_weisung_fact <- paste(data$sample_supervisor_therapieweisung_all, data$stratabehandl, sep = "_")
+
+# translate type of supervision
+ordered_labels <- c(
+  "No treatment order / currently in treatment",
+  "No treatment order / currently NOT in treatment",
+  "Treatment order / currently in treatment",
+  "Treatment order / currently NOT in treatment"
+)
+
+translation <- c(
+  "No_Ja" = "No treatment order / currently in treatment",
+  "No_Nein" = "No treatment order / currently NOT in treatment",
+  "Yes_Ja" = "Treatment order / currently in treatment",
+  "Yes_Nein" = "Treatment order / currently NOT in treatment"
+)
+
+data$therapy_weisung_fact <- factor(translation[as.character(data$therapy_weisung_fact)], levels = ordered_labels, ordered = TRUE)
+
+# zusmmenführung bisherige dauer der unterstellung
+data$combined_dauer_unterstellung_bisher <- coalesce(data$sample_supervisor_23, data$sample_supervisor_32)
+
+# zusmmenführung gesamtdauer der unterstellung
+data$combined_dauer_unterstellung_gesamt <- coalesce(data$sample_supervisor_22, data$sample_supervisor_31_a)
+
+data$combined_dauer_unterstellung_gesamt <- as.double(data$combined_dauer_unterstellung_gesamt)
+
+# zusmmenführung anzahl treffen mit supervisor
+data$combined_anzahl_treffen_bw <- coalesce(data$sample_supervisor_24, data$sample_supervisor_33)
+
+# translate levels of psychiatric diagnosis
+data$sample_supervisor_6 <- factor(data$sample_supervisor_6, levels=c("Ja", "Nein"), labels=c("Yes", "No"))
+
+# factorize f65.4 diagnosis
+data$sample_supervisor_6a_calc_f65.4 <- factor(data$sample_supervisor_6a_calc_f65.4, levels=c("Nein", "Ja"), labels=c("No", "Yes"))
+
+# ersetze NAs mit 0 in sample_supervisor_10a, wenn sample_supervisor_10 == Nein
+data$sample_supervisor_10a[is.na(data$sample_supervisor_10a) & data$sample_supervisor_10 == "Nein"] <- 0
+
+# translate levels of psychosocial functioning
+data$phq_11 <- factor(data$phq_11, levels=c("Überhaupt nicht erschwert",
+  "Etwas erschwert",
+  "Relativ stark erschwert",
+  "Sehr stark erschwert"), labels=c("Not difficult at all",
+  "Somewhat difficult",
+  "Very difficult",
+  "Extremely difficult"))
+
+data$stratabehandl <- factor(data$stratabehandl, levels=c("Ja",
+  "Nein"), labels=c("Yes",
+  "No"))
+
+# create table
+tbl <- data %>%
+  dplyr::select(
+    client_group,
+    demoalt_calc_factor,
+    sample_client_2,
+    sample_client_1,
+    sample_client_5a,
+    sample_client_4,
+
+    # criminological
+    calc_indexdelikt,
+    sample_supervisor_10a,  # Term of imprisonment (month)
+    sample_supervisor_9,
+    static99_modified_calc_factor,
+
+    sample_supervisor_21,
+    combined_dauer_unterstellung_gesamt,
+
+    # mental health
+    sample_supervisor_6,
+    stratabehandl,
+    phq_11
+    ) %>%
+  tbl_summary(
+    by=client_group,
+    type = list(
+      combined_dauer_unterstellung_gesamt ~ "continuous",
+      sample_supervisor_6 ~ "categorical",
+      stratabehandl ~ "categorical"
+    ),
+    statistic = list(
+      all_continuous() ~ "{mean} ({min} - {max})",
+      all_categorical() ~ "{n} ({p}%)"
+    ),
+    label = list(demoalt_calc_factor = "Age",
+                 sample_client_1 = "Highest education",
+                 sample_client_2 = "Years of education",
+                 sample_client_4 = "Marital status",
+                 sample_client_5a = "Employment status",
+
+                 calc_indexdelikt = "Conviction under the German Penal Code (StGB)",
+                 sample_supervisor_21 = "Type of supervision",
+                 sample_supervisor_10a = "Term of imprisonment (month)",
+                 combined_dauer_unterstellung_gesamt = "Duration of community supervision (month)",
+                 sample_supervisor_9 = "Criminal responsibility (StGB)",
+
+                 static99_modified_calc_factor = "Static recidivism risk",
+                 stratabehandl = "Psychotherapy and/or medical treatment",
+                 sample_supervisor_6 = "Psychiatric diagnosis",
+                 phq_11 = "Psychosocial functioning"
+            ),
+    missing_text = "Missing",
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Age",
+    footnote = "data extracted from case files"
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Highest education",
+    footnote = "information provided by the participant (self-report)"
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Years of education",
+    footnote = "information provided by the participant (self-report)"
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Marital status",
+    footnote = "information provided by the participant (self-report)"
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Employment status",
+    footnote = "information provided by the participant (self-report)"
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Conviction under the German Penal Code (StGB)",
+    footnote = "data extracted from case files"
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Term of imprisonment (imposed)",
+    footnote = "information provided by supervision officer"
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Criminal responsibility (StGB)",
+    footnote = "information provided by supervision officer"
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Static recidivism risk",
+    footnote = "reduced Static-99 filled in by staff members based on data extracted from case files; all staff member have been trained for the Static-99"
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Type of supervision",
+    footnote = "information provided by supervision officer; in the German legal system, probation service refers to supervision and support during a suspended sentence, while post-release supervision (Führungsaufsicht) is a court-ordered measure of control and assistance after imprisonment, mandatory for individuals released from high security hospitals (MRV)."
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Duration of community supervision (month)",
+    footnote = "information provided by supervision officer"
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Psychiatric diagnosis",
+    footnote = "Supervision officer’s information on psychiatric diagnoses with regard to ICD-10 within the ITT sample (multiple selections allowed). The supervision officers were required to complete an online questionnaireafter the participant had been enrolled in the study. They were asked to indicate whether they were aware of any psychiatric diagnosis for their participant and, if so, which one. The supervision officers did not make the diagnosis themselves. The information on ICD-10 diagnosis was extracted from the provided text input (see Supplementary Material XXXX for a detailed description of the extraction method)."
+  ) %>%
+  modify_table_styling(
+    columns = label,
+    rows = label == "Psychosocial functioning",
+    footnote = "assessed with the Patient Health Questionnaire (PQH-D, Löwe et al., 2002)"
+  ) %>%
+  add_overall() %>%
+  bold_labels() %>%
+  as_gt() %>%
+    gt::tab_options(
+      #table.font.names = "Source Sans Pro",
+      table.font.size = 12,
+      quarto.use_bootstrap = FALSE,
+      quarto.disable_processing = TRUE,
+      data_row.padding = px(2),
+      summary_row.padding = gt::px(2),
+      grand_summary_row.padding = gt::px(2),
+      #footnotes.padding = gt::px(2),
+      #source_notes.padding = gt::px(2),
+      row_group.padding = gt::px(2)
+    )
+
+# save tbl as image
+gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-baseline-characteristics.pdf")))
+gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-baseline-characteristics.docx")))
+gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-baseline-characteristics.png")))
+
+tbl
+```
