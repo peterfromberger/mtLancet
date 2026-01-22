@@ -987,7 +987,7 @@ if (verbose) clcl
 matching <-
   clcl %>%
   inner_join(pseudonyms) %>%
-  dplyr::select(ID = mnpaid, client_id = id, client_group)
+  dplyr::select(ID = mnpaid, client_id = id, client_group, excluded_at, status)
 if (verbose) matching
 
 #################
@@ -2116,7 +2116,7 @@ if (verbose) tab_exclusions$reason %>% table
 
 
 ## status labels
-status_labels <- c('Ja', 'Nein')
+status_labels <- c('Yes', 'No')
 status_levels = c(1,2)
 
 q_exclusion <-
@@ -2710,6 +2710,7 @@ module_btimes_module1 <- module_btimes %>% dplyr::filter(module=="Module 1") %>%
   dplyr::select("Beginn_Modul_1", client_id)
 
 df_times <- module_btimes %>%
+  dplyr::mutate(module_duration_days = as.numeric(time_post-time_pre)) %>%
   dplyr::mutate(recruitmentdate = recruitmentdate %>% as.POSIXct,
                 `Zeit_seit_Rekrutierung_in_Jahren` = as.numeric(time_post-recruitmentdate)/365.25)
 df_times %<>% base::merge(., module_btimes_module1, all.x = TRUE) %>%
@@ -2725,6 +2726,7 @@ levels(df_times$timepoint) %<>% paste(., "(post)")
 dat_clean %<>% merge(., df_times %>%
                        dplyr::select(client_id,
                                      timepoint,
+                                     module_duration_days,
                                      Zeit_seit_Beginn_Modul_1_in_Jahren,
                                      Zeit_seit_Rekrutierung_in_Jahren,
                                      `Zeit zwischen Beginn Modul 1 und Ausschluss (Tage)`),

@@ -17,9 +17,7 @@ gtsummary::theme_gtsummary_journal(journal = "lancet")
 data <- read.csv(here::here("_data/finalData/randomizedMaster.csv"))
 
 # itt
-data <- data %>%
-    filter(m1s4l7_calc_lession_finished == TRUE) %>%
-    filter(client_id != 194)
+data <- data %>% filter(client_id %in% client_list)
 
 # Create a factor variable for age
 data$demoalt_calc_factor <- cut(data$demoalt, breaks = c(18, 21, 31, 41, 51, 61, 71, 81), labels = c("18-20", "21-30", "31-40", "41-50", "51-60", "61-70", "71-80"), include.lowest = TRUE, right = FALSE)
@@ -195,7 +193,7 @@ translation <- c(
   "No_Ja" = "No treatment order / currently in treatment",
   "No_Nein" = "No treatment order / currently NOT in treatment",
   "Yes_Ja" = "Treatment order / currently in treatment",
-  "Yes_Nein" = "Treatment order / currently NOT in treatment"
+  "Yes_Nein" = "Treatment order / cur    icd_male_2_3,rently NOT in treatment"
 )
 
 data$therapy_weisung_fact <- factor(translation[as.character(data$therapy_weisung_fact)], levels = ordered_labels, ordered = TRUE)
@@ -237,120 +235,162 @@ data$stratabehandl <- factor(data$stratabehandl, levels=c("Ja",
 tbl <- data %>%
   dplyr::select(
     client_group,
-    demoalt_calc_factor,
+    demoalt,
     sample_client_2,
     sample_client_1,
     sample_client_5a,
     sample_client_4,
 
-    # criminological
-    calc_indexdelikt,
-    sample_supervisor_10a,  # Term of imprisonment (month)
-    sample_supervisor_9,
-    static99_modified_calc_factor,
+    icd_male_2_2,
+    icd_male_2_4,
 
-    sample_supervisor_21,
-    combined_dauer_unterstellung_gesamt,
+    # criminological
+    strataindex,
+    stratabetreu,
+    stratarueckfall,
+    sample_supervisor_10a,  # Term of imprisonment (month)
 
     # mental health
-    sample_supervisor_6,
+    sample_supervisor_therapieweisung_all,
     stratabehandl,
-    phq_11
-    ) %>%
+    phq_calc_MajorDepressivesSyndrom,
+    phq_calc_AndereDepressiveSyndrome,
+    phq_calc_PanikSyndrom,
+    phq_calc_AndereAngstSyndrome,
+    phq_calc_BulimiaNervosa,
+    phq_calc_BingeEating,
+    phq_calc_Alkoholsyndrom,
+    phq_calc_SomatoformeSyndrome,
+    phq_11,
+    icd_calc_male_6D30_Exhibitionistische_Störung,
+    icd_calc_male_6D31_Voyeuristische_Störung,
+    icd_calc_male_6D32_Pädophile_Störung,
+    icd_calc_male_6D33_Sexuell_sadistische_Störung,
+    icd_calc_male_6D34_Frotteuristische_Störung,
+    icd_calc_male_6D35_Sonstige_paraphile_Störung
+    
+  ) %>%
+  mutate(
+        phq_calc_MajorDepressivesSyndrom = factor(phq_calc_MajorDepressivesSyndrom, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        phq_calc_AndereDepressiveSyndrome = factor(phq_calc_AndereDepressiveSyndrome, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        phq_calc_PanikSyndrom = factor(phq_calc_PanikSyndrom, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        phq_calc_AndereAngstSyndrome = factor(phq_calc_AndereAngstSyndrome, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        phq_calc_BulimiaNervosa = factor(phq_calc_BulimiaNervosa, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        phq_calc_BingeEating = factor(phq_calc_BingeEating, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        phq_calc_Alkoholsyndrom = factor(phq_calc_Alkoholsyndrom, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        phq_calc_SomatoformeSyndrome = factor(phq_calc_SomatoformeSyndrome, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        strataindex = factor(strataindex, levels = c('Auch §§ 176, 176a, 176b StGB', 'Nur § 184b'), labels=c("Hands-on (at least one conviction §176ff StGB)", "Hands-off (only §184b StGB)")),
+        stratabetreu = factor(stratabetreu, levels = c('Führungsaufsicht', 'Bewährungshilfe ohne Führungsaufsicht'), labels=c("post-release supervision", "community supervision")),
+        stratarueckfall = factor(stratarueckfall, levels = c('0 - 3', '4 - 12'), labels=c("Low-medium", "Medium-high risk")),
+        icd_calc_male_6D30_Exhibitionistische_Störung = factor(icd_calc_male_6D30_Exhibitionistische_Störung, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        icd_calc_male_6D31_Voyeuristische_Störung = factor(icd_calc_male_6D31_Voyeuristische_Störung, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        icd_calc_male_6D32_Pädophile_Störung = factor(icd_calc_male_6D32_Pädophile_Störung, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        icd_calc_male_6D33_Sexuell_sadistische_Störung = factor(icd_calc_male_6D33_Sexuell_sadistische_Störung, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        icd_calc_male_6D34_Frotteuristische_Störung = factor(icd_calc_male_6D34_Frotteuristische_Störung, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        icd_calc_male_6D35_Sonstige_paraphile_Störung = factor(icd_calc_male_6D35_Sonstige_paraphile_Störung, levels=c("Ja", "Nein"), labels=c("Yes", "No")),
+        icd_male_2_2 = factor(icd_male_2_2, levels=c('Weiblich', 'Männlich', 'Trans*/Transsexuell', 'Weder weiblich, männlich noch trans*/transsexuell'), labels=c("Female", "Male", "Trans/Transsexual", "Other")),
+        icd_male_2_4 = factor(icd_male_2_4, levels=c('...ausschließlich heterosexuell', '...vorwiegend heterosexuell', '...bisexuell', '...vorwiegend homosexuell', '...ausschließlich homosexuell/schwul', '...asexuell', 'anderes'), labels=c('Exclusively heterosexual', 'Predominantly heterosexual', 'Bisexual', 'Predominantly homosexual', 'Exclusively homosexual', 'Asexual', 'Other'))
+  ) %>%
   tbl_summary(
     by=client_group,
     type = list(
-      combined_dauer_unterstellung_gesamt ~ "continuous",
-      sample_supervisor_6 ~ "categorical",
-      stratabehandl ~ "categorical"
+      stratabehandl ~ "categorical",
+      strataindex ~ "categorical",
+      stratabetreu ~ "categorical",
+      stratarueckfall ~ "categorical",
+      sample_supervisor_therapieweisung_all ~ "categorical",
+      phq_calc_MajorDepressivesSyndrom  ~ "categorical",
+      phq_calc_AndereDepressiveSyndrome  ~ "categorical",
+      phq_calc_PanikSyndrom  ~ "categorical",
+      phq_calc_AndereAngstSyndrome  ~ "categorical",
+      phq_calc_BulimiaNervosa  ~ "categorical",
+      phq_calc_BingeEating  ~ "categorical",
+      phq_calc_Alkoholsyndrom  ~ "categorical",
+      phq_calc_SomatoformeSyndrome  ~ "categorical",
+      phq_11  ~ "categorical",
+      icd_calc_male_6D30_Exhibitionistische_Störung  ~ "categorical",
+      icd_calc_male_6D31_Voyeuristische_Störung  ~ "categorical",
+      icd_calc_male_6D32_Pädophile_Störung  ~ "categorical",
+      icd_calc_male_6D33_Sexuell_sadistische_Störung  ~ "categorical",
+      icd_calc_male_6D34_Frotteuristische_Störung  ~ "categorical",
+      icd_calc_male_6D35_Sonstige_paraphile_Störung  ~ "categorical",
+      icd_male_2_2  ~ "categorical",
+      icd_male_2_4  ~ "categorical"
     ),
     statistic = list(
       all_continuous() ~ "{mean} ({min} - {max})",
       all_categorical() ~ "{n} ({p}%)"
     ),
-    label = list(demoalt_calc_factor = "Age",
-                 sample_client_1 = "Highest education",
-                 sample_client_2 = "Years of education",
-                 sample_client_4 = "Marital status",
-                 sample_client_5a = "Employment status",
+    label = list(
+      demoalt = "Age",
+      sample_client_1 = "Highest education",
+      sample_client_2 = "Years of education",
+      sample_client_4 = "Marital status",
+      sample_client_5a = "Employment status",
 
-                 calc_indexdelikt = "Conviction under the German Penal Code (StGB)",
-                 sample_supervisor_21 = "Type of supervision",
-                 sample_supervisor_10a = "Term of imprisonment (month)",
-                 combined_dauer_unterstellung_gesamt = "Duration of community supervision (month)",
-                 sample_supervisor_9 = "Criminal responsibility (StGB)",
+      sample_supervisor_10a = "Term of imprisonment (month)",
+      combined_dauer_unterstellung_gesamt = "Duration of community supervision (month)",
 
-                 static99_modified_calc_factor = "Static recidivism risk",
-                 stratabehandl = "Psychotherapy and/or medical treatment",
-                 sample_supervisor_6 = "Psychiatric diagnosis",
-                 phq_11 = "Psychosocial functioning"
-            ),
+      stratabehandl = "Additional treatment",
+      sample_supervisor_therapieweisung_all = "Treatment ordered by court",
+      stratabetreu = "Type of supervision",
+      strataindex = "Offense type",
+      stratarueckfall = "Static recidivism risk",
+
+      phq_calc_MajorDepressivesSyndrom = "Major depressive syndrome",
+      phq_calc_AndereDepressiveSyndrome = "Other depressive syndromes",
+      phq_calc_PanikSyndrom = "Panic syndrome",
+      phq_calc_AndereAngstSyndrome = "Other anxiety syndromes",
+      phq_calc_BulimiaNervosa = "Bulimia nervosa",
+      phq_calc_BingeEating = "Binge eating",
+      phq_calc_Alkoholsyndrom = "Alcohol syndrome",
+      phq_calc_SomatoformeSyndrome = "Somatoform syndrome",
+      phq_11 = "Psychosocial functioning",
+      icd_calc_male_6D30_Exhibitionistische_Störung  = "6D30 Exhibitionistic disorder",
+      icd_calc_male_6D31_Voyeuristische_Störung  = "6D31 Voyeuristic disorder",
+      icd_calc_male_6D32_Pädophile_Störung = "6D32 Pedophilic disorder",
+      icd_calc_male_6D33_Sexuell_sadistische_Störung = "6D33 Coercive sexual sadism disorder",
+      icd_calc_male_6D34_Frotteuristische_Störung = "6D34 Frotteuristic disorder",
+      icd_calc_male_6D35_Sonstige_paraphile_Störung = "6D35 Other paraphilic disorder (non-consenting)",
+      icd_male_2_2 = "Gender",
+      icd_male_2_4 = "Sexual orientation"
+    ),
     missing_text = "Missing",
   ) %>%
   modify_table_styling(
     columns = label,
-    rows = label == "Age",
-    footnote = "data extracted from case files"
+    rows = label %in% c("Major depressive syndrome", "Other depressive syndromes", "Panic syndrome", "Other anxiety syndromes", "Bulimia nervosa", "Binge eating", "Alcohol syndrome", "Somatoform syndrome"),
+    footnote = "assessed with the PHQ-D (LIT)."
   ) %>%
   modify_table_styling(
     columns = label,
-    rows = label == "Highest education",
-    footnote = "information provided by the participant (self-report)"
+    rows = label %in% c("6D30 Exhibitionistic disorder", "6D34 Frotteuristic disorder", "6D35 Other paraphilic disorder (non-consenting)", "6D33 Coercive sexual sadism disorder", "6D31 Voyeuristic disorder", "6D32 Pedophilic disorder", "Gender", "Sexual orientation"),
+    footnote = "assessed with the ICD-11 screener (LIT), a self-report measure which items follow the ICD-11 diagnostic criteria for paraphilic disorders."
   ) %>%
   modify_table_styling(
     columns = label,
-    rows = label == "Years of education",
-    footnote = "information provided by the participant (self-report)"
+    rows = label %in% c("Highest education", "Years of education", "Marital status", "Employment status"),
+    footnote = "information provided by the participant (SSQ-P)."
   ) %>%
   modify_table_styling(
     columns = label,
-    rows = label == "Marital status",
-    footnote = "information provided by the participant (self-report)"
+    rows = label %in% c("Conviction under the German Penal Code (StGB)", "Additional treatment", "Age", "Offense type"),
+    footnote = "data extracted from case files by trained staff (SSQ-CF)."
   ) %>%
   modify_table_styling(
     columns = label,
-    rows = label == "Employment status",
-    footnote = "information provided by the participant (self-report)"
-  ) %>%
-  modify_table_styling(
-    columns = label,
-    rows = label == "Conviction under the German Penal Code (StGB)",
-    footnote = "data extracted from case files"
-  ) %>%
-  modify_table_styling(
-    columns = label,
-    rows = label == "Term of imprisonment (imposed)",
-    footnote = "information provided by supervision officer"
-  ) %>%
-  modify_table_styling(
-    columns = label,
-    rows = label == "Criminal responsibility (StGB)",
-    footnote = "information provided by supervision officer"
+    rows = label %in% c("Term of imprisonment (month)", "Duration of community supervision (month)", "Treatment ordered by court"),
+    footnote = "information provided by supervision officer (SSQ-SO)."
   ) %>%
   modify_table_styling(
     columns = label,
     rows = label == "Static recidivism risk",
-    footnote = "reduced Static-99 filled in by staff members based on data extracted from case files; all staff member have been trained for the Static-99"
+    footnote = "data extracted from case files by trained staff; since the Static-99 is only defined for hands-on offenders, we used the reduced Static-99 as mentioned by [LIT]; all staff member have been trained for the Static-99."
   ) %>%
   modify_table_styling(
     columns = label,
     rows = label == "Type of supervision",
-    footnote = "information provided by supervision officer; in the German legal system, probation service refers to supervision and support during a suspended sentence, while post-release supervision (Führungsaufsicht) is a court-ordered measure of control and assistance after imprisonment, mandatory for individuals released from high security hospitals (MRV)."
-  ) %>%
-  modify_table_styling(
-    columns = label,
-    rows = label == "Duration of community supervision (month)",
-    footnote = "information provided by supervision officer"
-  ) %>%
-  modify_table_styling(
-    columns = label,
-    rows = label == "Psychiatric diagnosis",
-    footnote = "Supervision officer’s information on psychiatric diagnoses with regard to ICD-10 within the ITT sample (multiple selections allowed). The supervision officers were required to complete an online questionnaireafter the participant had been enrolled in the study. They were asked to indicate whether they were aware of any psychiatric diagnosis for their participant and, if so, which one. The supervision officers did not make the diagnosis themselves. The information on ICD-10 diagnosis was extracted from the provided text input (see Supplementary Material XXXX for a detailed description of the extraction method)."
-  ) %>%
-  modify_table_styling(
-    columns = label,
-    rows = label == "Psychosocial functioning",
-    footnote = "assessed with the Patient Health Questionnaire (PQH-D, Löwe et al., 2002)"
+    footnote = "information provided by supervision officer (SSQ-SO); in the German legal system, probation service refers to supervision and support during a suspended sentence or post-release support after prison, while post-release supervision (Führungsaufsicht) is a court-ordered measure of control and assistance after imprisonment in a high security hospital."
   ) %>%
   add_overall() %>%
   bold_labels() %>%

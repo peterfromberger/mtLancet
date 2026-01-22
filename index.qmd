@@ -9,6 +9,7 @@ date: last-modified
 date-format: long
 
 lightbox: true
+notebook-links: false
 
 authors:
   - name: Peter Fromberger
@@ -41,7 +42,6 @@ authors:
   - name: Safiye Tozdan
     degrees: PhD
     is_prof: false
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "ST"
     affiliations:
       - ref: UKE
@@ -51,7 +51,6 @@ authors:
   - name: Andreas Leha
     degrees: PhD
     is_prof: false
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "AL"
     affiliations:
       - ref: UMGmath
@@ -59,7 +58,6 @@ authors:
   - name: Fabian Kück
     degrees: PhD
     is_prof: false
-    declaration_of_interests: "conflict-of-interest is here?"
     initials: "FK"
     affiliations:
       - ref: UMGmath
@@ -69,14 +67,12 @@ authors:
   - name: Louisa Neumann
     degrees: MSc
     is_prof: false
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "LM"
     affiliations:
       - ref: Wun
   - name: Sabine Horn
     degrees: MSc
     is_prof: false
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "SH"
     affiliations:
       - ref: UzK
@@ -84,7 +80,6 @@ authors:
   - name: Claudia Buntrock
     degrees: PhD
     is_prof: true
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "CB"
     affiliations:
       - ref: Mag
@@ -100,7 +95,6 @@ authors:
   - name: Sonja Etzler
     degrees: PhD
     is_prof: false
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "SE"
     affiliations:
       - ref: KrimZ
@@ -108,7 +102,6 @@ authors:
   - name: Martin Rettenberger
     degrees: PhD
     is_prof: true
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "MR"
     affiliations:
       - ref: KrimZ
@@ -117,7 +110,6 @@ authors:
   - name: Anja Schiemann
     degrees: PhD
     is_prof: true
-    declaration_of_interests: "conflict-of-interest is here"
     initials: "AS"
     affiliations:
       - ref: UzK
@@ -126,7 +118,6 @@ authors:
   - name: Peer Briken
     degrees: MD
     is_prof: true
-    declaration_of_interests: "conflict-of-interest is here."
     initials: "PB"
     affiliations:
       - ref: UKE
@@ -175,33 +166,6 @@ affiliations:
     name: Institute of Social Medicine and Health Systems Research (ISMHSR), Otto-von-Guericke-University Magdeburg
     city: Magdeburg
     country: Germany
-
-summary:
-  background: |
-    Sexual offenders often present with diverse risk profiles requiring differentiated interventions [@knuth84].
-  methods: |
-    We conducted a randomized controlled trial evaluating a web-based relapse prevention tool. The trial was prospectively registered on April 24, 2020 in the [German Clinical Trial Register (DRKS00021256)](https://drks.de/search/en/trial/DRKS00021256).
-  findings: |
-    Preliminary findings suggest significant reductions in dynamic risk factors.
-  interpretations: |
-    Taken together, the intervention did not lead to measurable changes in the primary CARES outcome but was associated with selected improvements in secondary endpoints — most notably reduced explicit sexual interest and strengthened working alliance with coaches and supervisors — without indications of harm also for low-risk individuals.
-  funding: |
-    The work was funded by the German Federal Ministry of Education and Research (BMBF, Funding number: 01KR1807A). The funder of the study had no role in study design, data collection, data analysis, data interpretation, or writing of the report.
-
-panel:
-  evidence_before_this_study: |
-    This section should include a description of all the evidence that the authors considered before undertaking this study. Authors should state: the sources (databases, journal or book reference lists, etc) searched; the criteria used to include or exclude studies (including the exact start and end dates of the search), which should not be limited to English language publications; the search terms used; the quality (risk of bias) of that evidence; and the pooled estimate derived from meta-analysis of the evidence, if appropriate. Research in context panels should not have references; anything mentioned that needs referencing should appear in the main text.
-  added_value_of_this_study: |
-    Authors should describe here how their findings add value to the existing evidence (including an updated meta-analysis, if appropriate).
-  implications_of_all_the_available_evidence: |
-    Authors should state the implications for practice or policy and future research of their study combined with existing evidence.
-
-data_sharing_statement: "The source code of the web-based intervention, the content of the intervention as well as placebo arm are available online under an open source license after publishing. De-identified data will be made available on reasonable request from the corresponding author (peter.fromberger@medizin.uni-goettingen.de). Data access requests, which can be submitted via email to the corresponding author, must include a detailed description of the research question and aims. Data sharing will be authorized following proposal approval and the execution of a signed data access agreement, strictly for scientific use."
-
-acknowledgement:
-  funding: "The work was funded by the German Federal Ministry of Education and Research (BMBF, Funding number: 01KR1807A). The funder of the study had no role in study design, data collection, data analysis, data interpretation, or writing of the report."
-  ai_use: "A local LLM (qwen-3) has been used exclusively for language and grammar corrections."
-  thanks: "The authors would like to thank all participants and community supervisors for their time, trust and willingness to take part in the study. We would like to thank Maissa Hallaq and Nancy Thilo for their support."
 ---
 
 ```{r}
@@ -224,9 +188,6 @@ source(here::here("_scripts/analysis_secondary_endpoints.R"))
 # run script to remove outlier
 #source(here::here("_resources/MBSB/remove_outlier.R"))
 
-# load function to create tbl_mmrm
-# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/prim_mmrm_functions.R"))
-
 # # load functions to create diffscores and their tbls
 source(here::here("_scripts/prim_diffscore_functions.R"))
 source(here::here("_scripts/sec_diffscore_functions.R"))
@@ -234,40 +195,39 @@ source(here::here("_scripts/sec_diffscore_functions.R"))
 # # load functions to create pairwise tbls
 source(here::here("_scripts/prim_pairwise_functions.R"))
 source(here::here("_scripts/sec_pairwise_functions.R"))
-
-# # load functions for who-5
-# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/who_functions.R"))
-
-# # load functions for wai-sr
-# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/wai_functions.R"))
-
-# # load functions for mrq
-# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/mrq_functions_prepluspost.R"))
-# source(here::here("paper/clinical_trial_LancetDigitalHealth/_scripts/mrq_functions.R"))
-
-# # load functions for plots
-# source(here::here("                    _scripts/prim_plot_functions.R"))
 ```
 
 <!-- SUMMARY -->
-<!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
-<!-- We do not count the words in the summary -->
-{{< summary >}}
+## Summary
+
+### Background:
+Sexual offenders often present with diverse risk profiles requiring differentiated interventions.
+
+### Methods:
+We conducted a randomized controlled trial evaluating a web-based relapse prevention tool. The trial was prospectively registered on April 24, 2020 in the [German Clinical Trial Register (DRKS00021256)](https://drks.de/search/en/trial/DRKS00021256).
+
+### Findings: 
+Preliminary findings suggest significant reductions in dynamic risk factors.
+
+### Interpretations:
+Taken together, the intervention did not lead to measurable changes in the primary CARES outcome but was associated with selected improvements in secondary endpoints — most notably reduced explicit sexual interest and strengthened working alliance with coaches and supervisors — without indications of harm also for low-risk individuals.
+
+### Funding:
+The work was funded by the German Federal Ministry of Education and Research (BMBF, Funding number: 01KR1807A). The funder of the study had no role in study design, data collection, data analysis, data interpretation, or writing of the report.
 
 {{< pagebreak >}}
 
 <!-- PANEL -->
-<!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
-{{< panel >}} {.content-visible when-format="html"}
-
-::: {.content-visible when-format="docx"}
+::: {.research-panel}
 ## Research in context
 
 ### Evidence before this study
 This section should include a description of all the evidence that the authors considered before undertaking this study. Authors should state: the sources (databases, journal or book reference lists, etc) searched; the criteria used to include or exclude studies (including the exact start and end dates of the search), which should not be limited to English language publications; the search terms used; the quality (risk of bias) of that evidence; and the pooled estimate derived from meta-analysis of the evidence, if appropriate. Research in context panels should not have references; anything mentioned that needs referencing should appear in the main text.
 
+Before undertaking this study, a XXX search revealed no results for high-quality studies on the efficacy of WBIs in reducing risk factors for recidivism of individuals who have already committed CSA or CSEM offences. These results have been published online 2021 [LIT: Sonja review]. In summary, despite the fact that already promoted and online WBIs have been described only based on their attractiveness for MIPs (e.g. the number of visits of the website), there existed no study reporting on the effectiveness of theses WBIs. In the meanwhile, the results of one placebo-controlled randomized trial of an WBI exclusively for CSEM have been reported in 2022. The RCT demonstrated for the first time a significant reduction of time spend on viewing CSEM in the intervention arm compared to the placebo arm, but the effect size as well as the sample size was small. In 2024, an updated review revealed no more evidence base for the effectiveness of WBIs, . To the best of our knowledge, at the moment there is no evidence for the effectiveness of WBIS, wether in the secondary nor in the tertiary prevention of CSA and CSEM.
+
 ### Added value of this study
-Authors should describe here how their findings add value to the existing evidence (including an updated meta-analysis, if appropriate).
+The study provides for the first time data on the effectiveness of a WBI for individuals who have already committed CSA or CSEM offences. While the main outcome revealed no superiority of the WBI against a placebo condition, secondary outcomes provide hints for superiority of the intervention arm in reducing sexual interest in children and enhancing treatment readiness. The WBI significantly enhanced the therapeutic alliance with online coaches and community supervisors only in the intervention arm. The effects were small and do not pass clinically significance. Adverse events were very low in both trial arms, but a significantly of decrease of impulse control was observed in the intervention arm.
 
 ### Implications of all the available evidence
 Authors should state the implications for practice or policy and future research of their study combined with existing evidence.
@@ -294,16 +254,16 @@ Authors should state the implications for practice or policy and future research
 {{< contributors >}}
 
 <!-- DATA SHARING -->
-<!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
-{{< datasharing_statement >}}
+## Data sharing
+The source code and the content of the WBI, the as well as the de-identified data will be made available on reasonable request from the corresponding author (peter.fromberger@med.uni-goettingen.de). Requests, which can be submitted via email to the corresponding author, must include a detailed description of the research question and aims. Data sharing will be authorized following proposal approval and the execution of a signed data access agreement, strictly for scientific use. Code and content sharing follows the same procedure, strictly for non-commercial use.
 
 <!-- DECLARATION OF INTEREST -->
 <!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
 {{< declaration_of_interests >}}
 
 <!-- ACKNOWLEDGEMENTS -->
-<!-- Is automatically filled with metadata defined above; do not delete the shortcode -->
-{{< acknowledgements >}}
+## Acknowledgements
+The work was funded by the German Federal Ministry of Education and Research (BMBF, Funding number: 01KR1807A). The funder of the study had no role in study design, data collection, data analysis, data interpretation, or writing of the report. A local LLM (qwen-3) has been used exclusively for language and grammar corrections. The authors would like to thank all participants and community supervisors for their time, trust and willingness to take part in the study. We would like to thank Maissa Hallaq for their engagement in recruitment and Nancy Thilo for their support for the PIs. Further we want to thank all members of the DSMB for their time and professional support."
 
 {{< pagebreak >}}
 

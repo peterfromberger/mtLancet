@@ -234,68 +234,69 @@ tests <- c(`cvtrq_calc_total` = "w.nparcomp.paired",
            hbi_calc_total = "w.nparcomp.paired",
            ssik_calc_total = "w.nparcomp.paired")
 
-dtab_sec <- dat_complete_sec_intervention %>%
-  dplyr::select(cvtrq_calc_total, rcq_calc_total, fsozu_calc_total, ors_calc_total, ucla_calc_total, bis_calc_total, cusi_calc_total, ders_calc_imp, narq_calc_ris, spsi_calc_total, kvm_score, ekk_calc_total, esiq_calc_total, hbi_calc_total, ssik_calc_total, soi_total_score, timepoint) %>%
-  descsuppR::buildDescrTbl(
-    groupby = "timepoint",
-    useutf8 = "utf8",
-    show.IQR = TRUE,
-    includeNAs = TRUE,
-    factorlevellimit = 45,
-    dopvals = TRUE,
-    tests = tests,
-    descr_digits = 3,
-    pvals_digits = 3,
-    orderedAsUnordered = TRUE,
-    report_tests = TRUE,
-    report_testmessages = FALSE)
+# dtab_sec <- dat_complete_sec_intervention %>%
+#   dplyr::select(cvtrq_calc_total, rcq_calc_total, fsozu_calc_total, ors_calc_total, ucla_calc_total, bis_calc_total, cusi_calc_total, ders_calc_imp, narq_calc_ris, spsi_calc_total, kvm_score, ekk_calc_total, esiq_calc_total, hbi_calc_total, ssik_calc_total, soi_total_score, timepoint) %>%
+#   descsuppR::buildDescrTbl(
+#     groupby = "timepoint",
+#     useutf8 = "utf8",
+#     show.IQR = TRUE,
+#     includeNAs = TRUE,
+#     factorlevellimit = 45,
+#     dopvals = TRUE,
+#     tests = tests,
+#     descr_digits = 3,
+#     pvals_digits = 3,
+#     orderedAsUnordered = TRUE,
+#     report_tests = TRUE,
+#     report_testmessages = FALSE)
 
-dtab_sec_placebo <- dat_complete_sec_placebo %>%
-  dplyr::select(cvtrq_calc_total, rcq_calc_total, fsozu_calc_total, ors_calc_total, ucla_calc_total, bis_calc_total, cusi_calc_total, ders_calc_imp, narq_calc_ris, spsi_calc_total, kvm_score, ekk_calc_total, esiq_calc_total, hbi_calc_total, ssik_calc_total, soi_total_score, timepoint) %>%
-  descsuppR::buildDescrTbl(
-    groupby = "timepoint",
-    useutf8 = "utf8",
-    show.IQR = TRUE,
-    includeNAs = TRUE,
-    factorlevellimit = 45,
-    dopvals = TRUE,
-    tests = tests,
-    descr_digits = 3,
-    pvals_digits = 3,
-    orderedAsUnordered = TRUE,
-    report_tests = TRUE,
-    report_testmessages = FALSE)
+# dtab_sec_placebo <- dat_complete_sec_placebo %>%
+#   dplyr::select(cvtrq_calc_total, rcq_calc_total, fsozu_calc_total, ors_calc_total, ucla_calc_total, bis_calc_total, cusi_calc_total, ders_calc_imp, narq_calc_ris, spsi_calc_total, kvm_score, ekk_calc_total, esiq_calc_total, hbi_calc_total, ssik_calc_total, soi_total_score, timepoint) %>%
+#   descsuppR::buildDescrTbl(
+#     groupby = "timepoint",
+#     useutf8 = "utf8",
+#     show.IQR = TRUE,
+#     includeNAs = TRUE,
+#     factorlevellimit = 45,
+#     dopvals = TRUE,
+#     tests = tests,
+#     descr_digits = 3,
+#     pvals_digits = 3,
+#     orderedAsUnordered = TRUE,
+#     report_tests = TRUE,
+#     report_testmessages = FALSE)
 
-dtab_sec_expl <- dat_complete_sec_intervention %>%
-  dplyr::select("esiq_calc_fan", "esiq_calc_ver", "spsi_calc_as", "spsi_calc_ppo", "spsi_calc_rps", "spsi_calc_npo", "spsi_calc_ics", timepoint) %>%
-  descsuppR::buildDescrTbl(
-    groupby = "timepoint",
-    useutf8 = "utf8",
-    show.IQR = TRUE,
-    includeNAs = TRUE,
-    factorlevellimit = 45,
-    dopvals = TRUE,
-    tests = tests,
-    descr_digits = 3,
-    pvals_digits = 3,
-    orderedAsUnordered = TRUE,
-    report_tests = TRUE,
-    report_testmessages = FALSE)
+# dtab_sec_expl <- dat_complete_sec_intervention %>%
+#   dplyr::select("esiq_calc_fan", "esiq_calc_ver", "spsi_calc_as", "spsi_calc_ppo", "spsi_calc_rps", "spsi_calc_npo", "spsi_calc_ics", timepoint) %>%
+#   descsuppR::buildDescrTbl(
+#     groupby = "timepoint",
+#     useutf8 = "utf8",
+#     show.IQR = TRUE,
+#     includeNAs = TRUE,
+#     factorlevellimit = 45,
+#     dopvals = TRUE,
+#     tests = tests,
+#     descr_digits = 3,
+#     pvals_digits = 3,
+#     orderedAsUnordered = TRUE,
+#     report_tests = TRUE,
+#     report_testmessages = FALSE)
 
-dtab_sec_placebo_expl <- dat_complete_sec_placebo %>%
-  dplyr::select("esiq_calc_fan", "esiq_calc_ver", "spsi_calc_as", "spsi_calc_ppo", "spsi_calc_rps", "spsi_calc_npo", "spsi_calc_ics", timepoint) %>% descsuppR::buildDescrTbl(
-    groupby = "timepoint",
-    useutf8 = "utf8",
-    show.IQR = TRUE,
-    includeNAs = TRUE,
-    factorlevellimit = 45,
-    dopvals = TRUE,
-    tests = tests,
-    descr_digits = 3,
-    pvals_digits = 3,
-    orderedAsUnordered = TRUE,
-    report_tests = TRUE,
-    report_testmessages = FALSE)
+# dtab_sec_placebo_expl <- dat_complete_sec_placebo %>%
+#   dplyr::select("esiq_calc_fan", "esiq_calc_ver", "spsi_calc_as", "spsi_calc_ppo", "spsi_calc_rps", "spsi_calc_npo", "spsi_calc_ics", timepoint) %>% descsuppR::buildDescrTbl(
+#     groupby = "timepoint",
+#     useutf8 = "utf8",
+#     show.IQR = TRUE,
+#     includeNAs = TRUE,
+#     factorlevellimit = 45,
+#     dopvals = TRUE,
+#     tests = tests,
+#     descr_digits = 3,
+#     pvals_digits = 3,
+#     orderedAsUnordered = TRUE,
+#     report_tests = TRUE,
+#     report_testmessages = FALSE)
+
 score_columns <- c("cvtrq_calc_total", "rcq_calc_total", "fsozu_calc_total", "ors_calc_total",
                    "ucla_calc_total", "bis_calc_total", "cusi_calc_total", "ders_calc_imp",
                    "narq_calc_ris", "spsi_calc_total", "kvm_score", "ekk_calc_total",
@@ -339,44 +340,44 @@ df_diff_expl <- df_wide_expl %>%
 variable_names <- paste0("diff_", score_columns)
 tests <- generate_named_vector(variable_names, "w.npar.t.test")
 
-dtab_sec2 <- df_diff %>% dplyr::select(-client_id) %>%
-                         filter(!is.na(treatment)) %>%
-                         descsuppR::buildDescrTbl(groupby = "treatment",
-                                                  useutf8 = "utf8",
-                                                  show.IQR = TRUE,
-                                                  includeNAs = TRUE,
-                                                  factorlevellimit = 45,
-                                                  dopvals = TRUE,
-                                                  tests = tests,
-                                                  descr_digits = 3,
-                                                  pvals_digits = 3,
-                                                  orderedAsUnordered = TRUE,
-                                                  report_tests = TRUE,
-                                                  report_testmessages = FALSE)
+# dtab_sec2 <- df_diff %>% dplyr::select(-client_id) %>%
+#                          filter(!is.na(treatment)) %>%
+#                          descsuppR::buildDescrTbl(groupby = "treatment",
+#                                                   useutf8 = "utf8",
+#                                                   show.IQR = TRUE,
+#                                                   includeNAs = TRUE,
+#                                                   factorlevellimit = 45,
+#                                                   dopvals = TRUE,
+#                                                   tests = tests,
+#                                                   descr_digits = 3,
+#                                                   pvals_digits = 3,
+#                                                   orderedAsUnordered = TRUE,
+#                                                   report_tests = TRUE,
+#                                                   report_testmessages = FALSE)
 
-dplot_sec2 <- dtab_sec2 %>%
-  descsuppRplots::plotDescTbl(centrality.plotting = FALSE)
+# dplot_sec2 <- dtab_sec2 %>%
+#   descsuppRplots::plotDescTbl(centrality.plotting = FALSE)
 
-variable_names_expl <- paste0("diff_", score_columns_exploratory)
-tests <- generate_named_vector(variable_names_expl, "w.npar.t.test")
-dtab_sec2_expl <- df_diff_expl %>% dplyr::select(-client_id) %>%
-  filter(!is.na(treatment)) %>%
-  descsuppR::buildDescrTbl(groupby = "treatment",
-                           useutf8 = "utf8",
-                           show.IQR = TRUE,
-                           includeNAs = TRUE,
-                           factorlevellimit = 45,
-                           dopvals = TRUE,
-                           tests = tests,
-                           descr_digits = 3,
-                           pvals_digits = 3,
-                           orderedAsUnordered = TRUE,
-                           report_tests = TRUE,
-                           report_testmessages = FALSE,
-                           p.adjust.method = NULL)
+# variable_names_expl <- paste0("diff_", score_columns_exploratory)
+# tests <- generate_named_vector(variable_names_expl, "w.npar.t.test")
+# dtab_sec2_expl <- df_diff_expl %>% dplyr::select(-client_id) %>%
+#   filter(!is.na(treatment)) %>%
+#   descsuppR::buildDescrTbl(groupby = "treatment",
+#                            useutf8 = "utf8",
+#                            show.IQR = TRUE,
+#                            includeNAs = TRUE,
+#                            factorlevellimit = 45,
+#                            dopvals = TRUE,
+#                            tests = tests,
+#                            descr_digits = 3,
+#                            pvals_digits = 3,
+#                            orderedAsUnordered = TRUE,
+#                            report_tests = TRUE,
+#                            report_testmessages = FALSE,
+#                            p.adjust.method = NULL)
 
-dplot_sec2_expl <- dtab_sec2_expl %>%
-  descsuppRplots::plotDescTbl(centrality.plotting = FALSE)
+# dplot_sec2_expl <- dtab_sec2_expl %>%
+#   descsuppRplots::plotDescTbl(centrality.plotting = FALSE)
 
 # Regression models
 pretty_Pvalues <- function(p_vals,
@@ -454,13 +455,13 @@ tab_lm <- function(fit, exponentiate=FALSE)
     tbl_regression(
       add_estimate_to_reference_rows = TRUE,
       intercept = TRUE,
-      pvalue_fun = pretty_Pvalues,
+      #pvalue_fun = pretty_Pvalues,
       label = list(
         static99_modified_calc = "Static recidivism risk (baseline)",
         `Aktuelle Betreuung` = "Type of supervision",
         `Aktuelle zusätzliche Behandlung` = "Additional treatment",
         Indexdelikt = "Offense type",
-        Treatment = "Treatment",
+        treatment = "Treatment",
         cvtrq_calc_total_pre = "Baseline value (pre)",
         rcq_calc_total_pre = "Baseline value (pre)",
         ors_calc_total_pre = "Baseline value (pre)",
@@ -485,23 +486,24 @@ tab_lm <- function(fit, exponentiate=FALSE)
       columns = c(estimate, conf.low, conf.high),
       rows = reference_row %in% TRUE,
       missing_symbol = "Ref.") %>%
-    modify_footnote(abbreviation = TRUE) %>%
+    #modify_footnote(abbreviation = TRUE) %>%
     bold_labels() %>%
-    italic_p(t = 0.05) %>%
+    #italic_p(t = 0.05) %>%
     # CI in round brackets:
-    modify_column_merge(pattern = "({conf.low}, {conf.high})",
-                        rows =  conf.low!="") %>%
+    #modify_column_merge(pattern = "({conf.low}, {conf.high})",
+    #                    rows =  conf.low!="") %>%
     modify_table_body(
       ~ .x %>%
-        dplyr::mutate(adjusted_p_value = "")) %>%
+      dplyr::mutate(adjusted_p_value = "")
+    ) %>%
     modify_header(estimate ~ "**β**", adjusted_p_value = "**adjusted p value**") else
     fit %>%
     tbl_regression(
       add_estimate_to_reference_rows = TRUE,
       intercept = TRUE,
-      tidy_fun = my_log_lm_tidy,
-      estimate_fun = purrr::partial(style_ratio, digits = 2),
-      pvalue_fun = pretty_Pvalues,
+      #tidy_fun = my_log_lm_tidy,
+      #estimate_fun = purrr::partial(style_ratio, digits = 2),
+      #pvalue_fun = pretty_Pvalues,
       label = list(
         static99_modified_calc = "Static recidivism risk (baseline)",
         `Aktuelle Betreuung` = "Type of supervision",
@@ -528,16 +530,16 @@ tab_lm <- function(fit, exponentiate=FALSE)
     add_n(location = "level") %>% #add_nevent(location = "level") %>%
     modify_header(label ~ "**Variable**") %>%
     #    add_global_p(keep=TRUE) %>%
-    modify_table_styling(
-      columns = c(estimate, conf.low, conf.high),
-      rows = reference_row %in% TRUE,
-      missing_symbol = "Ref.") %>%
+    #modify_table_styling(
+    #  columns = c(estimate, conf.low, conf.high),
+    #  rows = reference_row %in% TRUE,
+    #  missing_symbol = "Ref.") %>%
     modify_footnote(abbreviation = TRUE) %>%
     bold_labels() %>%
-    italic_p(t = 0.05) %>%
+    #italic_p(t = 0.05) %>%
     # CI in round brackets:
-    modify_column_merge(pattern = "({conf.low}, {conf.high})",
-                        rows =  conf.low!="") %>%
+    #modify_column_merge(pattern = "({conf.low}, {conf.high})",
+    #                    rows =  conf.low!="") %>%
     modify_table_body(
       ~ .x %>%
         dplyr::mutate(adjusted_p_value = rep("", 15))) %>%
@@ -560,7 +562,7 @@ tab_glm <- function(fit)
                       `Aktuelle Betreuung` = "Type of supervision",
                       `Aktuelle zusätzliche Behandlung` = "Additional treatment",
                       `Indexdelikt` = "Offense type",
-                      Treatment = "Treatment",
+                      treatment = "Treatment",
                       cvtrq_calc_total_pre = "Baseline value (pre)",
                       ekk_calc_total_pre = "Baseline value (pre)",
                       rcq_calc_total_pre = "Baseline value (pre)",
@@ -587,16 +589,18 @@ tab_glm <- function(fit)
       rows = reference_row %in% TRUE,
       missing_symbol = "Ref."
     ) %>%
-    modify_footnote(abbreviation = TRUE) %>%
+    #modify_footnote(abbreviation = TRUE) %>%
     bold_labels() %>%
-    italic_p(t = 0.05) %>%
+    #italic_p(t = 0.05) %>%
     # CI in round brackets:
-    modify_column_merge(pattern = "({conf.low}, {conf.high})",
-                        rows =  conf.low!="") %>%
+    #modify_column_merge(pattern = "({conf.low}, {conf.high})",
+    #                    rows =  conf.low!="") %>%
     modify_table_body(
       ~ .x %>%
-        dplyr::mutate(adjusted_p_value = "")) %>%
-    modify_header(adjusted_p_value = "**adjusted p value**") else
+      dplyr::mutate(adjusted_p_value = "")
+    ) %>%
+    modify_header(adjusted_p_value = "**adjusted p value**") 
+else
   fit %>%
     tbl_regression(exponentiate = TRUE,
                    add_estimate_to_reference_rows = TRUE,
@@ -632,12 +636,12 @@ tab_glm <- function(fit)
       rows = reference_row %in% TRUE,
       missing_symbol = "Ref."
     ) %>%
-    modify_footnote(abbreviation = TRUE) %>%
+    #modify_footnote(abbreviation = TRUE) %>%
     bold_labels() %>%
-    italic_p(t = 0.05) %>%
+    #italic_p(t = 0.05) %>%
     # CI in round brackets:
-    modify_column_merge(pattern = "({conf.low}, {conf.high})",
-                        rows =  conf.low!="") %>%
+    #modify_column_merge(pattern = "({conf.low}, {conf.high})",
+    #                    rows =  conf.low!="") %>%
     modify_table_body(
       ~ .x %>%
         dplyr::mutate(adjusted_p_value = "")) %>%
