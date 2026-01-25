@@ -198,12 +198,18 @@ source(here::here("_scripts/sec_pairwise_functions.R"))
 ```
 
 <!-- TITLE PAGE -->
-::: {.no-count }
-{{< title >}}
+::: {.no-count .content-visible when-format="docx"}
+{{< meta title >}}
+
+{{< pagebreak >}}
 :::
 
 <!-- SUMMARY -->
-::: {.no-count}
+::: {.no-count .content-visible when-format="html"}
+{{< summary >}}
+:::
+
+::: {.no-count .content-visible when-format="docx"}
 ## Summary
 
 ### Background:
@@ -227,11 +233,11 @@ The work was funded by the German Federal Ministry of Education and Research (BM
 {{< pagebreak >}}
 
 <!-- PANEL -->
-::: {.research-panel .no-count}
+::: {.research-panel .no-count .content-visible when-format="docx"}
 ## Research in context
 
 ### Evidence before this study
-Before undertaking this study, a XXX search revealed no published results on the efficacy of WBIs in reducing risk factors for recidivism of individuals who have already committed CSA or CSEM offences. The results of these reviews have been published online 2021. In summary, despite the fact that already promoted and online WBIs have been described only based on their attractiveness for MIPs (e.g. the number of visits of the website), there existed no study reporting on the effectiveness of these WBIs. The results of a placebo-controlled randomized trial of an WBI exclusively for CSEM users in the dark field have been reported for the first time in 2022. The RCT demonstrated a small, but significant reduction of time spended on viewing CSEM based on self-reports. In 2024, an updated review revealed no further empirical evidence for the effectiveness of WBIs. To the best of our knowledge, at the moment there is no evidence for the effectiveness of WBIS in reducing re-offenses of CSA and CSEM.
+Before undertaking this study, a XXX search revealed no published results on the efficacy of WBIs in reducing risk factors for recidivism of individuals who have already committed CSA or CSEM offences. The results of these reviews have been published online 2021. In summary, there existed no study reporting on the effectiveness of WBIs. The results of a placebo-controlled randomized trial of an WBI exclusively for CSEM users in the dark field have been reported for the first time in 2022. The RCT demonstrated a small, but significant reduction of time spended on viewing CSEM based on self-reports. In 2024, an updated review revealed no further empirical evidence for the effectiveness of WBIs. More recent meta-analyses did not provide additional empirical evdience for WBIs. To the best of our knowledge, at the moment there is no evidence for the effectiveness of WBIS in reducing re-offenses of CSA and CSEM.
 
 ### Added value of this study
 The study provides for the first time data on the effectiveness of a WBI for individuals who have already committed CSA or CSEM offences. While the main outcome revealed no superiority of the WBI against a placebo condition, secondary outcomes provide hints for superiority of the intervention arm in reducing sexual interest. The WBI significantly enhanced the therapeutic alliance with online coaches and community supervisors only in the intervention arm. Adverse events were low as well as re-offenses during trial participation.
