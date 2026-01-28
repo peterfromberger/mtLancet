@@ -173,7 +173,7 @@ summary:
   methods: |
     We conducted a randomized controlled trial evaluating a web-based relapse prevention tool. The trial was prospectively registered on April 24, 2020 in the [German Clinical Trial Register (DRKS00021256)](https://drks.de/search/en/trial/DRKS00021256).
   findings: |
-    Preliminary findings suggest significant reductions in dynamic risk factors.
+    Preliminary findings suggest significant reductions in dynamic risk-factors.
   interpretations: |
     Taken together, the intervention did not lead to measurable changes in the primary CARES outcome but was associated with selected improvements in secondary endpoints — most notably reduced explicit sexual interest and strengthened working alliance with coaches and supervisors — without indications of harm also for low-risk individuals.
   funding: |
@@ -239,11 +239,11 @@ The trial was prospectively registered on April 24, 2020, German Clinical Trial 
 
 ### Findings {.unnumbered}
 
-In this randomized placebo‑controlled trial of a WBI for individuals who committed CSA or CSEM offences (ICCO), no superiority of the intervention arm compared to the placebo arm was observed. Among secondary outcomes, only some risk factors showed significant changes in the intervention arm in line with the hypotheses, most notably a reduced sexual interest in children. Also in line with our hypothesis, treatment readiness was enhanced in the intervention arm. Against the hypothesis, difficulties in emotion regulations increased significantly in the intervention arm, whereas the perceived social support increased isolated in the placebo arm. Post-hoc analyses demonstrated robust significant improvements in the working alliance with both STs and SOs in the intervention group. No evidence emerged for an increased risk of recidivism. The frequency of adverse events was generally low without significant differences between trial arms.
+In this randomized placebo‑controlled trial of a WBI for individuals who committed CSA or CSEM offences (ICCO), no superiority of the intervention arm compared to the placebo arm was observed. Among secondary outcomes, only some risk-factors showed significant changes in the intervention arm in line with the hypotheses, most notably a reduced sexual interest in children. Also in line with our hypothesis, treatment readiness was enhanced in the intervention arm. Against the hypothesis, difficulties in emotion regulations increased significantly in the intervention arm, whereas the perceived social support increased isolated in the placebo arm. Post-hoc analyses demonstrated robust significant improvements in the working alliance with both STs and SOs in the intervention group. No evidence emerged for an increased risk of recidivism. The frequency of adverse events was generally low without significant differences between trial arms.
 
 ### Interpretations {.unnumbered}
 
-The WBI for individuals who committed CSA or CSEM offences, no superiority of the intervention arm compared to the placebo arm was observed. Among secondary outcomes, only some risk factors showed significant changes in the intervention arm in line with the hypotheses, most notably a reduced sexual interest in children. Also in line with our hypothesis, treatment readiness was enhanced in the intervention arm. Against the hypothesis, difficulties in emotion regulations increased significantly in the intervention arm, whereas the perceived social support increased isolated in the placebo arm. Post-hoc analyses demonstrated robust significant improvements in the working alliance with both STs and SOs in the intervention group. No evidence emerged for an increased risk of recidivism. The frequency of adverse events was generally low without significant differences between trial arms.
+The WBI for individuals who committed CSA or CSEM offences, no superiority of the intervention arm compared to the placebo arm was observed. Among secondary outcomes, only some risk-factors showed significant changes in the intervention arm in line with the hypotheses, most notably a reduced sexual interest in children. Also in line with our hypothesis, treatment readiness was enhanced in the intervention arm. Against the hypothesis, difficulties in emotion regulations increased significantly in the intervention arm, whereas the perceived social support increased isolated in the placebo arm. Post-hoc analyses demonstrated robust significant improvements in the working alliance with both STs and SOs in the intervention group. No evidence emerged for an increased risk of recidivism. The frequency of adverse events was generally low without significant differences between trial arms.
 
 ### Funding {.unnumbered}
 
@@ -255,17 +255,17 @@ The work was funded by the German Federal Ministry of Education and Research (BM
 <!-- PANEL -->
 
 ::: {.research-panel .no-count custom-style="research-panel"}
-## Research in context {.unnumbered}
+## Research in context {.unnumbered custom-style="research-panel-title"}
 
-### Evidence before this study {.unnumbered}
+### Evidence before this study {.unnumbered custom-style="research-panel-subtitle"}
 
-Before undertaking this study, a XXX search revealed no published results on the efficacy of web-based intervention in reducing risk factors for recidivism of Individuals who committed CSA or CSEM Offences (ICCO). The results of these reviews have been published online 2021. In summary, there existed no study reporting on the effectiveness of WBIs. The results of a placebo-controlled randomized trial of an WBI exclusively for CSEM users in the dark field have been reported for the first time in 2022. The RCT demonstrated a small, but significant reduction of time spended on viewing CSEM based on self-reports. In 2024, an updated review revealed no further empirical evidence for the effectiveness of WBIs. More recent meta-analyses did not provide additional empirical evdience for WBIs. To the best of our knowledge, at the moment there is no evidence for the effectiveness of WBIS in reducing re-offenses of CSA and CSEM.
+Before undertaking this study, a XXX search revealed no published results on the efficacy of web-based intervention in reducing risk-factors for recidivism of Individuals who committed CSA or CSEM Offences (ICCO). The results of these reviews have been published online 2021. In summary, there existed no study reporting on the effectiveness of WBIs. The results of a placebo-controlled randomized trial of an WBI exclusively for CSEM users in the dark field have been reported for the first time in 2022. The RCT demonstrated a small, but significant reduction of time spended on viewing CSEM based on self-reports. In 2024, an updated review revealed no further empirical evidence for the effectiveness of WBIs. More recent meta-analyses did not provide additional empirical evdience for WBIs. To the best of our knowledge, at the moment there is no evidence for the effectiveness of WBIS in reducing re-offenses of CSA and CSEM.
 
-### Added value of this study {.unnumbered}
+### Added value of this study {.unnumbered custom-style="research-panel-subtitle"}
 
 The study provides for the first time data on the effectiveness of a WBI for individuals who have already committed CSA or CSEM offences. While the main outcome revealed no superiority of the WBI against a placebo condition, secondary outcomes provide hints for superiority of the intervention arm in reducing sexual interest. The WBI significantly enhanced the therapeutic alliance with online coaches and community supervisors only in the intervention arm. Adverse events were low as well as re-offenses during trial participation.
 
-### Implications of all the available evidence {.unnumbered}
+### Implications of all the available evidence {.unnumbered custom-style="research-panel-subtitle"}
 
 Authors should state the implications for practice or policy and future research of their study combined with existing evidence.
 :::
@@ -301,7 +301,7 @@ Authors should state the implications for practice or policy and future research
 
 ## Data sharing {.unnumbered}
 
-The source code and the content of the WBI, as well as the de-identified data will be made available on reasonable request from the corresponding author (peter.fromberger\@med.uni-goettingen.de). Requests, which can be submitted via email to the corresponding author, must include a detailed description of the research question and aims. Data sharing will be authorized following proposal approval and the execution of a signed data access agreement, strictly for scientific use. Code and content sharing follows the same procedure, strictly for non-commercial use.
+The source code, the content of the WBI, and the de-identified data will be made available on reasonable request from the corresponding author (peter.fromberger\@med.uni-goettingen.de). Requests, which can be submitted via email to the corresponding author, must include a detailed description of the research question and aims. Data sharing will be authorized following proposal approval and the execution of a signed data access agreement, strictly for scientific use. Code and content sharing follows the same procedure, strictly for non-commercial use.
 
 <!-- DECLARATION OF INTEREST -->
 
