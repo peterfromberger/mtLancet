@@ -153,8 +153,8 @@ ordered_labels <- c(
 )
 
 translation <- c(
-  "Bewährungshilfe" = "Probation service",
-  "Führungsaufsicht" = "Post-release supervision"
+  "Bewährungshilfe" = "Probation service (§§56, 57 StGB)",
+  "Führungsaufsicht" = "Post-release supervision (§68 StGB)"
 )
 
 data$sample_supervisor_21 <- factor(translation[as.character(data$sample_supervisor_21)], levels = ordered_labels, ordered = TRUE)
@@ -365,27 +365,27 @@ tbl <- data %>%
   modify_table_styling(
     columns = label,
     rows = label %in% c("6D30 Exhibitionistic disorder", "6D34 Frotteuristic disorder", "6D35 Other paraphilic disorder (non-consenting)", "6D33 Coercive sexual sadism disorder", "6D31 Voyeuristic disorder", "6D32 Pedophilic disorder", "Gender", "Sexual orientation"),
-    footnote = "assessed with the ICD-11 screener (LIT), a self-report measure which items follow the ICD-11 diagnostic criteria for paraphilic disorders."
+    footnote = "assessed with the ICD-11 screener, a self-report measure which items follow the ICD-11 diagnostic criteria for paraphilic disorders."
   ) %>%
   modify_table_styling(
     columns = label,
     rows = label %in% c("Highest education", "Years of education", "Marital status", "Employment status"),
-    footnote = "information provided by the participant (SSQ-P)."
+    footnote = "information provided by the participant (Sample Specifications Questionnaire for the Participant, SSQ-P)."
   ) %>%
   modify_table_styling(
     columns = label,
     rows = label %in% c("Conviction under the German Penal Code (StGB)", "Additional treatment", "Age", "Offense type"),
-    footnote = "data extracted from case files by trained staff (SSQ-CF)."
+    footnote = "data extracted from case files by trained staff (Sample Specifications Questionnaire based on the Court File, SSQ-CF)."
   ) %>%
   modify_table_styling(
     columns = label,
     rows = label %in% c("Term of imprisonment (month)", "Duration of community supervision (month)", "Treatment ordered by court"),
-    footnote = "information provided by supervision officer (SSQ-SO)."
+    footnote = "information provided by supervision officer (Sample Specifications Questionnaire for the SO, SSQ-SO)."
   ) %>%
   modify_table_styling(
     columns = label,
     rows = label == "Static recidivism risk",
-    footnote = "data extracted from case files by trained staff; since the Static-99 is only defined for hands-on offenders, we used the reduced Static-99 as mentioned by [LIT]; all staff member have been trained for the Static-99."
+    footnote = "data extracted from case files by trained staff (Sample Specifications Questionnaire based on the Court File, SSQ-CF); since the Static-99 is only defined for hands-on offenders, the reduced Static-99 as mentioned by Seto et al. (2012) was used); all staff member have been trained for the Static-99."
   ) %>%
   modify_table_styling(
     columns = label,
@@ -394,6 +394,7 @@ tbl <- data %>%
   ) %>%
   add_overall() %>%
   bold_labels() %>%
+  modify_abbreviation("ICD-11 = International Classification of Disease version 11, StGB = German penalty law.") %>%
   as_gt() %>%
     gt::tab_options(
       #table.font.names = "Source Sans Pro",

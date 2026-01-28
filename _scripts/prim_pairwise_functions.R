@@ -104,18 +104,7 @@ create_prim_pairwise_tbl <- function(data, dvs, label_list, type_list, abbreviat
     # damit quarto citations im footer erkeent, dürfen keine footnotes vorhanden sein!
     remove_footnote_header(columns = "q.value") %>%
     # abbreviations
-    modify_abbreviation("*Q1* = 25th percentile") %>%
-    modify_abbreviation("*Q3* = 75th percentile") %>%
-    modify_abbreviation("*95% CI* = Confidence interval of the estimated relative effect") %>%
-    modify_abbreviation("*p-hat* = estimated relative effect") %>%
-    modify_abbreviation("*t* = Brunner–Munzel test statistic for paired samples") %>%
-    modify_abbreviation("*q-value* = Holm-Bonferroni adjusted p-value")
-
-  # add abbreviations
-  for (i in 1:length(abbreviations)) {
-    tbl <- tbl %>%
-        modify_abbreviation(abbreviations[i])
-  }
+    modify_abbreviation("Q1 = 25th percentile, Q3 = 75th percentile, 95% CI = Confidence interval of the estimated relative effect, p-hat = estimated relative effect, t = Brunner–Munzel test statistic for unpaired samples, q-value = Holm-Bonferroni adjusted p-value.")
 
   tbl <- tbl %>%
     as_gt() %>%

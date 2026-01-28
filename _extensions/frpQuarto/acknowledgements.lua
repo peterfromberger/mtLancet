@@ -3,7 +3,7 @@ return {
 
     local md = {}
 
-    table.insert(md, "## Acknowledgement {.unnumbered .unlisted}\n")
+    table.insert(md, "## Acknowledgments {.unnumbered .unlisted}\n")
     if not meta.acknowledgement then
         table.insert(md, "This work has not been funded.\n")
     else

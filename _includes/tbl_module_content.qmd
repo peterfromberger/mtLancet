@@ -15,7 +15,7 @@ library(gt)
 
 # Korrigierte Daten (ohne `-` am Anfang der Zeilen, nur Zeilenumbrüche)
 Intervention <- c(
-  "- Exercises on identifying personal values and future aspirations, enhancing treatment readiness and reducing resistance to change.\n\n- Psychoeducation on improving decision-making by weighing long-term consequences over immediate rewards.\n\n- Based on structured goal-setting techniques, participants transform abstract desires into specific, measurable, and achievable objectives, increasing self-efficacy and clarity about their own needs and personal values and enhancing treatment readiness.",
+  "- Exercises on identifying personal values and future aspirations in order to enhance treatment readiness and reduce resistance to change.\n\n- Psychoeducation on improving decision-making by weighting long-term consequences over immediate rewards.\n\n- Based on structured goal-setting techniques, participants transform abstract desires into specific, measurable, and achievable objectives, increasing self-efficacy and clarity about their own needs and personal values in order to enhane treatment readiness.",
   
   "- Development of skills to build trust and collaborative working relationships with supervision officers, reducing resistance against community supervision and improving adherence to supervision mandates.\n\n- Identification of trauma- and fear-based avoidance patterns that interfere with engagement in community supervision, using cognitive-behavioral strategies to enhance compliance with structured interventions.\n\n- Through guided exercises, participants examine the impact of adult relationships on emotional regulation and behavioral stability, targeting deficits in capacity for adult intimacy.",
   
@@ -58,15 +58,17 @@ tbl <- gt(tbl_dat) %>%
     rows = everything()
   ) %>%
   gt::tab_options(
-      #table.font.names = "Source Sans Pro",
-      table.font.size = 12,
-      data_row.padding = px(2),
-      summary_row.padding = gt::px(2),
-      grand_summary_row.padding = gt::px(2),
-      #footnotes.padding = gt::px(2),
-      #source_notes.padding = gt::px(2),
-      row_group.padding = gt::px(2)
-    )
+    table.font.names = "Times New Roman",
+    table.font.size = 10,
+    quarto.use_bootstrap = FALSE,
+    quarto.disable_processing = TRUE,
+    data_row.padding = px(2),
+    summary_row.padding = gt::px(2),
+    grand_summary_row.padding = gt::px(2),
+    #footnotes.padding = gt::px(2),
+    #source_notes.padding = gt::px(2),
+    row_group.padding = gt::px(2)
+  )
 
 # save tbl as image
 gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-module-content.pdf")))
@@ -80,7 +82,7 @@ library(officer)
 
 ft <- flextable(tbl_dat) |>
   align(align = "left", part = "all") |>
-  fontsize(size = 12, part = "all") |>
+  fontsize(size = 10, part = "all") |>
   padding(
     padding.top = 2,
     padding.bottom = 2,

@@ -11,10 +11,30 @@ bibliography: references.bib
 csl: the-lancet.csl
 
 format:
+  elsevier-pdf:
+    journal:
+      name: "The Lancet Digital Health"
+      formatting: preprint
+      model: 1p
+      layout: onecolumn
+      cite-style: super
+    include-in-header: 
+      text: |
+        \newpageafter{author}
   docx:
-    reference-docx: _extensions/frpQuarto/Lancet_Word_Template.docx
+    reference-doc: _extensions/frpQuarto/custom-reference-doc.docx
     toc: false
-    number-sections: false
+    number-sections: true
+    citeproc: false
+    title-block: true
+    filters:
+      - _extensions/frpQuarto/wordcount.lua
+      - _extensions/frpQuarto/summary_wordcount.lua
+      - authors-block
+      - at: pre-quarto
+        path: _extensions/andrewheiss/wordcount/citeproc.lua
+      - at: pre-quarto
+        path: _extensions/andrewheiss/wordcount/wordcount.lua
   html:
     theme: [default, _extensions/frpQuarto/styles.scss]
     html-table-processing: none
@@ -27,27 +47,6 @@ format:
       text: |
         <script>
           document.addEventListener("DOMContentLoaded", () => {
-
-            /* --------------------------------------------------
-            * 1. FIGCAPTION TRANSFORMATION
-            * -------------------------------------------------- */
-            document.querySelectorAll("figcaption").forEach(e => {
-              e.innerHTML = e.innerHTML.replace(
-                /((.*?)\.)\s*(.*)/,
-                '<div class="figcaption-title-lancet">$1</div>' +
-                '<details class="dropdown-card">' +
-                  '<summary>' +
-                    '<span class="figcaption-dropdown">Show full caption</span>' +
-                    '<span class="arrow">' +
-                      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">' +
-                        '<polyline points="6 9 12 15 18 9"/>' +
-                      '</svg>' +
-                    '</span>' +
-                  '</summary>' +
-                  '<div class="figcaption-subtext">$3</div>' +
-                '</details>'
-              );
-            });
 
             /* ---------- Wordcount einklappbar ---------- */
 
@@ -161,7 +160,7 @@ format:
             document.querySelectorAll(".quarto-other-links > h2")
               .forEach(h2 => {
                 if (h2.textContent.includes("Other")) {
-                  h2.textContent = "Submission files";
+                  h2.textContent = "For submission";
                 }
               });
 

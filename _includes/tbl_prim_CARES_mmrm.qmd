@@ -3,8 +3,7 @@
 #| message: false
 #| warning: false
 #| label: tbl-prim-cares-mmrm
-#| tbl-cap: "Mixed model for repeated measures (MMRM) for the CARES total score."
-#| html-table-processing: none
+#| tbl-cap: "Mixed model for repeated measures (MMRM) for the primary endpoint Child Sexual Abuse Risk Evaluation Self-Report (CARES total score)."
 
 library(gtsummary)
 library(gt)
@@ -30,8 +29,7 @@ tbl <- fit2 %>%
     ) %>%
     modify_header(label ~ "**Variable**") %>%
     remove_abbreviation("CI = Confidence Interval") %>%
-    modify_abbreviation("CI = Confidence Interval") %>%
-    modify_abbreviation("StGB = German penalty law") %>%
+    modify_abbreviation("CI = Confidence Interval, StGB = German penalty law.") %>%
     modify_column_alignment(columns = everything(), align = "left") %>%
     modify_table_styling(
         columns = c(estimate, conf.low, conf.high),
@@ -41,11 +39,16 @@ tbl <- fit2 %>%
     bold_labels() %>%
     as_gt() %>%
     gt::tab_options(
-      #table.font.names = "Source Sans Pro",
-      table.font.size = 12,
+      table.font.names = "Times New Roman",
+      table.font.size = 10,
       quarto.use_bootstrap = FALSE,
       quarto.disable_processing = TRUE,
-      data_row.padding = px(2)
+      data_row.padding = px(2),
+      summary_row.padding = gt::px(2),
+      grand_summary_row.padding = gt::px(2),
+      #footnotes.padding = gt::px(2),
+      #source_notes.padding = gt::px(2),
+      row_group.padding = gt::px(2)
     )
 
 # save tbl as image
