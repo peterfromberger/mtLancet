@@ -38,7 +38,7 @@ bm_paired_test <- function(data, variable, by, ...) {
     dplyr::mutate(
       ci.value = glue::glue("{Lower}, {Upper}")
     ) %>%
-    dplyr::select(c(p.hat, ci.value, t.value, p.value))
+    dplyr::select(c(p.value))
 
   return(df)
 }
@@ -68,16 +68,14 @@ create_pairwise_tbl <- function(data, dvs, label_list, type_list, abbreviations,
     add_stat(fns = everything() ~ bm_paired_test) %>%
     add_q(method = "holm") %>%
     modify_header(
-      p.hat = "**p-hat**",
-      t.value = "**t**",
-      ci.value = "**95% CI**",
-      p.value = "**p-value**"
+      p.value = "**p**",
+      q.value = "**p~adj~**"
     ) %>%
     bold_labels() %>%
     # damit quarto citations im footer erkeent, dürfen keine footnotes vorhanden sein!
     remove_footnote_header(columns = "q.value") %>%
     # abbreviations
-    modify_abbreviation("95% CI = Confidence interval of the estimated relative effect, BIS-15 = Barratt Impulsiveness Scale-15, BMS = Bumby Molest Scale, CUSI = Coping Using Sex Inventory, CVTRQ = Corrections Victoria Treatment Readiness Questionnaire, DERS = Difficulties in Emotion Regulation Scale, EKK-R = Questionnaire on Emotional Congruence with Children-Revised, ESIQ = Explicit Sexual Interest Questionnaire, F-Soz-U = Seven-item short version of the Social Support Questionnaire, HBI-19 = Hypersexual Behavior Inventory-19, NARQ = Negative Affect Repair Questionnaire, OQMPR = Questionnaire for the Measurement of Psychological Reactance, Q1 = 25th percentile, Q3 = 75th percentile, RCQ = Readiness to Change Questionnaire - German version, SD = Standard deviation, SOI-R = Sexual Outlet Inventory revised, subscale desire for sexual activity with children, SPSI-R = Social Problem-Solving Inventory Revised, SSIC = Specific self-efficacy for modifying Sexual Interest in Children, UCLA = UCLA Loneliness Scale - German short version, p-hat = estimated relative effect, q-value = Holm-Bonferroni adjusted p-value, t = Brunner–Munzel test statistic for paired samples.")
+    modify_abbreviation("BIS-15 = Barratt Impulsiveness Scale-15, BMS = Bumby Molest Scale, CUSI = Coping Using Sex Inventory, CVTRQ = Corrections Victoria Treatment Readiness Questionnaire, DERS = Difficulties in Emotion Regulation Scale, EKK-R = Questionnaire on Emotional Congruence with Children-Revised, ESIQ = Explicit Sexual Interest Questionnaire, F-Soz-U = Seven-item short version of the Social Support Questionnaire, HBI-19 = Hypersexual Behavior Inventory-19, NARQ = Negative Affect Repair Questionnaire, OQMPR = Questionnaire for the Measurement of Psychological Reactance, Q1 = 25th percentile, Q3 = 75th percentile, RCQ = Readiness to Change Questionnaire - German version, SD = Standard deviation, SOI-R = Sexual Outlet Inventory revised, subscale desire for sexual activity with children, SPSI-R = Social Problem-Solving Inventory Revised, SSIC = Specific self-efficacy for modifying Sexual Interest in Children, UCLA = UCLA Loneliness Scale - German short version, p~adj~ = Holm-Bonferroni adjusted p-value")
 
   return(tbl)
 

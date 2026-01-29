@@ -360,7 +360,7 @@ tbl <- data %>%
   modify_table_styling(
     columns = label,
     rows = label %in% c("Major depressive syndrome", "Other depressive syndromes", "Panic syndrome", "Other anxiety syndromes", "Bulimia nervosa", "Binge eating", "Alcohol syndrome", "Somatoform syndrome"),
-    footnote = "assessed with the PHQ-D (LIT)."
+    footnote = "assessed with the PHQ-D."
   ) %>%
   modify_table_styling(
     columns = label,
@@ -396,18 +396,20 @@ tbl <- data %>%
   bold_labels() %>%
   modify_abbreviation("ICD-11 = International Classification of Disease version 11, StGB = German penalty law.") %>%
   as_gt() %>%
-    gt::tab_options(
-      #table.font.names = "Source Sans Pro",
-      table.font.size = 12,
-      quarto.use_bootstrap = FALSE,
-      quarto.disable_processing = TRUE,
-      data_row.padding = px(2),
-      summary_row.padding = gt::px(2),
-      grand_summary_row.padding = gt::px(2),
-      #footnotes.padding = gt::px(2),
-      #source_notes.padding = gt::px(2),
-      row_group.padding = gt::px(2)
-    )
+  gt::tab_options(
+    #table.font.names = "Source Sans Pro",
+    table.font.size = 12,
+    quarto.use_bootstrap = FALSE,
+    quarto.disable_processing = TRUE,
+    data_row.padding = px(2),
+    summary_row.padding = gt::px(2),
+    grand_summary_row.padding = gt::px(2),
+    #footnotes.padding = gt::px(2),
+    #source_notes.padding = gt::px(2),
+    row_group.padding = gt::px(2)
+  ) %>%
+  tab_style(style = cell_text(align = "left"), locations = cells_source_notes()) %>%
+  tab_style(style = cell_text(align = "left"), locations = cells_footnotes())
 
 # save tbl as image
 gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-baseline-characteristics.pdf")))

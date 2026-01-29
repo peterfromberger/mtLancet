@@ -188,7 +188,9 @@ create_sec_diff_tbl <- function(data, dvs, label_list, grouping_var, abbreviatio
       #footnotes.padding = gt::px(2),
       #source_notes.padding = gt::px(2),
       row_group.padding = gt::px(2)
-    )
+    ) %>%
+  tab_style(style = cell_text(align = "left"), locations = cells_source_notes()) %>%
+  tab_style(style = cell_text(align = "left"), locations = cells_footnotes())
 
   return(tbl)
 }

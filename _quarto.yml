@@ -25,6 +25,7 @@ format:
     reference-doc: _extensions/frpQuarto/custom-reference-doc.docx
     toc: false
     number-sections: true
+    tbl-cap-location: top
     citeproc: false
     title-block: true
     filters:
@@ -38,7 +39,7 @@ format:
   html:
     theme: [default, _extensions/frpQuarto/styles.scss]
     html-table-processing: none
-    tbl-cap-location: bottom
+    tbl-cap-location: top
     toc: true
     toc-depth: 3
     template: _extensions/frpQuarto/template.html

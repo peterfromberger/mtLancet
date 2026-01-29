@@ -1,0 +1,174 @@
+
+```{r}
+
+library(gt)
+library(dplyr)
+
+risk_factors_df <- data.frame(
+    module = c(
+        "Module 1 (Motivation)",
+        "Module 1 (Motivation)",
+        "Module 2 (Supervision and Social Relationships)",
+        "Module 2 (Supervision and Social Relationships)",
+        "Module 2 (Supervision and Social Relationships)",
+        "Module 3 (Emotion Management)",
+        "Module 3 (Emotion Management)",
+        "Module 3 (Emotion Management)",
+        "Module 3 (Emotion Management)",
+        "Module 4 (Problem Solving)",
+        "Module 5 (Offense-Supportive Attitudes)",
+        "Module 6 (Sexuality Module)",
+        "Module 6 (Sexuality Module)",
+        "Module 6 (Sexuality Module)",
+        "Module 6 (Sexuality Module)",
+        "Module 6 (Sexuality Module)"
+    ),
+    risk_factor_endpoint = c(
+        "Treatment readiness",
+        "Motivation to change",
+        "Negative social influences",
+        "Resistance to rules and supervision",
+        "Emotionally intimate relationships with adults",
+        "(lifestyle) Impulsiveness",
+        "Sexualized coping",
+        "Impulse control difficulties",
+        "External Coping",
+        "Poor problem solving skills",
+        "Offense-supportive attitudes",
+        "Sexual interest in children",
+        "Sexual interest in children",
+        "Self-Efficacy for Modifying Sexual Interest",
+        "Emotional congruence with children",
+        "Sexual preoccupation"
+    ),
+    treatment_goals_operationalized = c(
+        "Enhance readiness to participate in and engage with a cognitive skills training program",
+        "Enhance the offender's motivation to change his offense-related behavior",
+        "Enhance the motivation to build up a (new) positive social network",
+        "Reduce resistance to rules and supervision",
+        "Setting up emotionally intimate relationships with adults",
+        "Reducing (lifestyle) impulsiveness",
+        "Reducing sexualized coping strategies during stressful or negative emotional life-events",
+        "Reducing impulse control difficulties",
+        "Reducing external coping strategies during stressful or negative emotional life-events",
+        "Improving poor problem solving skills by establishment and training of positive problem orientation and rational problem solving skills",
+        "Reduce Offense-supportive attitudes as defined as the belief that children are able to build sexually mature relationships, that children are not harmed by sex with adults, and that children consciously provoke sexual behaviors in adults",
+        "Enhance knowledge about adult sexuality, reduce CSE fantasies",
+        "Reducing sexual interest in and sexual fantasies about children and enhancing sexual interest in adults",
+        "Enhance self-efficacy for modifying sexual fantasies and interest in children",
+        "Reduce the emotional congruence with children by psycho-educative techniques",
+        "Reducing sexual preoccupation (excessive sexual thoughts and activities)"
+    ),
+    used_treatment_techniques = c(
+        "Motivational interviewing (Miller and Rollnick): 'change talk' and 'confidence talk'",
+        "Motivational interviewing (Miller and Rollnick): 'change talk' and 'confidence talk'",
+        "CBT",
+        "CBT",
+        "CBT",
+        "DBT (Linehan et al.), ACT (Hayes et al.)",
+        "DBT (Linehan et al.), ACT (Hayes et al.)",
+        "DBT (Linehan et al.), ACT (Hayes et al.)",
+        "DBT (Linehan et al.), ACT (Hayes et al.)",
+        "Problem-Solving Therapy (PST; Nezu et al.): Enhance positive problem orientation and rational problem-solving",
+        "Need-Principle (Andrews and Bonta); Cognitive restructuring (Beck): identification, reframing, Socratic dialogue, comparison of new vs. old beliefs with respect to offense-supportive attitudes",
+        "CBT, psychoeducation about adult sexuality, developmental aspects of sexuality; neutral mindset of STs towards modifying sexual fantasies and interests",
+        "CBT, psychoeducation about adult sexuality, developmental aspects of sexuality; neutral mindset of STs towards modifying sexual fantasies and interests",
+        "CBT, psychoeducation about adult sexuality, developmental aspects of sexuality; neutral mindset of STs towards modifying sexual fantasies and interests",
+        "CBT, psychoeducation about adult sexuality, developmental aspects of sexuality; neutral mindset of STs towards modifying sexual fantasies and interests",
+        "CBT, psychoeducation about adult sexuality, developmental aspects of sexuality; neutral mindset of STs towards modifying sexual fantasies and interests"
+    ),
+    techniques_effectivity = c(
+        "Motivational interviewing",
+        "Motivational interviewing",
+        "Module 2 (Supervision and Social Relationships)",
+        "Module 2 (Supervision and Social Relationships)",
+        "Module 2 (Supervision and Social Relationships)",
+        "Module 3 (Emotion Management)",
+        "Module 3 (Emotion Management)",
+        "Module 3 (Emotion Management)",
+        "Module 3 (Emotion Management)",
+        "Module 4 (Problem Solving)",
+        "Module 5 (Offense-Supportive Attitudes)",
+        "Module 6 (Sexuality Module)",
+        "Module 6 (Sexuality Module)",
+        "Module 6 (Sexuality Module)",
+        "Module 6 (Sexuality Module)",
+        "Module 6 (Sexuality Module)"
+    ),
+    outcome_measure = c(
+        "Corrections Victoria Treatment Readiness Questionnaire (CVTRQ)",
+        "Readiness to Change Questionnaire (RCQ)",
+        "Social Support Questionnaire (F-Soz-U)",
+        "Optimized Questionnaire for the Measurement of Psychological Reactance (OQMPR)",
+        "University of California Los Angeles Loneliness Scale (UCLA)",
+        "Barratt Impulsiveness Scale-15 (BIS-15)",
+        "Coping Using Sex Inventory (CUSI)",
+        "Difficulties in Emotion Regulation Scale (DERS), Subscale Impulsivity ",
+        "Negative Affect Repair Questionnaire (NARQ), Subscale Externalized Coping",
+        "Social Problem-Solving Inventory Revised (SPSI-R)",
+        "Bumby Molest Scale (BMS)",
+        "The Explicit Sexual Interest Questionnaire (ESIQ)",
+        "Sexual Outlet Inventory - Revised (SOI-R)",
+        "Specific self-efficacy for modifying Sexual Interest in Children (SSIC)",
+        "Questionnaire on Emotional Congruence with Children-Revised (EKK-R)",
+        "Hypersexual Behavior Inventory-19 (HBI-19)"
+    ),
+    outcome_measure_short_name = c(
+        "CVTRQ",
+        "RCQ",
+        "Fsoz-U",
+        "OQMPR",
+        "UCLA",
+        "BIS-15",
+        "CUSI",
+        "DERS",
+        "NARQ",
+        "SPSI-R",
+        "BMS",
+        "ESIQ",
+        "SOI-R",
+        "SSIC",
+        "EKK-R",
+        "HBI-19"
+    ),
+    comparable_q_data = c(
+        "n = 180, mean = 83, SD = 10.73, Casey et al. (2017)",
+        "n = 180, mean = 46, SD = 6.09, Casey et al. (2017)",
+        "n = 157, mean = 4.21, SD = 0.73, Dunkel et al. (2005)",
+        "",
+        "n = 313, mean = 41.57, SD = 10.13, Nunes et al. (2011)",
+        "healthy students, n = 752, M = 30.04, SD = 6.13, Meule et al. (2011)",
+        "n = 53, M = 27.33, SD = 8.54, @beier_german_2015",
+        "healthy students, n = 97, M = 11.55, SD = 4.59, Gratz & Römer (2003)",
+        "healthy students, n = 314, M = 4.7, SD = 3.5, Scherer et al. (2013)",
+        "German norm population, n = 179, M = 67.94, SD = 11.25, Graf (2003)",
+        "ICCO, n = 149, M = 74.54, SD = 18.54, Neutze et al. (2012)",
+        "no comparability since other scale used than defined in ESIQ",
+        "",
+        "Darkfield, n = 56, M = 17.66, SD = 5.28, Tozdan et al. (2015)",
+        "",
+        "German norm population, n = 1749, M = 33.90, SD = 10.46, Klein et al., 2014)"
+    )
+)
+
+tbl <- risk_factors_df %>%
+    dplyr::select(module, risk_factor_endpoint, outcome_measure, outcome_measure_short_name, comparable_q_data) %>%
+    gt(groupname_col = "module") %>%
+    gt::fmt_markdown(
+        columns = everything(),
+        rows = everything()
+    ) %>%
+    gt::tab_options(
+        table.font.names = "Times New Roman",
+        table.font.size = 10,
+        quarto.use_bootstrap = FALSE,
+        quarto.disable_processing = TRUE,
+        data_row.padding = px(1),
+        summary_row.padding = gt::px(1),
+        grand_summary_row.padding = gt::px(1),
+        row_group.padding = gt::px(1)
+    ) %>%
+    tab_style(style = cell_text(align = "left"), locations = cells_source_notes()) %>%
+    tab_style(style = cell_text(align = "left"), locations = cells_footnotes())
+tbl
+```

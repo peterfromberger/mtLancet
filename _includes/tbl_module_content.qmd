@@ -68,7 +68,9 @@ tbl <- gt(tbl_dat) %>%
     #footnotes.padding = gt::px(2),
     #source_notes.padding = gt::px(2),
     row_group.padding = gt::px(2)
-  )
+  ) %>%
+  tab_style(style = cell_text(align = "left"), locations = cells_source_notes()) %>%
+  tab_style(style = cell_text(align = "left"), locations = cells_footnotes())
 
 # save tbl as image
 gt::gtsave(tbl, file = file.path(here::here("_tables/tbl-module-content.pdf")))

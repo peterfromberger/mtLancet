@@ -3,7 +3,7 @@ title: "Effectiveness of a web-based intervention for individuals who committed 
 
 shorttitle: "Effectiveness of a web-based intervention for individuals who committed sexual offenses against children."
 
-version: "0.8.0"
+version: "0.9.0"
 
 date: last-modified
 date-format: long
@@ -19,7 +19,7 @@ authors:
     affiliations:
       - ref: UMG
     orcid: 0000-0002-4818-8730
-    email: peter.fromberger@medizin.uni-goettingen.de
+    email: peter.fromberger@med.uni-goettingen.de
     roles: [writing – original draft, visualization, conceptualization, funding acquisition, project administration, supervision, software, methodology]
     corresponding: true
   - name: Sonja Schröder
@@ -29,7 +29,7 @@ authors:
     affiliations:
       - ref: Mor
     orcid: 0000-0002-4140-1818
-    roles: [writing – review & editing, investigation]
+    roles: [writing – review & editing, investigation, methodology, resources, project administration]
     corresponding: false
   - name: Bruno Siegel
     degrees: MSc
@@ -37,7 +37,7 @@ authors:
     initials: "BS"
     affiliations:
       - ref: UMG
-    roles: [writing – review & editing, investigation]
+    roles: [writing – review & editing, investigation, resources, supervision]
     corresponding: false
   - name: Safiye Tozdan
     degrees: PhD
@@ -46,7 +46,7 @@ authors:
     affiliations:
       - ref: UKE
     orcid: 0000-0001-6645-3617
-    roles: [writing – review & editing, investigation, conceptualization, funding acquisition]
+    roles: [writing – review & editing, investigation, conceptualization, resources]
     corresponding: false
   - name: Andreas Leha
     degrees: PhD
@@ -54,14 +54,14 @@ authors:
     initials: "AL"
     affiliations:
       - ref: UMGmath
-    roles: [formal analysis, writing – review & editing]
+    roles: [formal analysis, visualization, writing – review & editing]
   - name: Fabian Kück
     degrees: PhD
     is_prof: false
     initials: "FK"
     affiliations:
       - ref: UMGmath
-    roles: [formal analysis, writing – review & editing]
+    roles: [formal analysis, visualization, writing – review & editing]
     orcid: 0000-0002-8634-9101
     corresponding: false
   - name: Louisa Neumann
@@ -70,19 +70,25 @@ authors:
     initials: "LM"
     affiliations:
       - ref: Wun
+    roles: [writing – review & editing, investigation, methodology, resources]
+    orcid: 0000-0003-1959-5035
+    corresponding: false
   - name: Sabine Horn
     degrees: MSc
     is_prof: false
     initials: "SH"
     affiliations:
       - ref: UzK
-    roles: [writing – review & editing, conceptualization, funding acquisition]
+    roles: [writing – review & editing, conceptualization]
   - name: Claudia Buntrock
     degrees: PhD
     is_prof: true
     initials: "CB"
     affiliations:
       - ref: Mag
+    roles: [writing – review & editing, conceptualization, funding acquisition, resources]
+    corresponding: false
+    orcid: 0000-0002-4974-5455
   - name: Kirsten Jordan
     degrees: PhD
     is_prof: false
@@ -99,6 +105,8 @@ authors:
     affiliations:
       - ref: KrimZ
     roles: [writing – review & editing, conceptualization, funding acquisition]
+    orcid: 0000-0002-3993-3591
+    corresponding: false
   - name: Martin Rettenberger
     degrees: PhD
     is_prof: true
@@ -107,6 +115,7 @@ authors:
       - ref: KrimZ
     roles: [writing – review & editing, conceptualization, funding acquisition]
     corresponding: false
+    orcid: 0000-0002-0979-4295
   - name: Anja Schiemann
     degrees: PhD
     is_prof: true
@@ -130,8 +139,9 @@ authors:
     initials: "JLM"
     affiliations:
       - ref: UMG
-    roles: [writing – review & editing, conceptualization, funding acquisition, supervision]
+    roles: [writing – review & editing, conceptualization, funding acquisition]
     corresponding: false
+    orcid: 
 
 affiliations:
   - id: UMG
@@ -169,13 +179,13 @@ affiliations:
 
 summary:
   background: |
-    Sexual offenders often present with diverse risk profiles requiring differentiated interventions [@knuth84].
+    Child Sexual Abuse (CSA) and Child Sexual Exploitation Material (CSEM) offenses impose severe harm on survivors and society. While tertiary prevention for convicted offenders is well-researched in-person, evidence for secondary prevention — targeting individuals at risk but not yet convicted — is limited, with few high-quality studies. CSEM-specific programs remain particularly under-evaluated, suffering from small samples, short follow-ups, and reliance on self-reported outcomes. A growing number of CSEM offenders and limited access to outpatient treatment have created a post-release care gap. Web-based interventions (WBIs) may improve accessibility, yet empirical evidence for indivudals who have committed CSA or CSEM offenses remains scarce. Only one study evaluated a guided WBI (Prevent It), showing a small effect on CSEM viewing, but with low conviction rates in the sample. To date, no WBI has been rigorously tested for ICCO with formal convictions. This study evaluates \@myTabu, a new guided WBI for ICCO, in a randomized controlled trial, testing its effectiveness in reducing dynamic risk factors compared to a psychological placebo.
   methods: |
-    We conducted a randomized controlled trial evaluating a web-based relapse prevention tool. The trial was prospectively registered on April 24, 2020 in the [German Clinical Trial Register (DRKS00021256)](https://drks.de/search/en/trial/DRKS00021256).
+    This prospective, parallel-group, placebo-controlled RCT was conducted online in Germany with 1:1 randomization. Eligible participants were individuals under community supervision for CSA (§176ff StGB) or CSEM (§184b StGB), aged ≥18, with ≥6 months probation and online access. Exclusions included severe psychiatric or cognitive impairments. Randomization was stratified by offense type, supervision type, and static risk, using a block design (block size 4). Participants, outcome assessors, and analysts were blinded. The intervention, \@myTabu, comprised six guided cognitive-behavioral modules targeting dynamic risk factors; the placebo arm delivered non-specific psychoeducation on healthy living. Primary outcome was the CARES (Child Sexual Abuse Risk Evaluation Self-Report). Secondary outcomes included module-specific questionnaires on meaningful risk factors. Analysis followed intention-to-treat principles. Primary analysis used MMRM with treatment group, time (six assessments), treatment-by-time interaction, baseline CARES, and stratification factors as fixed effects, unstructured covariance, and multiple reference-based imputation for sensitivity. Secondary outcomes were analyzed using non-parametric Brunner-Munzel tests with Bonferroni-Holm correction. All tests were two-sided at α = 0.05. The trial was prospectively registered on April 24, 2020 in the [German Clinical Trial Register (DRKS00021256)](https://drks.de/search/en/trial/DRKS00021256).
   findings: |
-    Preliminary findings suggest significant reductions in dynamic risk-factors.
+    Of 385 screened individuals, 369 were randomized (182 placebo, 187 intervention); 213 included in ITT analysis. The MMRM for the primary outcome (CARES) showed no significant treatment effect over time (all p≥0·15). Within-arm analyses revealed significant reductions in self-reported risk factors at module one (intervention: p = 0·005) and module three (p<0·01) in bot trial arms. Secondary outcomes showed a significant decrease in self-reported child sexual interest (ESIQ, p=0·001) and improved treatment readiness (CVTRQ, p=0·006) in the intervention arm. There were no significant differences in re-offense rates as reported by community supervisor or adverse events. The intervention arm required longer to complete modules, with higher working time in modules one, four, and five (all p ≤ 0·046). As a side effect, therapeutic alliance (WAI-SR) improved significantly in the intervention arm (p ≤ 0·006). No serious safety concerns were reported.
   interpretations: |
-    Taken together, the intervention did not lead to measurable changes in the primary CARES outcome but was associated with selected improvements in secondary endpoints — most notably reduced explicit sexual interest and strengthened working alliance with coaches and supervisors — without indications of harm also for low-risk individuals.
+    This RCT found no significant superiority of the WBI \@myTabu over placebo in reducing dynamic risk factors among ICCO, despite a small reduction in sexual interest in children. Unexpectedly, emotion regulation worsened in the intervention arm, while social support increased only in the placebo group. Robust improvements in therapeutic alliance with supervision officers suggest potential benefits. The null result aligns with recent meta-analyses showing smaller effects in high-quality studies. Differences in sample characteristics and treatment intensity may explain the lack of efficacy. High dropout, prolonged module completion, and low baseline risk may have attenuated detectable effects. While the CARES is a promising new measure, its link to official recidivism remains unverified. The study represents the largest RCT to date on WBIs for ICCO, but routine implementation is not justified without re-working the WBI. Future research should focus on blended models, a higher RNR-based personalization, and direct comparison with in-person treatment programs.
   funding: |
     The work was funded by the German Federal Ministry of Education and Research (BMBF, Funding number: 01KR1807A). The funder of the study had no role in study design, data collection, data analysis, data interpretation, or writing of the report.
 ---
@@ -228,25 +238,18 @@ source(here::here("_scripts/sec_pairwise_functions.R"))
 ## Summary {.abstract .unnumbered}
 
 ### Background {.unnumbered}
-
-The impact of sexual offenses against children is high for both, victims and society. Meta-analyses demonstrated a robust but small treatment effect in tertiary prevention. For individuals with a court ordered treatment under community supervision and who gave been convicted for CSA or CSEM offenses (tertiary prevention), there exists a care gap at least in Germany. Web-based interventions seem to be a possible solution, but studies on WBIs are scarce. Up to now, only one study on the efficacy of WBIs showed for individuals suffering from CSEM and recruited in the dark net (secondary prevention) a small, but significant reduction of CSEM behavior. For tertiary prevention, there exist no empirical evidence for the efficacy of WBIs in reducing the risk to re-offend.
+Child Sexual Abuse (CSA) and Child Sexual Exploitation Material (CSEM) offenses impose severe harm on survivors and society. While tertiary prevention for convicted offenders is well-researched in-person, evidence for secondary prevention — targeting individuals at risk but not yet convicted — is limited, with few high-quality studies. CSEM-specific programs remain particularly under-evaluated, suffering from small samples, short follow-ups, and reliance on self-reported outcomes. A growing number of CSEM offenders and limited access to outpatient treatment have created a post-release care gap. Web-based interventions (WBIs) may improve accessibility, yet empirical evidence for indivudals who have committed CSA or CSEM offenses remains scarce. Only one study evaluated a guided WBI (Prevent It), showing a small effect on CSEM viewing, but with low conviction rates in the sample. To date, no WBI has been rigorously tested for ICCO with formal convictions. This study evaluates \@myTabu, a new guided WBI for ICCO, in a randomized controlled trial, testing its effectiveness in reducing dynamic risk factors compared to a psychological placebo.
 
 ### Methods {.unnumbered}
-
-We conducted a randomized controlled trial evaluating a web-based intervention (WBI) for indiviudals who committed sexual offenses against children.
-
-The trial was prospectively registered on April 24, 2020, German Clinical Trial Register (DRKS00021256).
+This prospective, parallel-group, placebo-controlled RCT was conducted online in Germany with 1:1 randomization. Eligible participants were individuals under community supervision for CSA (§176ff StGB) or CSEM (§184b StGB), aged ≥18, with ≥6 months probation and online access. Exclusions included severe psychiatric or cognitive impairments. Randomization was stratified by offense type, supervision type, and static risk, using a block design (block size 4). Participants, outcome assessors, and analysts were blinded. The intervention, \@myTabu, comprised six guided cognitive-behavioral modules targeting dynamic risk factors; the placebo arm delivered non-specific psychoeducation on healthy living. Primary outcome was the CARES (Child Sexual Abuse Risk Evaluation Self-Report). Secondary outcomes included module-specific questionnaires on meaningful risk factors. Analysis followed intention-to-treat principles. Primary analysis used MMRM with treatment group, time (six assessments), treatment-by-time interaction, baseline CARES, and stratification factors as fixed effects, unstructured covariance, and multiple reference-based imputation for sensitivity. Secondary outcomes were analyzed using non-parametric Brunner-Munzel tests with Bonferroni-Holm correction. All tests were two-sided at α = 0.05. 
 
 ### Findings {.unnumbered}
-
-In this randomized placebo‑controlled trial of a WBI for individuals who committed CSA or CSEM offences (ICCO), no superiority of the intervention arm compared to the placebo arm was observed. Among secondary outcomes, only some risk-factors showed significant changes in the intervention arm in line with the hypotheses, most notably a reduced sexual interest in children. Also in line with our hypothesis, treatment readiness was enhanced in the intervention arm. Against the hypothesis, difficulties in emotion regulations increased significantly in the intervention arm, whereas the perceived social support increased isolated in the placebo arm. Post-hoc analyses demonstrated robust significant improvements in the working alliance with both STs and SOs in the intervention group. No evidence emerged for an increased risk of recidivism. The frequency of adverse events was generally low without significant differences between trial arms.
+Of 385 screened individuals, 369 were randomized (182 placebo, 187 intervention); 213 included in ITT analysis. The MMRM for the primary outcome (CARES) showed no significant treatment effect over time (all p≥0·15). Within-arm analyses revealed significant reductions in self-reported risk factors at module one (intervention: p = 0·005) and module three (p<0·01) in both trial arms. Only one secondary outcome reached signifance after correction for multiple comparisons: self-reported child sexual interest decreased (ESIQ, p=0·001) in the intervention arm. There were no significant differences in re-offense rates as reported by community supervisor or adverse events. The intervention arm required longer to complete modules, with higher working time in modules one, four, and five (all p ≤ 0·046). As a side effect, therapeutic alliance (WAI-SR) improved significantly in the intervention arm (p ≤ 0·006). No serious safety concerns were reported.
 
 ### Interpretations {.unnumbered}
-
-The WBI for individuals who committed CSA or CSEM offences, no superiority of the intervention arm compared to the placebo arm was observed. Among secondary outcomes, only some risk-factors showed significant changes in the intervention arm in line with the hypotheses, most notably a reduced sexual interest in children. Also in line with our hypothesis, treatment readiness was enhanced in the intervention arm. Against the hypothesis, difficulties in emotion regulations increased significantly in the intervention arm, whereas the perceived social support increased isolated in the placebo arm. Post-hoc analyses demonstrated robust significant improvements in the working alliance with both STs and SOs in the intervention group. No evidence emerged for an increased risk of recidivism. The frequency of adverse events was generally low without significant differences between trial arms.
+This RCT found no significant superiority of the WBI \@myTabu over placebo in reducing dynamic risk factors among ICCO, despite a unexpected small reduction in sexual interest in children. Robust improvements in therapeutic alliance with supervision officers suggest potential benefits. The null result aligns with recent meta-analyses showing smaller effects in high-quality studies. Differences in sample characteristics and treatment intensity may explain the lack of efficacy. High dropout, prolonged module completion, and low baseline risk may have attenuated detectable effects. While the CARES is a promising new measure, its link to official recidivism remains unverified. The study represents the largest RCT to date on WBIs for ICCO, but implementation is not justified without re-working the WBI. The results suggest future work needs to focus on improving engagement and adherence to digital interventions.
 
 ### Funding {.unnumbered}
-
 The work was funded by the German Federal Ministry of Education and Research (BMBF, Funding number: 01KR1807A). The funder of the study had no role in study design, data collection, data analysis, data interpretation, or writing of the report.
 :::
 
@@ -259,11 +262,10 @@ The work was funded by the German Federal Ministry of Education and Research (BM
 
 ### Evidence before this study {.unnumbered custom-style="research-panel-subtitle"}
 
-Before undertaking this study, a XXX search revealed no published results on the efficacy of web-based intervention in reducing risk-factors for recidivism of Individuals who committed CSA or CSEM Offences (ICCO). The results of these reviews have been published online 2021. In summary, there existed no study reporting on the effectiveness of WBIs. The results of a placebo-controlled randomized trial of an WBI exclusively for CSEM users in the dark field have been reported for the first time in 2022. The RCT demonstrated a small, but significant reduction of time spended on viewing CSEM based on self-reports. In 2024, an updated review revealed no further empirical evidence for the effectiveness of WBIs. More recent meta-analyses did not provide additional empirical evdience for WBIs. To the best of our knowledge, at the moment there is no evidence for the effectiveness of WBIS in reducing re-offenses of CSA and CSEM.
+Before undertaking this study, no published data on the efficacy of web-based interventions (WBI) in reducing risk-factors for recidivism of Individuals who committed CSA or CSEM Offences (ICCO) was available. The results have been published online 2021. The results of a placebo-controlled RCT of an WBI exclusively for CSEM users in the dark field have been reported for the first time in 2022 (Prevent It). The RCT demonstrated a small, but significant reduction of time spended on viewing CSEM based on self-reports (Cohen’s d 0·18). The RCT involved 160 individuals with CSEM use but only 6.9% had prior convictions, limiting generalizability to ICCO. In 2024, an updated review revealed no further empirical evidence. A systematic search was conducted in PubMed, PsycINFO, Scopus, and Web of Science from January 2024 to March 2025 using the terms ("web-based intervention" OR "digital intervention") AND ("child sexual abuse" OR "child sexual exploitation material" OR "CSEM") AND ("recidivism" OR "re-offense") AND ("randomized controlled trial"). Results indicate, to the best of our knowledge, that no data on effectiveness WBIs for ICCO is published yet. 
 
 ### Added value of this study {.unnumbered custom-style="research-panel-subtitle"}
-
-The study provides for the first time data on the effectiveness of a WBI for individuals who have already committed CSA or CSEM offences. While the main outcome revealed no superiority of the WBI against a placebo condition, secondary outcomes provide hints for superiority of the intervention arm in reducing sexual interest. The WBI significantly enhanced the therapeutic alliance with online coaches and community supervisors only in the intervention arm. Adverse events were low as well as re-offenses during trial participation.
+This study is the first randomized controlled trial to evaluate a WBI specifically designed for individuals who have committed child sexual abuse (CSA) or child sexual exploitation material (CSEM) offences (ICCOs). It addresses a critical gap in the literature by assessing the effectiveness of a WBI in reducing dynamic risk factors among a population with criminal convictions, which has not been previously evaluated. Unlike prior studies focusing on secondary prevention with minimal conviction history, this trial targets ICCO with a structured, modular WBI delivered in a controlled trial setting. The study provides the first empirical evidence on the impact of a WBI on dynamic risk factors in this high-risk group, offering a foundation for scalable, accessible post-release care solutions.
 
 ### Implications of all the available evidence {.unnumbered custom-style="research-panel-subtitle"}
 
