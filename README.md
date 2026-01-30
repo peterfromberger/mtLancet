@@ -4,7 +4,7 @@
 To render the manuscript, use the following command:
 
 ```bash
-quarto render index.qmd --to frpQuarto-html
+quarto render index.qmd
 ```
 ## Publish to GitHub Pages
 To publish the rendered manuscript to GitHub Pages, use the following command:

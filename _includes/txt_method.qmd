@@ -24,10 +24,6 @@ The concept of the WBI framework, theoretical foundation, and content of the WBI
     <col style="width:42.5%;">
     <col style="width:42.5%;">
   </colgroup>
-
-  <caption style="text-align: left;">
-    Content of the trial arms.
-  </caption>
   <thead>
     <tr>
       <th style="border:1px solid #ccc; padding:6px;">Module</th>
@@ -138,6 +134,9 @@ The concept of the WBI framework, theoretical foundation, and content of the WBI
   </tbody>
 </table>
 ```
+
+Content of the trial arms.
+
 :::
 
 {{< pagebreak >}}
@@ -160,7 +159,7 @@ Secondary endpoints include specific questionnaires operationalizing these risk-
 
 {{< pagebreak >}}
 
-Frequencies of re-offenses as reported by SOs were assessed with the EQ. Frequencies of critical events as reported by STs were assessed continuous (appendix Figure 4), adverse events with the Mood and Risk Questionnaire (MRQ), post-hoc defined as the occurrence of at least one report of the highest possible score on a sub-scale.
+Frequencies of re-offenses as reported by SOs were assessed systematicall with the EQ. Frequencies of critical events as reported by STs were assessed continuous (appendix Figure 4), adverse events systematically with the Mood and Risk Questionnaire (MRQ), post-hoc defined as the occurrence of at least one report of the highest possible score on a sub-scale.
 
 The Working Alliance Inventory-Short Revised (WAI-SR) was used to assess therapeutic alliance with STs and SOs. Changes in psychological well-being have been assessed with the WHO-5 Well-Being Index (WHO-5). To assess a possible volunteer-effect, the Questionnaire of Non-Participation (QNP) was developed. The Questionnaire for Acceptance of Technology (ATQ) and the Questionnaire of Subjective Therapy Preconditions (SBV-R) were administered, but not related to the hypotheses and not reported here. Preliminary ATQ data from the intermediate analysis are published. [@schroderAcceptanceWebBasedIntervention2024; @schroderEngagementWebbasedIntervention2025]
 
