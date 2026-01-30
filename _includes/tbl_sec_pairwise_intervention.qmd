@@ -90,7 +90,7 @@ subgroup_str = "Intervention"
 #| message: false
 #| warning: false
 #| label: tbl-sec-pairwise-intervention
-#| tbl-cap: "Pairwise comparisons between pre- and post module scores of secondary endpoints within the intervention arm. The table shows the number of participants included in the analysis, the number of participants with available data at the outcome time-point as well as the estimated effect size and its precision (such as 95% confidence interval) for the brunner-munzel test for pairwise comparisons."
+#| tbl-cap: "Pairwise comparisons between pre- and post module scores of secondary endpoints within the intervention arm."
 
 tbl <- create_pairwise_tbls(mbsb = TRUE, dvs = dvs, dvs_mbsb = dvs_mbsb, types, labels, abbreviations, subgroup_str)
 

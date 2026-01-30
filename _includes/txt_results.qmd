@@ -44,7 +44,7 @@ The MMRM for the cumulative time from baseline to finish module showed a signifi
 
 ::: {.no-count}
 
-{{< include _includes/tbl_sec_pairwise_placebo.qmd >}}
+{{< include _includes/tbl_sec_pairwise_intervention.qmd >}}
 
 :::
 
@@ -62,7 +62,7 @@ The MMRM analyzing the WAI‑SR SUPERVISOR showed significant treatment-by-time 
 
 ::: {.no-count}
 
-{{< include _includes/tbl_sec_pairwise_intervention.qmd >}}
+{{< include _includes/tbl_sec_pairwise_placebo.qmd >}}
 
 :::
 

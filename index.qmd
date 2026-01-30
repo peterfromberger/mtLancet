@@ -226,7 +226,7 @@ source(here::here("_scripts/sec_pairwise_functions.R"))
 
 -   *Summary*: {{< meta summary-wordcount >}} (max. 300 words)
 -   *Manuscript*: {{< words-body >}} (max. 4500 words)
--   *Citations*: max. 30
+-   *Citations*: 32 (max 30 references)
 
 {{< pagebreak >}}
 :::

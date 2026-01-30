@@ -14,10 +14,130 @@ The concept of the WBI framework, theoretical foundation, and content of the WBI
 
 {{< pagebreak >}}
 
-::: {.no-count}
+::: {#tbl-module-content .no-count}
 
-{{< include _includes/tbl_module_content.qmd >}}
+```{=html}
+<table id="tbl-module-content" style="width:100%; border-collapse: collapse; text-align: left; vertical-align: top;">
+    <!-- Spaltenbreiten -->
+  <colgroup>
+    <col style="width:15%;">
+    <col style="width:42.5%;">
+    <col style="width:42.5%;">
+  </colgroup>
 
+  <caption style="text-align: left;">
+    Content of the trial arms.
+  </caption>
+  <thead>
+    <tr>
+      <th style="border:1px solid #ccc; padding:6px;">Module</th>
+      <th style="border:1px solid #ccc; padding:6px;">Intervention</th>
+      <th style="border:1px solid #ccc; padding:6px;">Placebo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border:1px solid #ccc; padding:6px;"><strong>Module 1</strong></td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Motivation</strong>:<br>
+        – Exercises on identifying personal values and future aspirations in order to enhance treatment readiness and reduce resistance to change.<br>
+        – Psycho-education on improving decision-making by weighting long-term consequences over immediate rewards.<br>
+        – Based on structured goal-setting techniques, participants transform abstract desires into specific, measurable, and achievable objectives, increasing self-efficacy and clarity about their own needs and personal values in order to enhance treatment readiness.
+      </td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Physical activity</strong>:<br>
+        – Psycho-educational content promotes the benefits of physical activity, identifies personal barriers, and set achievable goals to build motivation for physical activity.<br>
+        – The importance of motor skills, coordination, and balance, enhancing physical confidence and improving participation in daily and therapeutic activities is highlighted.<br>
+        – Through guided exercises, participants are introduced to break sedentary patterns, to increase awareness of health risks and motivated for a sustainable, active living.
+      </td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #ccc; padding:6px;"><strong>Module 2</strong></td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Supervision and social relationships</strong>:<br>
+        – Development of skills to build trust and collaborative working relationships with supervision officers, reducing resistance against community supervision and improving adherence to supervision mandates.<br>
+        – Identification of avoidance patterns that interfere with engagement in community supervision, using cognitive-behavioral strategies to enhance compliance with structured interventions.<br>
+        – Through guided exercises, participants examine the impact of adult relationships on emotional regulation and behavioral stability, targeting deficits in capacity for adult intimacy.
+      </td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Sports</strong>:<br><br>
+        – Psycho-education provides the basics of muscle structure and function, increasing self-awareness of physical capabilities and enhancing motivation to engage in structured physical routines.<br>
+        – In guided exercises, intrinsic and extrinsic motivators are identified as well as barriers like low confidence or time constraints that affect adherence on personal training plans.<br>
+        – By reflecting on personal sport preferences in exercises, participants recognize how peer or cultural influences may shape physical activity choices, reducing susceptibility to negative social pressures.
+      </td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #ccc; padding:6px;"><strong>Module 3</strong></td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Emotion management</strong>:<br>
+        – Identification of emotions as indicators of unmet personal needs, reducing impulsive reactions by linking affective states to underlying psychological demands.<br>
+        – Through mindfulness exercises and case examples, participants learn the importance of non-reactive awareness of emotions and connected bodily sensations, improving impulse control and reducing maladaptive coping.<br>
+        – Differentiation of emotional experiences and action urges using tools like the tension scale, fostering pause-and-reflect strategies to interrupt impulsive behaviors.<br>
+        – Creation of a personalized skill set, with adaptive, individualized responses to emotional distress, enhancing long-term emotional regulation and self-management.
+      </td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Healthy sleep</strong>:<br>
+        – Psycho-education promotes that sleep quality directly influences emotional regulation, cognitive function, and physical health, addressing impulsivity and emotional dysregulation that undermine sleep hygiene.<br>
+        – Understanding sleep cycles and physiological restoration helps link poor sleep to heightened stress, supporting those with external or sexualized coping patterns in developing healthier responses.<br><br>
+        – Practical, non-drug strategies are taught in exercises to manage shift work and jetlag, promoting consistent routines and environmental adjustments that support long-term sleep stability.
+      </td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #ccc; padding:6px;"><strong>Module 4</strong></td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Problem solving</strong>:<br>
+        – Psycho-education on problem-solving deficits as a core component of self-regulation difficulties, understanding that challenges are manageable through structured, cognitive-behavioral approaches.<br>
+        – Guided exercises following the 7-Step Problem-Solving Plan to systematically identify, define, and address problems, enhancing decision-making and reducing impulsive or avoidant reactions.<br>
+        – Through video examples and case studies, participants practice distinguishing between changeable and unchangeable issues, generating realistic solutions, and evaluating outcomes.
+      </td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Dreaming</strong>:<br>
+        – Psycho-educational content focus on the neuroscience of dreaming, including REM and non-REM sleep stages.<br><br>
+        – Through exercises like dream journaling and symbolic interpretation, participants develop reflective practices that enhance awareness of dreams.<br>
+        – The module links stress, sleep disruption, and dream content, illustrating how chronic stress undermines executive function and exacerbates difficulties in structured thinking and solution generation.<br>
+        – Case studies highlight trauma-related dream patterns, showing how unresolved psychological distress and poor sleep hinder insight and cognitive restoration.
+      </td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #ccc; padding:6px;"><strong>Module 5</strong></td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Offense-supportive attitudes</strong>:<br>
+        – Need-principle: Identification of three offense-supportive cognitions; the participant must choose three out of 16 pre-defined offense-supportive cognitions.<br>
+        – Psycho-education on how offense-supportive cognitions arise from selective attention to partial truths, reinforcing denial and minimizing consequences through psychological defense mechanisms.<br>
+        – Through cognitive restructuring, participants challenge offense-supportive cognitions and promoting critical evaluation of harmful thought patterns in guided exercises.<br>
+        – Case studies and video examples illustrate real-world consequences of offense-supportive cognitions, bridging the gap between perceived justification and actual harm.
+      </td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Nutrition</strong>:<br>
+        – Adaptive: Psycho-education provides foundational knowledge on nutrition and digestion; the participant must choose three out of six nutrition styles.<br>
+        – Through guided exercises, participants explore ethical, health, and environmental motivations for three out of six different nutrition types (e.g. plant-based diets), fostering empathy and prosocial decision-making.<br>
+        – Practical skills in meal planning and grocery shopping build confidence and sustainability, empowering lasting dietary changes that enhance psychological health and reduce behavioral risk.
+      </td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #ccc; padding:6px;"><strong>Module 6</strong></td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Sexuality</strong>:<br>
+        – Psycho-education focus on the differentiation between healthy and problematic sexual interests and on how sexual preoccupation can increase reoffending risk.<br>
+        – The module addresses emotional congruence with children as a potential risk-factor, emphasizing the importance of maintaining emotional and physical boundaries between oneself and children to reduce relapse potential (relapse prevention).<br>
+        – Cognitive restructuring techniques are used to challenge distorted beliefs about sexual behavior, fostering insight and promoting adaptive, non-harmful thought patterns.<br>
+        – Through identification of high-risk triggers and personalized coping strategies, the self-regulation, self-efficacy, and control over problematic sexual urges and fantasies will be focused.
+      </td>
+      <td style="border:1px solid #ccc; padding:6px;">
+        <strong>Well-being</strong>:<br>
+        – Psychological well-being is distinguished from happiness, focusing on meaning, inner balance, and personal growth, explored through reflections on identity, nature, music, and laughter.<br>
+        – Participants challenge the myth of universal well-being, recognizing its subjective nature and the importance of personal values, identity, and life context in shaping health and satisfaction.<br>
+        – Through exercises, participants explore the gut-brain axis, mindful eating, and hygiene practices, linking nutrition, self-care, and bodily awareness to mental clarity and psychological stability.
+      </td>
+    </tr>
+  </tbody>
+</table>
+```
 :::
 
 {{< pagebreak >}}
@@ -28,7 +148,17 @@ For the recruitment, scientific staff informed SOs about the trial and asked to 
 
 References, psychometric criteria and descriptions for all outcomes are provided in the appendix Section 3. The Statistical Analysis Plan (SAP), defines officially recorded re-offenses five years after last-patient-out (at September 2030) and the Index of Desistance (IoD) as primary endpoints. [@frombergerMyTabuAPlaceboControlled2021] However, recently, the items of the scales underlying the IoD have been reduced and one scale was removed due to low internal consistency; the IoD was renamed into Child Sexual Abuse Risk Evaluation Self-Report (CARES). The CARES is a composite measure with higher scores indicating greater severity of both acute and stable dynamic risk-factors. [@sonjaetzlerDevelopmentInitialValidationsubmitted] We report the validated CARES (see appendix section 6.2 for pre-specified IoD).
 
-Secondary endpoints include specific questionnaires operationalizing these risk-factors that are thematically addressed in the individual modules (appendix Table ??).
+Secondary endpoints include specific questionnaires operationalizing these risk-factors that are thematically addressed in the individual modules (see @tbl-sec-endpoints).
+
+{{< pagebreak >}}
+
+::: {.no-count}
+
+{{< include _includes/tbl_secondary_endpoints.qmd >}}
+
+:::
+
+{{< pagebreak >}}
 
 Frequencies of re-offenses as reported by SOs were assessed with the EQ. Frequencies of critical events as reported by STs were assessed continuous (appendix Figure 4), adverse events with the Mood and Risk Questionnaire (MRQ), post-hoc defined as the occurrence of at least one report of the highest possible score on a sub-scale.
 
