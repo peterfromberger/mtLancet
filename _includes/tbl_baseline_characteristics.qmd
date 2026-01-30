@@ -345,7 +345,7 @@ tbl <- data %>%
       phq_calc_BingeEating = "Binge eating",
       phq_calc_Alkoholsyndrom = "Alcohol syndrome",
       phq_calc_SomatoformeSyndrome = "Somatoform syndrome",
-      phq_11 = "Psychosocial functioning",
+      phq_11 = "Psycho-social functioning",
       icd_calc_male_6D30_Exhibitionistische_Störung  = "6D30 Exhibitionistic disorder",
       icd_calc_male_6D31_Voyeuristische_Störung  = "6D31 Voyeuristic disorder",
       icd_calc_male_6D32_Pädophile_Störung = "6D32 Pedophilic disorder",

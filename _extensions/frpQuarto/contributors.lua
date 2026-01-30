@@ -3,7 +3,7 @@ return {
 
     local md = {}
 
-    table.insert(md, "[Contributors]{.contributors}\n")
+    table.insert(md, "[Contributors]{.h2}\n")
 
     if meta.authors then
 

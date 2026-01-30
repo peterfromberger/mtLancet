@@ -77,7 +77,7 @@ abbreviations <- c(
   "*EKK-R* = Questionnaire on Emotional Congruence with Children-Revised [@mackEmotionaleKongruenzMit2012]",
   "*ESIQ* = Explicit Sexual Interest Questionnaire [@banseIndirectMeasuresSexual2010]",
   "*SOI-R* = Sexual Outlet Inventory revised, subscale desire for sexual activity with children [@bbrikenSexualOutletInventory2010]",
-  "*HBI-19* = Hypersexual Behavior Inventory-19 [@kleinValidierungsstudieDeutschenVersion2013]",
+  "*HBI-19* = Hyper-sexualBehavior Inventory-19 [@kleinValidierungsstudieDeutschenVersion2013]",
   "*SSIC* = Specific self-efficacy for modifying Sexual Interest in Children [@tozdanSpezifischeSelbstwirksamkeitZur2015]"
 )
 

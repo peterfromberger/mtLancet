@@ -11,16 +11,16 @@ bibliography: references.bib
 csl: the-lancet.csl
 
 format:
-  elsevier-pdf:
-    journal:
-      name: "The Lancet Digital Health"
-      formatting: preprint
-      model: 1p
-      layout: onecolumn
-      cite-style: super
-    include-in-header: 
-      text: |
-        \newpageafter{author}
+  # elsevier-pdf:
+  #   journal:
+  #     name: "The Lancet Digital Health"
+  #     formatting: preprint
+  #     model: 1p
+  #     layout: onecolumn
+  #     cite-style: super
+  #   include-in-header: 
+  #     text: |
+  #       \newpageafter{author}
   docx:
     reference-doc: _extensions/frpQuarto/custom-reference-doc.docx
     toc: false
@@ -161,7 +161,7 @@ format:
             document.querySelectorAll(".quarto-other-links > h2")
               .forEach(h2 => {
                 if (h2.textContent.includes("Other")) {
-                  h2.textContent = "For submission";
+                  h2.textContent = "Submission files";
                 }
               });
 
@@ -202,15 +202,18 @@ format:
       - text: Supplementary material
         icon: file-earmark-pdf
         href: '#'
-      - text: Trial registry
+      - text: Tables
         icon: file-earmark-pdf
-        href: resources/GermanClinicalTrialsRegister.pdf
-      - text: Study protocol
+        href: '#'
+      - text: Figures
         icon: file-earmark-pdf
-        href: resources/myTabu_frontiers_study_protocol.pdf
+        href: '#'
       - text: Statistical analysis plan
         icon: file-earmark-pdf
-        href: resources/myTabu_SAP_signed.pdf
+        href: '#'
+      - text: Zipped files
+        icon: file-earmark-pdf
+        href: '#'
 
     code-links:
       - text: Disclosure form

@@ -4,45 +4,50 @@
 #| message: false
 #| warning: false
 #| label: tbl-module-content
-#| tbl-cap: "Detailed description of the WBI content."
+#| tbl-cap: "Content of the trial arms."
 
 library(here)
 library(gt)
 library(readr)
 library(dplyr)
-
 library(gt)
 
-# Korrigierte Daten (ohne `-` am Anfang der Zeilen, nur Zeilenumbrüche)
 Intervention <- c(
-  "- Exercises on identifying personal values and future aspirations in order to enhance treatment readiness and reduce resistance to change.\n\n- Psychoeducation on improving decision-making by weighting long-term consequences over immediate rewards.\n\n- Based on structured goal-setting techniques, participants transform abstract desires into specific, measurable, and achievable objectives, increasing self-efficacy and clarity about their own needs and personal values in order to enhane treatment readiness.",
+  "**Motivation**:\n\n- Exercises on identifying personal values and future aspirations in order to enhance treatment readiness and reduce resistance to change.\n\n- Psycho-education on improving decision-making by weighting long-term consequences over immediate rewards.\n\n- Based on structured goal-setting techniques, participants transform abstract desires into specific, measurable, and achievable objectives, increasing self-efficacy and clarity about their own needs and personal values in order to enhane treatment readiness.",
   
-  "- Development of skills to build trust and collaborative working relationships with supervision officers, reducing resistance against community supervision and improving adherence to supervision mandates.\n\n- Identification of trauma- and fear-based avoidance patterns that interfere with engagement in community supervision, using cognitive-behavioral strategies to enhance compliance with structured interventions.\n\n- Through guided exercises, participants examine the impact of adult relationships on emotional regulation and behavioral stability, targeting deficits in capacity for adult intimacy.",
+  "**Supervision and social relationships**:\n\n- Development of skills to build trust and collaborative working relationships with supervision officers, reducing resistance against community supervision and improving adherence to supervision mandates.\n\n- Identification of avoidance patterns that interfere with engagement in community supervision, using cognitive-behavioral strategies to enhance compliance with structured interventions.\n\n- Through guided exercises, participants examine the impact of adult relationships on emotional regulation and behavioral stability, targeting deficits in capacity for adult intimacy.",
   
-  "- Identification of emotions as indicators of unmet personal needs, reducing impulsive reactions by linking affective states to underlying psychological demands.\n\n- Through mindfulness exercises and case examples, participants learn the importance of non-reactive awareness of emotions and connected bodily sensations, improving impulse control and reducing maladaptive coping.\n\n- Differentiation of emotional experiences and action urges using tools like the tension scale, fostering pause-and-reflect strategies to interrupt impulsive behaviors.\n\n- Creation of a personalized skill set, with adaptive, individualized responses to emotional distress, enhancing long-term emotional regulation and self-management.",
+  "**Emotion management**:\n\n- Identification of emotions as indicators of unmet personal needs, reducing impulsive reactions by linking affective states to underlying psychological demands.\n\n- Through mindfulness exercises and case examples, participants learn the importance of non-reactive awareness of emotions and connected bodily sensations, improving impulse control and reducing maladaptive coping.\n\n- Differentiation of emotional experiences and action urges using tools like the tension scale, fostering pause-and-reflect strategies to interrupt impulsive behaviors.\n\n- Creation of a personalized skill set, with adaptive, individualized responses to emotional distress, enhancing long-term emotional regulation and self-management.",
   
-  "- Psychoeducation on problem-solving deficits as a core component of self-regulation difficulties, understanding that challenges are manageable through structured, cognitive-behavioral approaches.\n\n- Guided exercises following the 7-Step Problem-Solving Plan to systematically identify, define, and address problems, enhancing decision-making and reducing impulsive or avoidant reactions.\n\n- Through video examples and case studies, participants practice distinguishing between changeable and unchangeable issues, generating realistic solutions, and evaluating outcomes.",
+  "**Problem solving**:\n\n- Psycho-education on problem-solving deficits as a core component of self-regulation difficulties, understanding that challenges are manageable through structured, cognitive-behavioral approaches.\n\n- Guided exercises following the 7-Step Problem-Solving Plan to systematically identify, define, and address problems, enhancing decision-making and reducing impulsive or avoidant reactions.\n\n- Through video examples and case studies, participants practice distinguishing between changeable and unchangeable issues, generating realistic solutions, and evaluating outcomes.",
   
-  "- Identifaction of three offense-supportive cognitive distortions, such as rationalizations that minimize harm, which perpetuate antisocial thinking and increase reoffending risk (overall 16 pre-defined offense-supportive cognitions).\n\n- Psychoeducation on how offense-supportive cognitions arise from selective attention to partial truths, reinforcing denial and minimizing consequences through psychological defense mechanisms.\n\n- Through cognitive restructuring, participants challenge distorted beliefs and promoting critical evaluation of harmful thought patterns in guided exercises.\n\n- Case studies and video examples illustrate real-world consequences of distorted thinking, bridging the gap between perceived justification and actual harm.",
+  "**Offense-supportive attitudes**:\n\n- Need-principle: Identification of three offense-supportive cognitions; the participant must choose three out of 16 pre-defined offense-supportive cognitions.\n\n- Psycho-education on how offense-supportive cognitions arise from selective attention to partial truths, reinforcing denial and minimizing consequences through psychological defense mechanisms.\n\n- Through cognitive restructuring, participants challenge distorted beliefs and promoting critical evaluation of harmful thought patterns in guided exercises.\n\n- Case studies and video examples illustrate real-world consequences of distorted thinking, bridging the gap between perceived justification and actual harm.",
   
-  "- Psychoeducation focus on the differentiation between healthy and problematic sexual interests and on how sexual preoccupation can increase reoffending risk.\n\n- The module addresses emotional congruence with children as a potential risk-factor, emphasizing the importance of maintaining emotional and physical boundaries between oneself and children to reduce relapse potential (relapse prevention).\n\n- Cognitive restructuring techniques are used to challenge distorted beliefs about sexual behavior, fostering insight and promoting adaptive, non-harmful thought patterns.\n\n- Through identification of high-risk triggers and personalized coping strategies, the self-regulation, self-efficacy, and control over problematic sexual urges and fantasies will be focused."
+  "**Sexuality**:\n\n- Psycho-education focus on the differentiation between healthy and problematic sexual interests and on how sexual preoccupation can increase reoffending risk.\n\n- The module addresses emotional congruence with children as a potential risk-factor, emphasizing the importance of maintaining emotional and physical boundaries between oneself and children to reduce relapse potential (relapse prevention).\n\n- Cognitive restructuring techniques are used to challenge distorted beliefs about sexual behavior, fostering insight and promoting adaptive, non-harmful thought patterns.\n\n- Through identification of high-risk triggers and personalized coping strategies, the self-regulation, self-efficacy, and control over problematic sexual urges and fantasies will be focused."
 )
 
 Placebo <- c(
-  "- Psychoeducational content promotes the benefits of physical activity, identifies personal barriers, and set achievable goals to build motivation for physical activity.\n\n- The importance of motor skills, coordination, and balance, enhancing physical confidence and improving participation in daily and therapeutic activities is highlighted.\n\n- Through guided exercises, participants are introduced to break sedentary patterns, to increase awareness of health risks and motivated for a sustainable, active living.",
+  "**Physical activity**:\n\n- Psycho-educational content promotes the benefits of physical activity, identifies personal barriers, and set achievable goals to build motivation for physical activity.\n\n- The importance of motor skills, coordination, and balance, enhancing physical confidence and improving participation in daily and therapeutic activities is highlighted.\n\n- Through guided exercises, participants are introduced to break sedentary patterns, to increase awareness of health risks and motivated for a sustainable, active living.",
   
-  "- Psychoeducation provides the basics of muscle structure and function, increasing self-awareness of physical capabilities and enhancing motivation to engage in structured physical routines.\n\n- in guided exercises, intrinsic and extrinsic motivators are identified as well as barriers like low confidence or time constraints that affect adherence on personal training plans.\n\n- By reflecting on personal sport preferences in exercises, participants recognize how peer or cultural influences may shape physical activity choices, reducing susceptibility to negative social pressures.",
+  "**Sports**:\n\n- Psycho-education provides the basics of muscle structure and function, increasing self-awareness of physical capabilities and enhancing motivation to engage in structured physical routines.\n\n- in guided exercises, intrinsic and extrinsic motivators are identified as well as barriers like low confidence or time constraints that affect adherence on personal training plans.\n\n- By reflecting on personal sport preferences in exercises, participants recognize how peer or cultural influences may shape physical activity choices, reducing susceptibility to negative social pressures.",
   
-  "- Psychoeducation promotes that sleep quality directly influences emotional regulation, cognitive function, and physical health, addressing impulsivity and emotional dysregulation that undermine sleep hygiene.\n\n- Understanding sleep cycles and physiological restoration helps link poor sleep to heightened stress, supporting those with external or sexualized coping patterns in developing healthier responses.\n\n- Practical, non-drug strategies are taught in exercises to manage shift work and jetlag, promoting consistent routines and environmental adjustments that support long-term sleep stability.",
+  "**Healthy sleep**:\n\n- Psycho-education promotes that sleep quality directly influences emotional regulation, cognitive function, and physical health, addressing impulsivity and emotional dysregulation that undermine sleep hygiene.\n\n- Understanding sleep cycles and physiological restoration helps link poor sleep to heightened stress, supporting those with external or sexualized coping patterns in developing healthier responses.\n\n- Practical, non-drug strategies are taught in exercises to manage shift work and jetlag, promoting consistent routines and environmental adjustments that support long-term sleep stability.",
   
-  "- Psychoeducational content focus on the neuroscience of dreaming, including REM and non-REM sleep stages.\n\n- Through exercises like dream journaling, and symbolic interpretation, participants develop reflective practices that enhance awareness of dreams.\n\n- The module links stress, sleep disruption, and dream content, illustrating how chronic stress undermines executive function and exacerbates difficulties in structured thinking and solution generation.\n\n- Case studies highlight trauma-related dream patterns, showing how unresolved psychological distress and poor sleep hinder insight and cognitive restoration.",
+  "**Dreaming**:\n\n- Psycho-educational content focus on the neuroscience of dreaming, including REM and non-REM sleep stages.\n\n- Through exercises like dream journaling, and symbolic interpretation, participants develop reflective practices that enhance awareness of dreams.\n\n- The module links stress, sleep disruption, and dream content, illustrating how chronic stress undermines executive function and exacerbates difficulties in structured thinking and solution generation.\n\n- Case studies highlight trauma-related dream patterns, showing how unresolved psychological distress and poor sleep hinder insight and cognitive restoration.",
   
-  "- Psychoeducation provides foundational knowledge of nutrition, digestion, and the mind-body connection.\n\n- Through guided exercises, participants explore ethical, health, and environmental motivations for three out of 6 different nutrition types (e.g. plant-based diets, fostering empathy and prosocial decision-making).\n\n- Practical skills in meal planning and grocery shopping build confidence and sustainability, empowering lasting dietary changes that enhance psychological health and reduce behavioral risk.",
+  "**Nutrition**:\n\n- Adaptive: Psycho-education provides foundational knowledge on nutrition, digestion; the participant mus choose three out of six nutrition styles.\n\n- Through guided exercises, participants explore ethical, health, and environmental motivations for three out of 6 different nutrition types (e.g. plant-based diets, fostering empathy and prosocial decision-making).\n\n- Practical skills in meal planning and grocery shopping build confidence and sustainability, empowering lasting dietary changes that enhance psychological health and reduce behavioral risk.",
   
-  "- Psychological well-being is distinguished from happiness, focusing on meaning, inner balance, and personal growth, explored through reflections on identity, nature, music, and laughter.\n\n- Participants challenge the myth of universal well-being, recognizing its subjective nature and the importance of personal values, identity, and life context in shaping health and satisfaction.\n\n- Through exercises, participants explore the gut-brain axis, mindful eating, and hygiene practices, linking nutrition, self-care, and bodily awareness to mental clarity and psychological stability."
+  "**Well-being**:\n\n- Psychological well-being is distinguished from happiness, focusing on meaning, inner balance, and personal growth, explored through reflections on identity, nature, music, and laughter.\n\n- Participants challenge the myth of universal well-being, recognizing its subjective nature and the importance of personal values, identity, and life context in shaping health and satisfaction.\n\n- Through exercises, participants explore the gut-brain axis, mindful eating, and hygiene practices, linking nutrition, self-care, and bodily awareness to mental clarity and psychological stability."
 )
 
-Module <- c("Module 1", "Module 2", "Module 3", "Module 4", "Module 5", "Module 6")
+Module = c(
+    "**Module 1**",
+    "**Module 2**",
+    "**Module 3**",
+    "**Module 4**",
+    "**Module 5**",
+    "**Module 6**"
+  )
 
 # Erstelle die Tabelle
 tbl_dat <- data.frame(Module, Intervention, Placebo)
@@ -58,16 +63,13 @@ tbl <- gt(tbl_dat) %>%
     rows = everything()
   ) %>%
   gt::tab_options(
-    table.font.names = "Times New Roman",
     table.font.size = 10,
-    quarto.use_bootstrap = FALSE,
-    quarto.disable_processing = TRUE,
-    data_row.padding = px(2),
-    summary_row.padding = gt::px(2),
-    grand_summary_row.padding = gt::px(2),
-    #footnotes.padding = gt::px(2),
-    #source_notes.padding = gt::px(2),
-    row_group.padding = gt::px(2)
+    #quarto.use_bootstrap = FALSE,
+    #quarto.disable_processing = TRUE,
+    data_row.padding = px(1),
+    summary_row.padding = gt::px(1),
+    grand_summary_row.padding = gt::px(1),
+    row_group.padding = gt::px(1)
   ) %>%
   tab_style(style = cell_text(align = "left"), locations = cells_source_notes()) %>%
   tab_style(style = cell_text(align = "left"), locations = cells_footnotes())

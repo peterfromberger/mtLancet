@@ -111,7 +111,7 @@ risk_factors_df <- data.frame(
         "Sexual Outlet Inventory - Revised (SOI-R)",
         "Specific self-efficacy for modifying Sexual Interest in Children (SSIC)",
         "Questionnaire on Emotional Congruence with Children-Revised (EKK-R)",
-        "Hypersexual Behavior Inventory-19 (HBI-19)"
+        "Hyper-sexualBehavior Inventory-19 (HBI-19)"
     ),
     outcome_measure_short_name = c(
         "CVTRQ",
