@@ -3350,7 +3350,7 @@ dat_clean_first <- dat_clean %>%
   group_by(client_id) %>%
   summarise_all(first) %>%
   ungroup()
-sfit <- bpcpfit(Surv(`Zeit zwischen Beginn Modul 1 und Ausschluss (Tage)`/365.25, recidivism) ~ treatment, data = dat_clean_first %>%
+sfit <- bpcp::bpcpfit(Surv(`Zeit zwischen Beginn Modul 1 und Ausschluss (Tage)`/365.25, recidivism) ~ treatment, data = dat_clean_first %>%
                   mutate(recidivism = if_else(recidivism=="Ja", 1, 0)))
 sfit.ci <- tidykmciLR(sfit)
 p_km_itt <-
